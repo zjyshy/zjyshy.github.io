@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-12</span>
-            <span class="time">23:34:04</span>
+            <span class="time">23:45:30</span>
           </span>
           
         </div>
@@ -118,20 +118,18 @@
 <p>  8,<a href="#链接">链接</a></p>
 <p>  9,<a href="#锚点">锚点</a>（其实应该放在链接那里，但我想单独拿出来）</p>
 <p>  10,<a href="#图片">图片</a></p>
-<p>  11,空格</p>
-<p>  12,空行</p>
+<p>  11,<a href="#空格">空格</a></p>
+<p>  12,<a href="#空行">空行</a></p>
 <h1 id="内容介绍"><a href="#内容介绍" class="headerlink" title="内容介绍"></a>内容介绍</h1><p>  主要用来保留我自己比较常用的md语法规则,内容会不断更新。</p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>  就是一个#+文字（还有一种方式懒得用）</p>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>  就是一个# + 空格 + 文字（加空格肯定没事，不加空格容易出问题）</p>
+<p>  其实还有一种方法从来不用。</p>
 <pre><code># 一级
 ## 二级
 ### 三级
     .
     .
     .
-最多六级（六个#）</code></pre><p>#一级</p>
-<p>##二级</p>
-<p>###三级</p>
-<br>
+最多六级（六个#）</code></pre><h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><br>
 
 <h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>  关于换行按两下回车就好了</p>
 <h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>  这个功能在日常书写中暂时还没体会到作用<br>  有点像标题的那个#,但是我并不知道具体有几级</p>
@@ -181,13 +179,15 @@ ___
 <hr>
 <br>
 
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2>  <br>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>title可有可无,就是你把鼠标放上去短暂延迟后出现的文字。<br><code>[名字](链接 &quot;title&quot;)</code></p>
+<pre><code>[baidu](http://www.baidu.com &quot;heihei&quot;)    </code></pre><p><a href="http://www.baidu.com" title="heihei" target="_blank" rel="noopener">baidu</a></p>
+  <br>
 
-<p>##锚点</p>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>这个挺好用的，但是目前只会回到标题，貌似只能回到标题也就是带有<code>#</code> 的那些内容。和链接基本相同，多了个#</p>
+<pre><code>[回到目录](#目录)</code></pre><p><a href="#目录">回到目录</a></p>
 <br>
 
-<p>##图片</p>
-<p><img src="../../../../img/guaiqiao.jpg" alt="heihei"></p>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="../../../../img/guaiqiao.jpg" alt="heihei"></p>
 <br>
 
 <h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p> <strong>添加&amp;#160;或者&amp;nbsp;</strong></p>
