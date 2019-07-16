@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-13</span>
-            <span class="time">17:20:30</span>
+            <span class="time">23:17:05</span>
           </span>
           
         </div>
@@ -146,12 +146,34 @@ cd ..</code></pre><p>如果知道绝对路径,就可以像下面一样去访问<
 <li><h4 id="echo"><a href="#echo" class="headerlink" title="echo"></a>echo</h4><p>创建文件,将文本hello world 存储到文本文件test1.txt，如果test1.txt不存在就会新建一个test1.txt并把文本内容写进去；如果已经存在一个<code>非空的</code>test1.txt那就会将原有内容覆盖。</p>
 <pre><code>echo &quot;hello world&quot; &gt; test1.txt</code></pre><p>如果想在已有的内容后面追加内容</p>
 <pre><code>echo &quot;heihei&quot; &gt;&gt; test1.txt</code></pre></li>
-<li><h4 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h4><p>touch在创建的时候并不可以为文件添加内容，可以改变文件最后的更新时间（感觉没啥用）。</p>
+<li><h5 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h5><p>touch在创建的时候并不可以为文件添加内容，可以改变文件最后的更新时间（感觉没啥用）。</p>
 <pre><code>touch test1.txt</code></pre><h4 id="2-4-复制"><a href="#2-4-复制" class="headerlink" title="2.4 复制"></a>2.4 复制</h4></li>
-<li><h4 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h4><p>复制文件，将文件1的内容复制到文件二。如果是一个未创建的文件那就会创建一个文件，并将内容复制进去。如果是已经创建的文件，就会覆盖掉原有内容。</p>
-<pre><code>cp test1.txt test2.txt</code></pre><p>复制目录</p>
+<li><h5 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h5><p>复制文件，将文件1的内容复制到文件二。如果是一个未创建的文件那就会创建一个文件，并将内容复制进去。如果是已经创建的文件，就会覆盖掉原有内容。</p>
+<pre><code>cp test1.txt test2.txt</code></pre><p>复制目录，如果是复制到一个不存在的目录，就会新建此目录；如果是复制到一个已存在的目录，则会覆盖掉原有目录；如果目录里面有文件,则会将文件复制过去</p>
+<pre><code>cp -p test1 test2</code></pre></li>
+</ul>
+<h4 id="2-5-移动和重命名"><a href="#2-5-移动和重命名" class="headerlink" title="2.5 移动和重命名"></a>2.5 移动和重命名</h4><ul>
+<li><h5 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h5><p>mv并<code>不会</code>自动新建<code>不存在</code>的目录。</p>
+<p>mv 文件名 文件名 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    将源文件名改为目标文件名</p>
+<p>mv 文件名 目录名    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将文件移动到目标目录</p>
+<p>mv 目录名 目录名    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目标目录已存在，将源目录移动到目标目录；</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;目标目录不存在则改名</p>
+<p>mv 目录名 文件名    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出错</p>
 </li>
 </ul>
+<h4 id="2-6-删除"><a href="#2-6-删除" class="headerlink" title="2.6 删除"></a>2.6 删除</h4><blockquote>
+<p>参数</p>
+<blockquote>
+<p>-i 删除前逐一询问确认。<br><br>-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。<br><br>-r 将目录及以下之档案亦逐一删除。</p>
+</blockquote>
+</blockquote>
+<h4 id="2-7-建立连接"><a href="#2-7-建立连接" class="headerlink" title="2.7 建立连接"></a>2.7 建立连接</h4>  <p style="color:red"> 我这边实现的效果和方方老师那边有很大区别</p>
+
+<h4 id="2-8-其他"><a href="#2-8-其他" class="headerlink" title="2.8 其他"></a>2.8 其他</h4><p>  下载文件    curl -L <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> &gt; baidu.html</p>
+<p>  拷贝网页    wget -p -H -e robots=off <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> (Windows 不支持 wget)</p>
+<p>  磁盘占用    df -kh</p>
+<p>  当前目录大小    du -sh .</p>
+<p>  各文件大小    du -h</p>
 <h2 id="3，扩展"><a href="#3，扩展" class="headerlink" title="3，扩展"></a>3，扩展</h2><h4 id="3-1关于以-开头的文件隐藏"><a href="#3-1关于以-开头的文件隐藏" class="headerlink" title="3.1关于以.开头的文件隐藏"></a>3.1关于以<code>.</code>开头的文件隐藏</h4><p>传言是一个bug，做这个功能的程序员本来只是想让.和..不显示，结果最后却导致所有的以<code>.</code>开头的文件都不显示</p>
 <h4 id="3-2关于-l参数显示的内容"><a href="#3-2关于-l参数显示的内容" class="headerlink" title="3.2关于-l参数显示的内容"></a>3.2关于-l参数显示的内容</h4><p>显示文件类型、权限、硬链接的数目、文件拥有者、文件所在的组、大小、日期和文件名。</p>
 
