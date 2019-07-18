@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-16</span>
-            <span class="time">23:17:05</span>
+            <span class="time">16:56:19</span>
           </span>
           
         </div>
@@ -110,8 +110,52 @@
         <div class="post-content">
           <p>##目录</p>
 <p>1，<a href="1，什么是脚本？">什么是脚本？</a></p>
+<p>2，<a href="2，写脚本">写脚本</a></p>
+<p>3，<a href="3，扩展">扩展</a></p>
 <h4 id="1，什么是脚本？"><a href="#1，什么是脚本？" class="headerlink" title="1，什么是脚本？"></a>1，什么是脚本？</h4><p>  按照一定的语法，告诉计算机你想让它做什么。</p>
-<h4 id="2，写脚本"><a href="#2，写脚本" class="headerlink" title="2，写脚本"></a>2，写脚本</h4>
+<h4 id="2，写脚本"><a href="#2，写脚本" class="headerlink" title="2，写脚本"></a>2，写脚本</h4><h5 id="2-1脚本功能"><a href="#2-1脚本功能" class="headerlink" title="2.1脚本功能"></a>2.1脚本功能</h5><p>  1，运行 ./demo2.sh xxx 之后，将会创建一个 xxx 目录</p>
+<p>  2，xxx 目录里面应该有一个 index.html 文件，一个 css 目录 和 一个 js 目录，也就是</p>
+<pre><code>xxx
+|-- css
+|   |-- style.css
+|-- index.html
+|-- js
+    |-- index.js</code></pre><p>   3，其中 index.html 文件里面的内容应该为 hi html</p>
+<p>   4，其中 css/style.css 文件里面的内容应该为 hi css</p>
+<p>   5，其中 js/index.js 文件里面的内容应该为 hi js</p>
+<h5 id="2-2-步骤"><a href="#2-2-步骤" class="headerlink" title="2.2 步骤"></a>2.2 步骤</h5><ul>
+<li><p><strong>建立目录</strong> </p>
+<p>建立一个专门存放脚本的文件夹，这里创建了local作为存放脚本的目录，<strong>并进入目录</strong></p>
+<pre><code>mkdir local
+cd ~/local</code></pre></li>
+<li><p><strong>创建文件</strong></p>
+<p>脚本文件后缀一般是sh,但是txt也可以执行</p>
+<pre><code>touch demo.txt</code></pre></li>
+<li><p><strong>编辑文本内容</strong></p>
+<pre><code>mkdir $1                          //根据参数创建一个目录
+cd  $1                            //进入创建好的目录
+mkdir css js                      //分别创建css和js两个目录
+touch index.html css/style.css js/main.js
+                                  //创建三个空文件 
+echo &quot;hi html&quot; &gt; index.html       //将&quot;hi html&quot;写入index.html
+echo &quot;hi css&quot; &gt; css/style.css     //将&quot;hi css&quot;写入style.css
+echo &quot;hi js&quot; &gt; js/main.js         //将&quot;hi js&quot;写入main.js
+exit                              //类似于c语言里面的return 0，是一种好习惯</code></pre></li>
+<li><p><strong>执行权限</strong></p>
+<p>现在还不能愉快地执行脚本，因为当ls -l后会发现现在这个文件并没有执行权限，</p>
+<pre><code>chmod +x demo.txt  </code></pre></li>
+<li><p><strong>执行脚本</strong></p>
+<p>现在终于可以在<strong>任何位置</strong>愉快地执行脚本了,输入如下指令就可以建立一个叫xxxx的文件夹，里面有我们想要的一切~</p>
+<pre><code>sh ~/local/demo.txt xxxx</code></pre></li>
+<li><p><strong>设置PATH</strong></p>
+<p>说实话，现在脚本虽然可以正确的运行了，但是还并不完美。因为想要执行它，还要输入一大串的东西，太麻烦了，可不可以简化它，就好像ls、cd这些内置命令一样可以简短一点。因为本质上，大家都是脚本，凭什么我们不如人家好用呢？？？<br>答案是肯定的，我们当然也能变得这么好用。</p>
+<p>方法只有一个将我们的脚本也加入PATH目录</p>
+<p> 在文件.bashrc中加入</p>
+<pre><code>export PATH=&quot;local的绝对路径:$PATH&quot;</code></pre><p>运行</p>
+<pre><code>source ~/.bashrc</code></pre><p>现在输入demo.txt xxx就可以运行了，还可以将后缀去掉</p>
+<pre><code>mv ~/local/demo.txt ~/local/demo</code></pre></li>
+</ul>
+<h4 id="3，扩展"><a href="#3，扩展" class="headerlink" title="3，扩展"></a>3，扩展</h4><h5 id="3-1-source命令"><a href="#3-1-source命令" class="headerlink" title="3.1 source命令"></a>3.1 source命令</h5><h5 id="3-2-PATH"><a href="#3-2-PATH" class="headerlink" title="3.2 PATH"></a>3.2 PATH</h5>
         </div>
       </div>
     </div>
