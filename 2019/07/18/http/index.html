@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-18</span>
-            <span class="time">17:02:07</span>
+            <span class="time">15:48:31</span>
           </span>
           
         </div>
@@ -117,7 +117,13 @@
         <!-- Post Main Content -->
         <div class="post-content">
           <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>1，<a href="#1，前言">前言</a></p>
-<p>2，[]</p>
+<p>2，<a href="#2，为什么是HTTP">为什么是HTTP</a></p>
+<p>3，<a href="#3，http所处位置">HTTP所处位置</a></p>
+<p>4，<a href="#4，告知服务器意图的HTTP常见方法">告知服务器意图的HTTP方法</a></p>
+<p>5，<a href="#5，curl命令">curl命令</a></p>
+<p>6，<a href="#6，请求">请求</a></p>
+<p>7，<a href="#7，响应">响应</a></p>
+<p>8，<a href="#8，状态码">状态码</a></p>
 <h4 id="1，前言"><a href="#1，前言" class="headerlink" title="1，前言"></a>1，前言</h4><p>  这篇博客不会仅限于方方老师在课上讲的内容，这应该是我对于http学习的一个总结，并且内容会随着我学习的不断深入来更新。关于历史什么的内容我就不再赘述了。</p>
 <h4 id="2，为什么是HTTP"><a href="#2，为什么是HTTP" class="headerlink" title="2，为什么是HTTP"></a>2，为什么是HTTP</h4><p>  我想说一下，其实Http知识Tcp/Ip协议的一个子集，还有诸如FTP、IP、DNS等等协议。但是为什么我们主要学习HTTP就ok了呢，因为TCP/IP是分层的：</p>
 <ul>
@@ -131,7 +137,358 @@
 <p>而这个Http就是处于离我们最近的应用层，其他的层次以及协议也一样重要，但是我们并不用深入的去学，因为对于前端开发的帮助不大。并且在应用层也并不是只有Http一家独大，但是我们主要用的就是http。</p>
 </li>
 </ul>
-<p>  <img src="zjyshy.github.io/img/guaiqiao.jpg" alt="四层结构"></p>
+<h4 id="3，http所处位置"><a href="#3，http所处位置" class="headerlink" title="3，http所处位置"></a>3，http所处位置</h4><p>  以http为例的四层结构：</p>
+<p>  <img src="/zjyshy.github.io/img/four.png" alt="四层结构"></p>
+<p>  <img src="/zjyshy.github.io/img/%E5%9B%9B%E5%B1%82%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3.png" alt="四层结构详解"></p>
+<p>  各种协议与HTTP的关系</p>
+<p>  <img src="/zjyshy.github.io/img/with-http.png" alt="与http的关系"></p>
+<h4 id="4，告知服务器意图的HTTP常见方法"><a href="#4，告知服务器意图的HTTP常见方法" class="headerlink" title="4，告知服务器意图的HTTP常见方法"></a>4，告知服务器意图的HTTP常见方法</h4><ul>
+<li><p><strong>GET</strong><br>获取资源</p>
+<p>若是请求资源是文本，就将资源原样返回。如果是CGI，就返回执行后的输出结果。</p>
+<p><img src="zjyshy.github.io/img/GET.png" alt="GET"></p>
+</li>
+<li><p><strong>POST</strong><br>传输实体的主体</p>
+<p>GET也可以进行传输，但一般不会选择使用GET，而是使用POST。这两个协议其实很像，但是POST主要目的不是获取响应的主体内容。</p>
+<p>  <img src="zjyshy.github.io/img/POST.png" alt="POST"></p>
+</li>
+<li><p><strong>PUT</strong><br>传输文件</p>
+<p>由于没有验证机制，所以这个方法一般的网站不会开放，不过多赘述。</p>
+</li>
+<li><p><strong>HEAD</strong><br>获得报文首部</p>
+<p>HEAD和GET非常像，但是不会返回报文主体内容。用于确认URI的有效性以及资源更新日期等。</p>
+</li>
+</ul>
+<pre><code>![HEAD](zjyshy.github.io/img/HEAD.png)</code></pre><ul>
+<li><p><strong>DELETE</strong><br>删除文件</p>
+<p>与PUT相反的方法，自身也不带验证机制。一般网站不会使用，不再赘述。</p>
+</li>
+<li><p><strong>OPTIONS</strong><br>询问支持的方法</p>
+<p>返回支持的方法</p>
+<p><img src="zjyshy.github.io/img/OPTIONS.png" alt="OPTIONS"></p>
+</li>
+</ul>
+<h4 id="5，curl命令"><a href="#5，curl命令" class="headerlink" title="5，curl命令"></a>5，curl命令</h4><p>  curl是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称url为下载工具。</p>
+<p>访问百度</p>
+<pre><code>curl www.baidu..com</code></pre><ul>
+<li><p><code>-v</code> 展示请求和相应的全部内容</p>
+</li>
+<li><p><code>-H</code> 添加请求内容</p>
+<pre><code>curl -H &quot;I&apos;m Batman&quot;</code></pre></li>
+<li><p><code>-o</code> 将输出内容写入文件</p>
+<pre><code>curl -o test.html www.baidu.com</code></pre></li>
+<li><p><code>-i</code> 显示响应内容</p>
+</li>
+</ul>
+<ul>
+<li>使用POST</li>
+</ul>
+<p>需要加-x 以及 -d</p>
+<pre><code>curl -X POST -d &quot;data= heheh&quot; www.baidu.com</code></pre><h4 id="6，请求"><a href="#6，请求" class="headerlink" title="6，请求"></a>6，请求</h4><ul>
+<li><p><strong>GET请求</strong></p>
+<pre><code>curl -s -v -- &quot;https://www.baidu.com&quot;
+
+GET / HTTP/1.1            //  方法    协议
+Host: www.baidu.com       //
+User-Agent: curl/7.54.0   //  发起请求的软件
+Accept: */*               //  接受返回内容
+                          //  回车 </code></pre></li>
+<li><p><strong>POST请求</strong></p>
+<p>没有上传内容</p>
+<pre><code>curl -X POST -s -v  -- &quot;https://www.baidu.com&quot;
+
+POST / HTTP/1.1
+Host: www.baidu.com
+User-Agent: curl/7.54.0
+Accept: */*
+Frank: xxx    </code></pre></li>
+</ul>
+<pre><code>有上传内容
+
+    curl -X POST -d &quot;1234567890&quot; -s -v -- &quot;https://www.baidu.com&quot;
+
+    POST / HTTP/1.1
+    Host: www.baidu.com
+    User-Agent: curl/7.54.0
+    Accept: */*
+    Content-Length: 10                               // 内容长度
+    Content-Type: application/x-www-form-urlencoded  // 内容类型</code></pre><ul>
+<li><p><strong>请求的格式</strong></p>
+<pre><code>1 动词路径协议/版本
+2 Key1: value1
+2 Key2: value2
+2 Key3: value3
+2 Content-Type: application/x-www-form-urlencoded
+2 Host: www.baidu.com
+2 User-Agent: curl/7.54.0
+3 
+4 要上传的数据</code></pre></li>
+</ul>
+<ul>
+<li><p><strong>NOTE</strong></p>
+<ul>
+<li><p>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</p>
+</li>
+<li><p>第三部分永远都是一个回车（\n）</p>
+</li>
+<li><p>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等</p>
+</li>
+<li><p>这里的路径包括「查询参数」，但不包括「锚点」</p>
+</li>
+<li><p>如果你没有写路径，那么路径默认为 /</p>
+</li>
+<li><p>第 2 部分中的 Content-Type 标注了第 4 部分的格式</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>用 Chrome 发请求</p>
+<blockquote>
+<p>1,打开 Network<br><br><br>2,地址栏输入网址<br><br><br>3,在 Network 点击，查看 request，点击「view source」<br><br><br>4,终于点了？可以看到请求的前三部分了<br><br><br>5,如果有请求的第四部分，那么在 FormData 或 Payload 里面可以看到</p>
+</blockquote>
+</blockquote>
+<h4 id="7，响应"><a href="#7，响应" class="headerlink" title="7，响应"></a>7，响应</h4><p>  下面分别对应以上前两个响应</p>
+<pre><code> curl -s -v -- &quot;https://www.baidu.com&quot;
+
+ HTTP/1.1 200 OK     //协议   状态码  
+ Accept-Ranges: bytes
+ Cache-Control: private, no-cache, no-store, proxy-revalidate, no-transform
+ Connection: Keep-Alive
+ Content-Length: 2443     //内容长度
+ Content-Type: text/html  //内容类型
+ Date: Tue, 10 Oct 2017 09:14:05 GMT  //时间  
+ Etag: &quot;5886041d-98b&quot;
+ Last-Modified: Mon, 23 Jan 2017 13:24:45 GMT
+ Pragma: no-cache
+ Server: bfe/1.0.8.18
+ Set-Cookie: BDORZ=27315; max-age=86400; domain=.baidu.com; path=/
+
+ &lt;!DOCTYPE html&gt;
+ &lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt; 后面太长，省略了……
+
+
+
+
+curl -X POST -s -v  -- &quot;https://www.baidu.com&quot;
+
+ HTTP/1.1 302 Found
+ Connection: Keep-Alive
+ Content-Length: 17931
+ Content-Type: text/html
+ Date: Tue, 10 Oct 2017 09:19:47 GMT
+ Etag: &quot;54d9749e-460b&quot;
+ Server: bfe/1.0.8.18
+
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;&gt; 后面太长，省略了……</code></pre><ul>
+<li><p><strong>响应的格式</strong></p>
+<pre><code>1 协议/版本号状态码状态解释
+2 Key1: value1
+2 Key2: value2
+2 Content-Length: 17931
+2 Content-Type: text/html
+3
+4 要下载的内容</code></pre></li>
+</ul>
+<blockquote>
+<p>用 Chrome 查看响应</p>
+<blockquote>
+<p>1,打开 Network <br><br><br>2,输入网址<br><br><br>3,选中第一个响应<br><br><br>4,查看 Response Headers，点击「view source」，点击「view source」，点击「view source」<br><br><br>5,你会看到响应的前两部分<br><br><br>6,查看 Response 或者 Preview，你会看到响应的第 4 部分</p>
+</blockquote>
+</blockquote>
+<h4 id="8，状态码"><a href="#8，状态码" class="headerlink" title="8，状态码"></a>8，状态码</h4><ul>
+<li><p>2xx成功</p>
+<p>这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。</p>
+<ul>
+<li><p>200 OK</p>
+<p>请求已成功，请求所希望的响应头或数据体将随此响应返回。实际的响应将取决于所使用的请求方法。在GET请求中，响应将包含与请求的资源相对应的实体。在POST请求中，响应将包含描述或操作结果的实体。<br><br><br></p>
+</li>
+<li><p>201 Created</p>
+<p>请求已经被实现，而且有一个新的资源已经依据请求的需要而建立，且其URI已经随Location头信息返回。假如需要的资源无法及时建立的话，应当返回’202<br>Accepted’。<br><br><br></p>
+</li>
+<li><p>202 Accepted</p>
+<p>服务器已接受请求，但尚未处理。最终该请求可能会也可能不会被执行，并且可能在处理發生时被禁止。<br><br><br></p>
+</li>
+<li><p>203 Non-Authoritative Information（自HTTP / 1.1起）</p>
+<p>服务器是一个转换代理服务器（transforming proxy，例如网络加速器），以200 OK状态码为起源，但回应了原始响应的修改版本。<br><br><br></p>
+</li>
+<li><p>204 No Content</p>
+<p>服务器成功处理了请求，没有返回任何内容。<br><br><br></p>
+</li>
+<li><p>205 Reset Content<br><br><br><br>服务器成功处理了请求，但没有返回任何内容。与204响应不同，此响应要求请求者重置文档视图。</p>
+</li>
+<li><p>206 Partial Content（RFC 7233）<br><br><br><br>服务器已经成功处理了部分GET请求。类似于FlashGet或者迅雷这类的HTTP 下载工具都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。<br><br><br></p>
+</li>
+<li><p>207 Multi-Status（WebDAV；RFC 4918）</p>
+<p>代表之后的消息体将是一个XML消息，并且可能依照之前子请求数量的不同，包含一系列独立的响应代码。<br><br><br></p>
+</li>
+<li><p>208 Already Reported （WebDAV；RFC 5842）</p>
+<p>DAV绑定的成员已经在（多状态）响应之前的部分被列举，且未被再次包含。<br><br><br></p>
+</li>
+<li><p>226 IM Used （RFC 3229）</p>
+<p>服务器已经满足了对资源的请求，对实体请求的一个或多个实体操作的结果表示。</p>
+</li>
+</ul>
+<p><br><br></p>
+</li>
+<li><p>3xx重定向</p>
+<p>这类状态码代表需要客户端采取进一步的操作才能完成请求。通常，这些状态码用来重定向，后续的请求地址（重定向目标）在本次响应的Location域中指明。</p>
+<p>当且仅当后续的请求所使用的方法是GET或者HEAD时，用户浏览器才可以在没有用户介入的情况下自动提交所需要的后续请求。客户端应当自动监测无限循环重定向（例如：A→B→C→……→A或A→A），因为这会导致服务器和客户端大量不必要的资源消耗。按照HTTP/1.0版规范的建议，浏览器不应自动访问超过5次的重定向。<br><br><br></p>
+<ul>
+<li><p>300 Multiple Choices<br>被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。</p>
+<p>除非这是一个HEAD请求，否则该响应应当包括一个资源特性及地址的列表的实体，以便用户或浏览器从中选择最合适的重定向地址。这个实体的格式由Content-Type定义的格式所决定。浏览器可能根据响应的格式以及浏览器自身能力，自动作出最合适的选择。当然，RFC 2616规范并没有规定这样的自动选择该如何进行。</p>
+<p>如果服务器本身已经有了首选的回馈选择，那么在Location中应当指明这个回馈的URI；浏览器可能会将这个Location值作为自动重定向的地址。此外，除非额外指定，否则这个响应也是可缓存的。<br><br><br></p>
+</li>
+<li><p>301 Moved Permanently</p>
+<p>被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。如果可能，拥有链接编辑功能的客户端应当自动把请求的地址修改为从服务器反馈回来的地址。除非额外指定，否则这个响应也是可缓存的。</p>
+<p>新的永久性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。</p>
+<p>如果这不是一个GET或者HEAD请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。</p>
+<p>注意：对于某些使用HTTP/1.0协议的浏览器，当它们发送的POST请求得到了一个301响应的话，接下来的重定向请求将会变成GET方式。<br><br><br></p>
+</li>
+<li><p>302 Found</p>
+<p>要求客户端执行临时重定向（原始描述短语为“Moved Temporarily”）。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。</p>
+<p>新的临时性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。</p>
+<p>如果这不是一个GET或者HEAD请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。</p>
+<p>注意：虽然RFC 1945和RFC 2068规范不允许客户端在重定向时改变请求的方法，但是很多现存的浏览器将302响应视作为303响应，并且使用GET方式访问在Location中规定的URI，而无视原先请求的方法。因此状态码303和307被添加了进来，用以明确服务器期待客户端进行何种反应。<br>  <br><br></p>
+</li>
+<li><p>303 See Other</p>
+<p>对应当前请求的响应可以在另一个URI上被找到，当响应于POST（或PUT / DELETE）接收到响应时，客户端应该假定服务器已经收到数据，并且应该使用单独的GET消息发出重定向。这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。这个新的URI不是原始资源的替代引用。同时，303响应禁止被缓存。当然，第二个请求（重定向）可能被缓存。</p>
+<p>新的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。</p>
+<p>注意：许多HTTP/1.1版以前的浏览器不能正确理解303状态。如果需要考虑与这些浏览器之间的互动，302状态码应该可以胜任，因为大多数的浏览器处理302响应时的方式恰恰就是上述规范要求客户端处理303响应时应当做的。<br><br><br></p>
+</li>
+<li><p>304 Not Modified</p>
+<p>表示资源在由请求头中的If-Modified-Since或If-None-Match参数指定的这一版本之后，未曾被修改。在这种情况下，由于客户端仍然具有以前下载的副本，因此不需要重新传输资源。<br><br><br></p>
+</li>
+<li><p>305 Use Proxy</p>
+<p>被请求的资源必须通过指定的代理才能被访问。Location域中将给出指定的代理所在的URI信息，接收者需要重复发送一个单独的请求，通过这个代理才能访问相应资源。只有原始服务器才能建立305响应。许多HTTP客户端（像是Mozilla[25]和Internet Explorer）都没有正确处理这种状态代码的响应，主要是出于安全考虑。</p>
+<p>注意：RFC 2068中没有明确305响应是为了重定向一个单独的请求，而且只能被原始服务器建立。忽视这些限制可能导致严重的安全后果。<br><br><br></p>
+</li>
+<li><p>306 Switch Proxy</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>在最新版的规范中，306状态码已经不再被使用。最初是指“后续请求应使用指定的代理”。</code></pre><p>  <br><br></p>
+<ul>
+<li><p>307 Temporary Redirect</p>
+<p>在这种情况下，请求应该与另一个URI重复，但后续的请求应仍使用原始的URI。 与302相反，当重新发出原始请求时，不允许更改请求方法。 例如，应该使用另一个POST请求</p>
+<p>来重复POST请求。<br><br><br></p>
+</li>
+<li><p>308 Permanent Redirect (RFC 7538)</p>
+<p>请求和所有将来的请求应该使用另一个URI重复。 307和308重复302和301的行为，但不允许HTTP方法更改。 例如，将表单提交给永久重定向的资源可能会顺利进行。</p>
+</li>
+</ul>
+<p><br><br></p>
+<ul>
+<li><p>4xx客户端错误</p>
+<p>这类的状态码代表了客户端看起来可能发生了错误，妨碍了服务器的处理。除非响应的是一个HEAD请求，否则服务器就应该返回一个解释当前错误状况的实体，以及这是临时的还是永久性的状况。这些状态码适用于任何请求方法。浏览器应当向用户显示任何包含在此类错误响应中的实体内容。[]</p>
+<p>如果错误发生时客户端正在传送数据，那么使用TCP的服务器实现应当仔细确保在关闭客户端与服务器之间的连接之前，客户端已经收到了包含错误信息的数据包。如果客户端在收到错误信息后继续向服务器发送数据，服务器的TCP栈将向客户端发送一个重置数据包，以清除该客户端所有还未识别的输入缓冲，以免这些数据被服务器上的应用程序读取并干扰后者。</p>
+<ul>
+<li><p>400 Bad Request</p>
+<p>由于明显的客户端错误（例如，格式错误的请求语法，太大的大小，无效的请求消息或欺骗性路由请求），服务器不能或不会处理该请求。<br>401 Unauthorized（RFC 7235）<br>参见：HTTP基本认证、HTTP摘要认证<br>类似于403 Forbidden，401语义即“未认证”，即用户没有必要的凭据。该状态码表示当前请求需要用户验证。该响应必须包含一个适用于被请求资源的WWW-Authenticate信息头用以询问用户信息。客户端可以重复提交一个包含恰当的Authorization头信息的请求。如果当前请求已经包含了Authorization证书，那么401响应代表着服务器验证已经拒绝了那些证书。如果401响应包含了与前一个响应相同的身份验证询问，且浏览器已经至少尝试了一次验证，那么浏览器应当向用户展示响应中包含的实体信息，因为这个实体信息中可能包含了相关诊断信息。<br>注意：当网站（通常是网站域名）禁止IP地址时，有些网站状态码显示的401，表示该特定地址被拒绝访问网站。<br><br><br></p>
+</li>
+<li><p>402 Payment Required<br>该状态码是为了将来可能的需求而预留的。该状态码最初的意图可能被用作某种形式的数字现金或在线支付方案的一部分，但几乎没有哪家服务商使用，而且这个状态码通常不被使用。如果特定开发人员已超过请求的每日限制，Google Developers API会使用此状态码。<br><br><br></p>
+</li>
+<li><p>403 Forbidden<br>主条目：HTTP 403<br>服务器已经理解请求，但是拒绝执行它。与401响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。如果这不是一个HEAD请求，而且服务器希望能够讲清楚为何请求不能被执行，那么就应该在实体内描述拒绝的原因。当然服务器也可以返回一个404响应，假如它不希望让客户端获得任何信息。<br><br><br></p>
+</li>
+<li><p>404 Not Found<br>主条目：HTTP 404<br>请求失败，请求所希望得到的资源未被在服务器上发现，但允许用户的后续请求。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用410状态码来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不<br>想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。<br><br><br></p>
+</li>
+<li><p>405 Method Not Allowed<br>请求行中指定的请求方法不能被用于请求相应的资源。该响应必须返回一个Allow头信息用以表示出当前资源能够接受的请求方法的列表。例如，需要通过POST呈现数据的表单上的GET请求，或只读资源上的PUT请求。</p>
+<p>鉴于PUT，DELETE方法会对服务器上的资源进行写操作，因而绝大部分的网页服务器都不支持或者在默认配置下不允许上述请求方法，对于此类请求均会返回405错误。</p>
+<p><br><br></p>
+</li>
+<li><p>406 Not Acceptable</p>
+<p>参见：内容协商</p>
+<p>请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体，该请求不可接受。</p>
+<p>除非这是一个HEAD请求，否则该响应就应当返回一个包含可以让用户或者浏览器从中选择最合适的实体特性以及地址列表的实体。实体的格式由Content-Type头中定义的媒体类型决定。浏览器可以根据格式及自身能力自行作出最佳选择。但是，规范中并没有定义任何作出此类自动选择的标准。<br><br><br></p>
+</li>
+<li><p>407 Proxy Authentication Required（RFC 2617）</p>
+<p>与401响应类似，只不过客户端必须在代理服务器上进行身份验证。代理服务器必须返回一个Proxy-Authenticate用以进行身份询问。客户端可以返回一个Proxy-Authorization信息头用以验证。<br><br><br></p>
+</li>
+<li><p>408 Request Timeout</p>
+<p>请求超时。根据HTTP规范，客户端没有在服务器预备等待的时间内完成一个请求的发送，客户端可以随时再次提交这一请求而无需进行任何更改。<br><br><br></p>
+</li>
+<li><p>409 Conflict</p>
+<p>表示因为请求存在冲突无法处理该请求，例如多个同步更新之间的编辑冲突。<br><br><br></p>
+</li>
+<li><p>410 Gone</p>
+<p>表示所请求的资源不再可用，将不再可用。当资源被有意地删除并且资源应被清除时，应该使用这个。在收到410状态码后，用户应停止再次请求资源。但大多数服务端不会使用此状态码，而是直接使用404状态码。<br><br><br></p>
+</li>
+<li><p>411 Length Required</p>
+<p>服务器拒绝在没有定义Content-Length头的情况下接受请求。在添加了表明请求消息体长度的有效Content-Length头之后，客户端可以再次提交该请求。[40]<br><br><br></p>
+</li>
+<li><p>412 Precondition Failed（RFC 7232）<br>服务器在验证在请求的头字段中给出先决条件时，没能满足其中的一个或多个。[41]这个状态码允许客户端在获取资源时在请求的元信息（请求头字段数据）中设置先决条件，以此避免该请求方法被应用到其希望的内容以外的资源上。<br><br><br></p>
+</li>
+<li><p>413 Request Entity Too Large（RFC 7231）<br>前称“Request Entity Too Large”，表示服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围。[]此种情况下，服务器可以关闭连接以免客户端继续发送此请求。</p>
+<p>如果这个状况是临时的，服务器应当返回一个Retry-After的响应头，以告知客户端可以在多少时间以后重新尝试。<br><br><br></p>
+</li>
+<li><p>414 Request-URI Too Long（RFC 7231）</p>
+<p>前称“Request-URI Too Long”，表示请求的URI长度超过了服务器能够解释的长度，因此服务器拒绝对该请求提供服务。通常将太多数据的结果编码为GET请求的查询字符串，在这种情况下，应将其转换为POST请求。这比较少见，通常的情况包括：</p>
+<p>本应使用POST方法的表单提交变成了GET方法，导致查询字符串过长。</p>
+<p>重定向URI“黑洞”，例如每次重定向把旧的URI作为新的URI的一部分，导致在若干次重定向后URI超长。</p>
+<p>客户端正在尝试利用某些服务器中存在的安全漏洞攻击服务器。这类服务器使用固定长度的缓冲读取或操作请求的URI，当GET后的参数超过某个数值后，可能会产生缓冲区溢出，导致任意代码被执行。没有此类漏洞的服务器，应当返回414状态码。<br><br><br></p>
+</li>
+<li><p>415 Unsupported Media Type</p>
+<p>对于当前请求的方法和所请求的资源，请求中提交的互联网媒体类型并不是服务器中所支持的格式，因此请求被拒绝。例如，客户端将图像上传格式为svg，但服务器要求图像使用上传格式为jpg。<br><br><br></p>
+</li>
+<li><p>416 Requested Range Not Satisfiable（RFC 7233）</p>
+<p>前称“Requested Range Not Satisfiable”。客户端已经要求文件的一部分（Byte serving），但服务器不能提供该部分。例如，如果客户端要求文件的一部分超出文件尾端。<br><br><br></p>
+</li>
+<li><p>417 Expectation Failed</p>
+<p>在请求头Expect中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服显的证据证明在当前路由的下一个节点上，Expect的内容无法被满足。<br><br><br></p>
+</li>
+<li><p>418 I’m a teapot（RFC 2324）</p>
+<p>本操作码是在1998年作为IETF的传统愚人节笑话, 在RFC 2324超文本咖啡壶控制协议’中定义的，并不需要在真实的HTTP服务器中定义。當一個控制茶壺的HTCPCP收到BREW或POST指令要求其煮咖啡時應當回傳此錯誤。这个HTTP状态码在某些网站（包括Google.com）與項目（如Node.js、ASP.NET和Go語言）中用作彩蛋。<br><br><br></p>
+</li>
+<li><p>420 Enhance Your Caim</p>
+<p>Twitter Search与Trends API在客户端被限速的情况下返回。<br><br><br></p>
+</li>
+<li><p>421 Misdirected Request （RFC 7540）</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>该请求针对的是无法产生响应的服务器（例如因为连接重用）。<br>    * 422 Unprocessable Entity（WebDAV；RFC 4918 ）</p>
+<pre><code>请求格式正确，但是由于含有语义错误，无法响应。</code></pre><p><br><br></p>
+<ul>
+<li><p>5xx服务器错误</p>
+<ul>
+<li><p>500 Internal Server Error</p>
+<p>通用错误消息，服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。没有给出具体错误信息。<br><br><br></p>
+</li>
+<li><p>501 Not Implemented</p>
+<p>服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。（例如，网络服务API的新功能）<br><br><br></p>
+</li>
+<li><p>502 Bad Gateway</p>
+<p>作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。<br><br><br></p>
+</li>
+<li><p>503 Service Unavailable<br>由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是暂时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个Retry-After头用以标明这个延迟时间。如果没有给出这个Retry-After信息，那么客户端应当以处理500响应的方式处理它。<br><br><br></p>
+</li>
+<li><p>504 Gateway Timeout</p>
+<p>作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如HTTP、FTP、LDAP）或者辅助服务器（例如DNS）收到响应。</p>
+<p>注意：某些代理服务器在DNS查询超时时会返回400或者500错误。<br><br><br></p>
+</li>
+<li><p>505 HTTP Version Not Supported</p>
+<p>服务器不支持，或者拒绝支持在请求中使用的HTTP版本。这暗示着服务器不能或不愿使用与客户端相同的版本。响应中应当包含一个描述了为何版本不被支持以及服务器支持哪些协议的实体。<br><br><br></p>
+</li>
+<li><p>506 Variant Also Negotiates（RFC 2295）<br>由《透明内容协商协议》（RFC 2295）扩展，代表服务器存在内部配置错误，被请求的协商变元资源被配置为在透明内容协商中使用自己，因此在一个协商处理中不是一个合适的重点。<br><br><br> </p>
+</li>
+<li><p>507 Insufficient Storage（WebDAV；RFC 4918）</p>
+<p>服务器无法存储完成请求所必须的内容。这个状况被认为是临时的。<br><br><br></p>
+</li>
+<li><p>508 Loop Detected （WebDAV；RFC 5842）</p>
+<p>服务器在处理请求时陷入死循环。 （可代替 208状态码）<br><br><br></p>
+</li>
+<li><p>510 Not Extended（RFC 2774）</p>
+<p>获取资源所需要的策略并没有被满足。<br><br><br></p>
+</li>
+<li><p>511 Network Authentication Required （RFC 6585）</p>
+<p>客户端需要进行身份验证才能获得网络访问权限，旨在限制用户群访问特定网络。（例如连接WiFi热点时的强制网络门户）</p>
+</li>
+</ul>
+</li>
+</ul>
 
         </div>
       </div>
