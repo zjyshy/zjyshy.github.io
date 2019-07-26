@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-25</span>
-            <span class="time">13:25:11</span>
+            <span class="time">00:08:51</span>
           </span>
           
         </div>
@@ -116,7 +116,173 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          
+          <hr>
+<h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p>action </p>
+<p> 规定了向谁提交</p>
+</li>
+<li><p>method</p>
+<ul>
+<li>默认是GET但是一般都会改成POST</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h5 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h5><ul>
+<li><p><strong>form是POST请求，a是GET请求</strong></p>
+</li>
+<li><p><strong>form的提交按钮是必不可少的</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>  这个标签就属于是form的内部标签，只有两者合作才会发挥作用</p>
+<h5 id="label"><a href="#label" class="headerlink" title="label"></a>label</h5><p>  点击label中的内容就可以自动聚焦到相应的input</p>
+<p>  label有两种使用方式：</p>
+<blockquote>
+<p>1，for 和 id对应</p>
+<blockquote>
+<pre><code>&lt;label for = &quot;test&quot;&gt;hi&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;hi&quot;id=&quot;test&quot;&gt;</code></pre><p><label for="test">hi</label><input type="text" id="test"></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2，将input嵌入label内</p>
+<blockquote>
+<pre><code>&lt;label&gt;hei&lt;input type=&quot;text&quot;name=&quot;hi&quot;&gt;&lt;/label&gt;</code></pre></blockquote>
+</blockquote>
+<h5 id="type"><a href="#type" class="headerlink" title="type"></a>type</h5><ul>
+<li><p>submit 提交按钮</p>
+<p>这个可以说form不可或缺的一项，没有它form里面的内容就没办法提交。</p>
+</li>
+</ul>
+<pre><code>    &lt;input type=submit value=点我啊&gt;
+
+&lt;input type=submit value=点我啊&gt;</code></pre><ul>
+<li><p>radio 单选按钮</p>
+<p>这个属性值要结合name属性使用，当radio的name值相同时，就只能选中一个，checked属性用来决定默认选中项。必须使用 value 属性定义此控件被提交时的值。</p>
+<p>性别 男<input type="radio" value="male" name="gender" checked><br>   女<input type="radio" value="female" name="gender"></p>
+</li>
+</ul>
+<pre><code>性别 男&lt;input type=radio value=&quot;male&quot; name=&quot;gender&quot; checked&gt;
+女&lt;input type=radio value=&quot;female&quot; name=&quot;gender&quot;&gt;</code></pre><ul>
+<li><p>checkbox 复选框</p>
+<p>这个属性复选框。必须使用 value 属性定义此控件被提交时的值。使用 checked 属性指示控件是否被选择。也可以使用 indeterminate 指示复选框在一种不确定状态（大多数平台上，显示为一条穿过复选框的水平线）。</p>
+</li>
+</ul>
+<pre><code>苹果&lt;input type=checkbox value=&quot;apple&quot;  name=&quot;fruit&quot;&gt;
+橘子&lt;input type=checkbox value=&quot;orange&quot; name=&quot;fruit&quot;&gt;
+香蕉&lt;input type=checkbox value=&quot;banana&quot; name=&quot;fruit&quot;&gt;
+
+
+
+    苹果&lt;input type=checkbox value=&quot;apple&quot;  name=&quot;fruit&quot;&gt;
+    橘子&lt;input type=checkbox value=&quot;orange&quot; name=&quot;fruit&quot;&gt;
+    香蕉&lt;input type=checkbox value=&quot;banana&quot; name=&quot;fruit&quot;&gt;</code></pre><ul>
+<li><p>color 颜色控件</p>
+<p>用来创建一个允许用户使用颜色选择器，或输入兼容CSS语法的颜色代码的区域。（不支持Alpha通道），value可以用来指定默认颜色。</p>
+</li>
+</ul>
+<pre><code>&lt;input type=&quot;color&quot; value=&quot;#ff0000&quot; /&gt;</code></pre><ul>
+<li><p>atetime-local 时间控件</p>
+<p>用于输入日期时间控件，不包含时区</p>
+<ul>
+<li>value可以设置默认时间</li>
+</ul>
+</li>
+</ul>
+  <input id="party" type="datetime-local" name="partydate" value="2017-06-01T08:30">
+
+
+<pre><code>&lt;input id=&quot;party&quot; type=&quot;datetime-local&quot; name=&quot;partydate&quot; value=&quot;2017-06-01T08:30&quot;&gt;</code></pre><ul>
+<li><p>email</p>
+<p>会自动检测是否是合法的email地址</p>
+<input type="email" name="email">
+
+
+</li>
+</ul>
+<pre><code>&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</code></pre><ul>
+<li><p>img </p>
+<p>一个图片提交按钮</p>
+  <input type="image">
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>text</p>
+<blockquote>
+<p>特有属性</p>
+<blockquote>
+<ul>
+<li>maxlength    文本框能接受的最大字符数。</li>
+<li>minlength    文本框能输入的最小字符数，并且仍然被认为是有效的。</li>
+<li>pattern     验证文本框内容的正则表达式。</li>
+<li>placeholder    文本框为空时显示的一个示例值。</li>
+<li>readonly    一个布尔属性，指示文本框中的内容是否应该为只读。</li>
+<li>size    一个数字，指示文本框有多少个字符宽度。</li>
+<li>spellcheck    控制是否可以检查文本框的拼写,或者默认的拼写检查配置是否应该使用。 </li>
+</ul>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<input type="text" size="10" placeholder="hehe" name="username" maxlength="2">
+
+<pre><code>&lt;input type = text size = 7  placeholder = hehe name = username maxlength = 2&gt;</code></pre><ul>
+<li>range</li>
+</ul>
+<blockquote>
+<p>特有属性</p>
+<blockquote>
+<ul>
+<li>max允许的最大值</li>
+<li>min最小允许值 </li>
+<li>step步进间隔，用于用户界面和验证目的</li>
+</ul>
+</blockquote>
+</blockquote>
+  <input type="range" max="15" min="0" step="3">
+
+<pre><code>&lt;input type=&quot;range&quot; max = 15 min = 0 step = 3  name = value&gt;</code></pre><p>这些感觉平时比较常见，其他的等到用的时候再补充吧。</p>
+<hr>
+<h3 id="select-和-option下拉菜单"><a href="#select-和-option下拉菜单" class="headerlink" title="select 和 option下拉菜单"></a>select 和 option下拉菜单</h3><ul>
+<li>autocomplete</li>
+</ul>
+<pre><code>DOMString 提供用户代理自动完成功能的提示。 有关完整值的完整列表以及有关如何使用自动完成的详细信息，请参阅HTML自动完成属性。</code></pre><ul>
+<li><p>autofocus</p>
+<p>这个属性能够让一个对象在页面加载的时候获得焦点. 在一个页面上下文中, 只有一个对象可以有这个属性，并且是布尔值(true 或者 false).</p>
+</li>
+<li><p>disabled</p>
+<p>这个布尔值的属性表明一个用户是否可以操控该表单对象. 如果这个属性没有被明确定义, 则从它的父元素继承, 例如 fieldset; 如果没有父元素设置 disabled 属性, 那么默认该表单对象 enabled.</p>
+</li>
+<li><p>form</p>
+<p>select所关联的form表单 (它的”表单拥有者”). 如果这个属性被明确定义, 那么它的值一定是在同一个document中表单ID. 这样能够让你把select标签放在任何的位置, 不仅限于作为form表单的后代元素.</p>
+</li>
+<li><p>multiple</p>
+<p>这个布尔值的属性标记select是否可以多选. 默认是单选.</p>
+</li>
+<li><p>name</p>
+<p>控件名称</p>
+</li>
+<li><p>required HTML5<br>规定select的值不能为空(布尔值).</p>
+</li>
+<li><p>size</p>
+<p>如果控件显示为滚动列表框，则此属性表示为控件中同时可见的行数。浏览器不需要将选择元素呈现为滚动列表框。默认值为0</p>
+</li>
+</ul>
+<pre><code>`option`的`selected`默认选中
+
+&lt;select multiple name=&quot;timezone_offset&quot; id=&quot;timezone-offset&quot; class=&quot;span5&quot;&gt;
+      &lt;option value=&quot;-12:00&quot;&gt;(GMT -12:00) Eniwetok, Kwajalein&lt;/option&gt;
+      &lt;option selected value=&quot;-11:00&quot;&gt;(GMT -11:00) Midway Island, Samoa&lt;/option&gt;
+      &lt;option value=&quot;-10:00&quot;&gt;(GMT -10:00) Hawaii&lt;/option&gt;
+      &lt;option selected value=&quot;-09:50&quot;&gt;(GMT -9:30) Taiohae&lt;/option&gt;
+      &lt;option value=&quot;-09:00&quot;&gt;(GMT -9:00) Alaska&lt;/option&gt;
+      &lt;option value=&quot;-08:00&quot;&gt;(GMT -8:00) Pacific Time (US &amp;amp; Canada)&lt;/option&gt;
+
+
+  &lt;/select&gt;</code></pre>
         </div>
       </div>
     </div>

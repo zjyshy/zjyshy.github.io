@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-16</span>
-            <span class="time">13:25:11</span>
+            <span class="time">00:08:51</span>
           </span>
           
         </div>
@@ -109,9 +109,10 @@
         <!-- Post Main Content -->
         <div class="post-content">
           <p>##目录</p>
-<p>1，<a href="1，什么是脚本？">什么是脚本？</a></p>
-<p>2，<a href="2，写脚本">写脚本</a></p>
-<p>3，<a href="3，扩展">扩展</a></p>
+<p>1，<a href="#1，什么是脚本？">什么是脚本？</a></p>
+<p>2，<a href="#2，写脚本">写脚本</a></p>
+<p>3，<a href="#3，node.js">node.js</a></p>
+<p>4，<a href="#4，扩展">扩展</a></p>
 <h4 id="1，什么是脚本？"><a href="#1，什么是脚本？" class="headerlink" title="1，什么是脚本？"></a>1，什么是脚本？</h4><p>  按照一定的语法，告诉计算机你想让它做什么。</p>
 <h4 id="2，写脚本"><a href="#2，写脚本" class="headerlink" title="2，写脚本"></a>2，写脚本</h4><h5 id="2-1脚本功能"><a href="#2-1脚本功能" class="headerlink" title="2.1脚本功能"></a>2.1脚本功能</h5><p>  1，运行 ./demo2.sh xxx 之后，将会创建一个 xxx 目录</p>
 <p>  2，xxx 目录里面应该有一个 index.html 文件，一个 css 目录 和 一个 js 目录，也就是</p>
@@ -155,7 +156,56 @@ exit                              //类似于c语言里面的return 0，是一�
 <pre><code>source ~/.bashrc</code></pre><p>现在输入demo.txt xxx就可以运行了，还可以将后缀去掉</p>
 <pre><code>mv ~/local/demo.txt ~/local/demo</code></pre></li>
 </ul>
-<h4 id="3，扩展"><a href="#3，扩展" class="headerlink" title="3，扩展"></a>3，扩展</h4><h5 id="3-1-source命令"><a href="#3-1-source命令" class="headerlink" title="3.1 source命令"></a>3.1 source命令</h5><h5 id="3-2-PATH"><a href="#3-2-PATH" class="headerlink" title="3.2 PATH"></a>3.2 PATH</h5>
+<ul>
+<li><p><strong>判断文件是否存在</strong></p>
+<p>  当目录出现重名的情况时就会发生报错的的情况，这说明我们的脚本还是不够完美。那就要判断一下当前的目录是否已经存在。</p>
+<pre><code>if [ -d $1 ]; then
+  echo &apos;error: 目录已经存在了&apos;
+  exit
+else
+  mkdir $1
+  cd $1
+  mkdir css js
+  touch index.html css/style.css js/main.js
+  echo &apos;success&apos;
+  exit
+  fi</code></pre></li>
+</ul>
+<h4 id="3，node-js"><a href="#3，node-js" class="headerlink" title="3，node.js"></a>3，node.js</h4><p>  node.js的主要功能并不是写这种脚本的，但是它确确实实有这个能力来实现这些功能。</p>
+<p>  代码如下</p>
+<pre><code>var fs = require(&apos;fs&apos;)
+
+var dirName = process.argv[2] // 你传的参数是从第 2 个开始的
+
+fs.mkdirSync(&quot;./&quot; + dirName) // mkdir $1
+process.chdir(&quot;./&quot; + dirName) // cd $1
+fs.mkdirSync(&apos;css&apos;) // mkdir css
+fs.mkdirSync(&apos;js&apos;) // mkdir js
+
+fs.writeFileSync(&quot;./index.html&quot;, &quot;&quot;)  // echo &quot;&quot; &gt;&gt;index.html
+fs.writeFileSync(&quot;css/style.css&quot;, &quot;&quot;) // echo &quot;&quot; &gt;&gt; css/style.css
+fs.writeFileSync(&quot;./js/main.js&quot;, &quot;&quot;)  // echo &quot;&quot; &gt;&gt; js/main.js
+
+process.exit(0)</code></pre><ul>
+<li><h5 id="不加node执行"><a href="#不加node执行" class="headerlink" title="不加node执行"></a>不加node执行</h5><p><strong>shebang</strong></p>
+</li>
+</ul>
+<h4 id="4，扩展"><a href="#4，扩展" class="headerlink" title="4，扩展"></a>4，扩展</h4><h5 id="4-1-source命令"><a href="#4-1-source命令" class="headerlink" title="4.1 source命令"></a>4.1 source命令</h5><h5 id="4-2-PATH"><a href="#4-2-PATH" class="headerlink" title="4.2 PATH"></a>4.2 PATH</h5><ul>
+<li><p>PATH 的作用</p>
+<ul>
+<li><p>你每次在 Bash 里面输入一个命令时（比如 ls、cp、demo），Bash 都会去 PATH 列表里面寻找对应的文件，如果找到了就执行。</p>
+</li>
+<li><p>使用 type demo 可以看到寻找过程，运行看看</p>
+</li>
+<li><p>使 用 which demo 可以看到寻找结果，运行看看</p>
+</li>
+<li><p>文件后缀的作用：毫无作用，demo.txt 和 demo 都可以是一个脚本文件的文件名</p>
+</li>
+</ul>
+<h5 id="3-3-type"><a href="#3-3-type" class="headerlink" title="3.3 type"></a>3.3 type</h5><p>告诉我们bash在PATH里面的查找过程</p>
+<pre><code>type cd </code></pre></li>
+</ul>
+
         </div>
       </div>
     </div>
