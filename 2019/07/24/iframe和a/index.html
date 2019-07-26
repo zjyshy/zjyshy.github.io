@@ -8,7 +8,7 @@
   <meta name="description" content>
   <meta name="author" content="John Doe">
   <!-- Open Graph Data -->
-  <meta property="og:title" content="iframe">
+  <meta property="og:title" content="iframe和a">
   <meta property="og:description" content>
   <meta property="og:site_name" content="加油吧!!!">
   <meta property="og:type" content="article">
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <div class="page-title with-background-image">
-          <p class="title">iframe</p>
+          <p class="title">iframe和a</p>
           <p class="subtitle"></p>
         </div>
         <div class="site-menu with-background-image">
@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-24</span>
-            <span class="time">15:57:23</span>
+            <span class="time">13:25:10</span>
           </span>
           
         </div>
@@ -116,7 +116,86 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          
+          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>现在iframe已经很少用了，这是一个可替换元素。这个元素的属性很多，但是并不常用，以后用到时候在具体去了解，下面是比较常用的属性。</p>
+<h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><ul>
+<li><p>frameborder</p>
+<p>默认有外边框</p>
+<pre><code>&lt;iframe src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/border.png" alt="border"></p>
+<p>  去掉外边框</p>
+</li>
+</ul>
+<pre><code>   &lt;iframe frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+
+![noborder](/zjyshy.github.io/img/noborder.png)</code></pre><ul>
+<li><p>name</p>
+<p>属性需要搭配a标签使用,这样a标签href的地址，就会从name为xxx的iframe中打开</p>
+<pre><code>&lt;iframe name = xxx frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+&lt;a target=&quot;xxx&quot; href=&quot;http://www.baidu.com&quot;&gt;xxx &lt;/a&gt;</code></pre></li>
+</ul>
+<ul>
+<li><p>src </p>
+<p>  支持相对路径</p>
+<pre><code>&lt;iframe src = &quot;./index2.html&quot; &gt;&lt;iframe&gt;
+
+![相对路径](/zjyshy.github.io/img/index2.png)</code></pre><p>  //表示使用当前页面所使用的协议</p>
+<pre><code>&lt;iframe src = &quot;//qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/usefile.png" alt="file"></p>
+<p>  <img src="/zjyshy.github.io/img/useHTTP.png" alt="HTTP"></p>
+<h3 id="a"><a href="#a" class="headerlink" title="a"></a>a</h3></li>
+</ul>
+<h5 id="四种target值"><a href="#四种target值" class="headerlink" title="四种target值"></a>四种target值</h5><p>  想要更好的理解这四个值，还需要结合iframe。</p>
+<p>  .</p>
+<p>├── index.html</p>
+<p>├── index2.html</p>
+<p>└── index3.html</p>
+<p>  index3.html的内容</p>
+<pre><code>&lt;a target=&quot;_blank&quot; href=&quot;http://www.baidu.com&quot;&gt;_blank &lt;/a&gt;
+&lt;a target=&quot;_top&quot; href=&quot;http://www.baidu.com&quot;&gt;_top&lt;/a&gt;
+&lt;a target=&quot;_self&quot; href=&quot;http://www.baidu.com&quot;&gt;_self &lt;/a&gt;
+&lt;a target=&quot;_parent&quot; href=&quot;http://www.baidu.com&quot;&gt;_parent &lt;/a&gt;</code></pre><p>index2.html的内容</p>
+<pre><code>&lt;iframe src=&quot;./index3.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>index.html的内容</p>
+<pre><code>&lt;iframe  src=&quot;./index2.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>_blank 会打开一个新的窗口</p>
+<p>_top 会在index.html这个祖宗页面打开</p>
+<p>_self 会在ifrem中打开的index3.html中打开</p>
+<p>_parent会在ifrem中打开的index2.html中打开</p>
+<h5 id="download属性"><a href="#download属性" class="headerlink" title="download属性"></a>download属性</h5><ul>
+<li>content-type:application/octet-stream是通过设置http内容让页面变成下载</li>
+</ul>
+<ul>
+<li><p>a标签也可以通过设置download来实现下载页面的功能</p>
+<p><a class="downloadme" href="#" download>下载这个页面</a></p>
+<pre><code>&lt;a class = &quot;downloadResume&quot; href=&quot;#&quot; download&gt;下载这个页面&lt;/a&gt;</code></pre></li>
+</ul>
+<h5 id="href"><a href="#href" class="headerlink" title="href"></a>href</h5><ul>
+<li><p>如果想要访问一个网址一定要写成<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+</li>
+</ul>
+<ul>
+<li><p>//<a href="http://www.baidu.com表示使用当前页面使用的协议，" target="_blank" rel="noopener">www.baidu.com表示使用当前页面使用的协议，</a></p>
+</li>
+<li><p>?name=qqqq 可以添加查询参数</p>
+</li>
+<li><p>./xxx.html   相对路径</p>
+</li>
+<li><p>javascript伪协议 </p>
+<p>当需要实现点击页面后不要跳转的需求时，可以使用javascript伪协议。加<code>#</code>虽然页面也不会发起请求，但是页面会滚动到顶部。当href的值是空白的时候会刷新页面。</p>
+<p>这时候就可以使用</p>
+<p><a href="javascript:;" target="_blank" rel="noopener">啥也不干</a></p>
+<pre><code>&lt;a href=&quot;javascript:;&quot;&gt;啥也不干&lt;/a&gt;</code></pre></li>
+</ul>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><h5 id="src和href"><a href="#src和href" class="headerlink" title="src和href"></a>src和href</h5><ul>
+<li><p>在HTML中有的标签使用src有的则是href甚至还有url这里着重说一下href和src的区别。</p>
+</li>
+<li><p>src表示引入 （img、script、iframe），是页面必不可少的内容，在请求src资源时会将其指向的资源下载并应用到文档内。</p>
+<ul>
+<li>href表示引用（link、a），建立和当前元素（锚点）或当前文档（链接）之间的链接</li>
+</ul>
+</li>
+</ul>
+
         </div>
       </div>
     </div>
