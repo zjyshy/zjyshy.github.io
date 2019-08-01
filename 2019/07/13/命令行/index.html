@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-13</span>
-            <span class="time">11:14:48</span>
+            <span class="time">18:54:00</span>
           </span>
           
         </div>
@@ -150,7 +150,7 @@ cd ..</code></pre><p>如果知道绝对路径,就可以像下面一样去访问<
 <pre><code>touch test1.txt</code></pre><h4 id="2-4-复制"><a href="#2-4-复制" class="headerlink" title="2.4 复制"></a>2.4 复制</h4></li>
 <li><h5 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h5><p>复制文件，将文件1的内容复制到文件二。如果是一个未创建的文件那就会创建一个文件，并将内容复制进去。如果是已经创建的文件，就会覆盖掉原有内容。</p>
 <pre><code>cp test1.txt test2.txt</code></pre><p>复制目录，如果是复制到一个不存在的目录，就会新建此目录；如果是复制到一个已存在的目录，则会覆盖掉原有目录；如果目录里面有文件,则会将文件复制过去</p>
-<pre><code>cp -p test1 test2</code></pre></li>
+<pre><code>cp -r test1 test2</code></pre></li>
 </ul>
 <h4 id="2-5-移动和重命名"><a href="#2-5-移动和重命名" class="headerlink" title="2.5 移动和重命名"></a>2.5 移动和重命名</h4><ul>
 <li><h5 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h5><p>mv并<code>不会</code>自动新建<code>不存在</code>的目录。</p>
