@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-31</span>
-            <span class="time">19:08:43</span>
+            <span class="time">19:09:07</span>
           </span>
           
         </div>
@@ -108,7 +108,13 @@
         
         <!-- Post Main Content -->
         <div class="post-content">
-          <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>  <img src="/zjyshy.github.io/img/boxmodel.png" alt="盒模型"></p>
+          <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>  <a href="#盒模型">1，盒模型</a></p>
+<p>  <a href="#display属性">2，display属性</a></p>
+<p>  <a href="#floa属性">3，float属性</a></p>
+<p>  <a href="#position属性">4，position属性</a></p>
+<p>  <a href="#常见布局">5，常见布局</a></p>
+<hr>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>  <img src="/zjyshy.github.io/img/boxmodel.png" alt="盒模型"></p>
 <h4 id="1-1-box-sizing"><a href="#1-1-box-sizing" class="headerlink" title="1.1 box-sizing"></a>1.1 box-sizing</h4><p>  这个属性至关重要，它可以改变盒模型计算大小的方式，他有两个主要属性<code>content-box</code> <code>border-box</code></p>
 <ul>
 <li><p><code>centent-box</code></p>
@@ -142,7 +148,7 @@
 <h3 id="float属性"><a href="#float属性" class="headerlink" title="float属性"></a>float属性</h3><p> 这个词中文有漂浮、浮动之意。可以让元素在文档流里面飘起来,也就是从正常的文档流中移除~他会将除了<code>flex</code>和<code>inlin-flex</code>之外的<code>display</code>值全部改成<code>block</code>,但是在为设置它的宽度之前，宽度会受内容影响，状态更像<code>inline-blkock</code>。</p>
 <h4 id="3-1-常见取值"><a href="#3-1-常见取值" class="headerlink" title="3.1 常见取值"></a>3.1 常见取值</h4><h5 id="left-amp-right"><a href="#left-amp-right" class="headerlink" title="left &amp; right"></a>left &amp; right</h5><p>  让元素向所在块的相应方向浮动。直到碰到所<code>block</code>处容器的边框,或者另一个<code>float</code>元素。</p>
 <h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><p>  它是为了<code>float</code>而生。可用于浮动和非浮动元素。属性指定一个元素是否必须移动(清除浮动后)到在它之前的浮动元素下面。</p>
-<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><h4 id="常见取值-1"><a href="#常见取值-1" class="headerlink" title="常见取值"></a>常见取值</h4><h5 id="static"><a href="#static" class="headerlink" title="static"></a>static</h5><p>  默认值。该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 top, right, bottom, left 和 z-index 属性无效。  </p>
+<h3 id="position属性"><a href="#position属性" class="headerlink" title="position属性"></a>position属性</h3><h4 id="常见取值-1"><a href="#常见取值-1" class="headerlink" title="常见取值"></a>常见取值</h4><h5 id="static"><a href="#static" class="headerlink" title="static"></a>static</h5><p>  默认值。该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 top, right, bottom, left 和 z-index 属性无效。  </p>
 <h5 id="relative-相对定位"><a href="#relative-相对定位" class="headerlink" title="relative 相对定位"></a>relative 相对定位</h5><p>  元素默认情况会被留在当前位置，并未脱离文档流。当设置了top等属性的时候，会在当前位置的基础上进行偏移。但是他会在原地留下空白。</p>
 <h5 id="position-绝对定位"><a href="#position-绝对定位" class="headerlink" title="position 绝对定位"></a>position 绝对定位</h5><p>  脱离文档流，会根据最近的非static祖元素进行定位。</p>
 <h3 id="常见布局"><a href="#常见布局" class="headerlink" title="常见布局"></a>常见布局</h3><h4 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h4><p>  这里就写我比较常用的方式吧。<a href="http://js.jirengu.com/helag/4/edit?html,css,output" target="_blank" rel="noopener">展示</a></p>
