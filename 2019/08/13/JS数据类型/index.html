@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-08-13</span>
-            <span class="time">11:01:54</span>
+            <span class="time">11:06:02</span>
           </span>
           
         </div>
@@ -213,25 +213,26 @@ null === undefinded   //false</code></pre><h4 id="3-2-区别"><a href="#3-2-区�
 
 (0.6-0.3) === (0.7-0.4)   //false</code></pre><ul>
 <li><p>js可以精确表示-2^53^ 到 2^53^ ,当大于这个数的时候就无法保持精度，这个数是16位，即js可以保证<strong>15</strong>位数的计算精度。</p>
-<pre><code>Math.pow(2,53)     //9007199254740992</code></pre></li>
+<pre><code>Math.pow(2,53)     //9007199254740992
+Math.pow(2,53)+1   //9007199254740992</code></pre></li>
 </ul>
-<pre><code>Math.pow(2,53)+1   //9007199254740992</code></pre><ul>
+<ul>
 <li><p>js可以表示2^1024^ 到 2^-1023^</p>
 <ul>
-<li><p>大与1024次方发生”正向溢出”</p>
-<pre><code>Math.pow(2,1025)        //Infinity</code></pre></li>
+<li>大与1024次方发生”正向溢出”</li>
 </ul>
 </li>
 </ul>
-<pre><code>* 小于-1075(指数部分-1023和小数部分的52位)次方发生&quot;负向溢出&quot;
-
-      Math.pow(2,-1075)      //0
-
-
-* Number对象的`MAX_VALUE`和`MIN_VALUE`分别返回js所能表示的最大的数
-
-      Number.MAX_VALUE      // 1.7976931348623157e+308
-      Number.MIN_VALUE      // 5e-324</code></pre><hr>
+<pre><code>Math.pow(2,1025)        //Infinity</code></pre><ul>
+<li><p>小于-1075(指数部分-1023和小数部分的52位)次方发生”负向溢出”</p>
+<pre><code>Math.pow(2,-1075)      //0</code></pre></li>
+</ul>
+<ul>
+<li><p>Number对象的<code>MAX_VALUE</code>和<code>MIN_VALUE</code>分别返回js所能表示的最大的数</p>
+<pre><code>Number.MAX_VALUE      // 1.7976931348623157e+308
+Number.MIN_VALUE      // 5e-324</code></pre></li>
+</ul>
+<hr>
 <h4 id="4-2数值的表示法"><a href="#4-2数值的表示法" class="headerlink" title="4.2数值的表示法"></a>4.2数值的表示法</h4><ul>
 <li><p>科学计数法，一个整数 + e +指数部分</p>
 <pre><code>111e10              //1110000000000</code></pre></li>
