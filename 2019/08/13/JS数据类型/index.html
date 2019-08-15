@@ -100,11 +100,19 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-08-13</span>
-            <span class="time">13:07:59</span>
+            <span class="time">23:47:59</span>
           </span>
           
         </div>
         <!-- Tags -->
+        
+          <div class="post-tags text-muted">
+            Tags: 
+
+<a class="tag" href="/tags/JavaScript/">#JavaScript</a>
+
+
+          </div>
         
         <!-- Post Main Content -->
         <div class="post-content">
@@ -114,9 +122,9 @@
 <p><strong><a href="#4，Number">4，Number</a></strong></p>
 <p><strong><a href="#5，字符串">5，字符串</a></strong></p>
 <p><strong><a href="#6，对象">6，对象</a></strong></p>
+<p><strong><a href="#7，类型的转换">7，类型的转换</a></strong></p>
 <hr>
-<p>###1，简介</p>
-<p>js的数据类型可以分为两个大类</p>
+<h3 id="1，简介"><a href="#1，简介" class="headerlink" title="1，简介"></a>1，简介</h3><p>js的数据类型可以分为两个大类</p>
 <ul>
 <li><p>简单类型（基本类型)</p>
 <ul>
@@ -200,8 +208,7 @@ null === undefinded   //false</code></pre><h4 id="3-2-区别"><a href="#3-2-区�
 * `null`
 
   `null`表示空值，即该处的值现在为空。调用函数时，某个参数未设置任何值，这时就可以传入`null`，表示该参数为空。比如，某个函数接受引擎抛出的错误作为参数，如果运行过程中未出错，那么这个参数就会传入`null`，表示未发生错误。</code></pre><hr>
-<h3 id="4，Number"><a href="#4，Number" class="headerlink" title="4，Number"></a>4，Number</h3><hr>
-<h4 id="4-1-整数和浮点数"><a href="#4-1-整数和浮点数" class="headerlink" title="4.1 整数和浮点数"></a>4.1 整数和浮点数</h4><p>  与c语言不同，js所有的数字都是用<strong>64位浮点数</strong>来表示的。但是有些运算只有整数才能完成，此时js会将64位浮点数，转换成<strong>32位整数</strong>。</p>
+<h3 id="4，Number"><a href="#4，Number" class="headerlink" title="4，Number"></a>4，Number</h3><h4 id="4-1-整数和浮点数"><a href="#4-1-整数和浮点数" class="headerlink" title="4.1 整数和浮点数"></a>4.1 整数和浮点数</h4><p>  与c语言不同，js所有的数字都是用<strong>64位浮点数</strong>来表示的。但是有些运算只有整数才能完成，此时js会将64位浮点数，转换成<strong>32位整数</strong>。</p>
 <ul>
 <li>由于计算机对于浮点数的存储机制，决定了浮点数结算结果有时不会是特别精确的值。</li>
 </ul>
@@ -288,7 +295,7 @@ Number.MIN_VALUE      // 5e-324</code></pre></li>
   Math.sqrt(-1)      // NaN
   0/0                //NaN</code></pre><h6 id="（2）运算规则"><a href="#（2）运算规则" class="headerlink" title="（2）运算规则"></a>（2）运算规则</h6><p>  它不等于任何值，包括它本身</p>
 <pre><code>NaN === NaN       //false</code></pre><p>  与任何数运算得到NaN</p>
-<pre><code>1+NaN             //NaN</code></pre><h5 id="3-Infinity"><a href="#3-Infinity" class="headerlink" title="3) Infinity"></a>3) <code>Infinity</code></h5><p><code>Infinity</code>大于一切<strong>数值</strong>，<code>-infinity</code>小于一切<strong>数值</strong>,但是两者与<code>NaN</code>比较的结果都是false</p>
+<pre><code>1+NaN             //NaN</code></pre><h6 id="3-isNaN"><a href="#3-isNaN" class="headerlink" title="(3)isNaN"></a>(3)<code>isNaN</code></h6><h5 id="3-Infinity"><a href="#3-Infinity" class="headerlink" title="3) Infinity"></a>3) <code>Infinity</code></h5><p><code>Infinity</code>大于一切<strong>数值</strong>，<code>-infinity</code>小于一切<strong>数值</strong>,但是两者与<code>NaN</code>比较的结果都是false</p>
 <pre><code> Infinity &gt; NaN    //false
 -Infinity &gt; NaN    //false
  Infinity &lt; NaN    //false
@@ -360,7 +367,8 @@ function b64Decode(str) {
   }
 
 b64Encode(&apos;你好&apos;)                        // &quot;JUU0JUJEJUEwJUU1JUE1JUJE&quot;
-b64Decode(&apos;JUU0JUJEJUEwJUU1JUE1JUJE&apos;)   // &quot;你好&quot;</code></pre><h3 id="6，对象"><a href="#6，对象" class="headerlink" title="6，对象"></a>6，对象</h3><p>  对象是一种十分特别的数据类型，是由各种原始类型组合而成的“键值对”集合。</p>
+b64Decode(&apos;JUU0JUJEJUEwJUU1JUE1JUJE&apos;)   // &quot;你好&quot;</code></pre><hr>
+<h3 id="6，对象"><a href="#6，对象" class="headerlink" title="6，对象"></a>6，对象</h3><p>  对象是一种十分特别的数据类型，是由各种原始类型组合而成的“键值对”集合。</p>
 <h4 id="6-1键名"><a href="#6-1键名" class="headerlink" title="6.1键名"></a>6.1键名</h4><p>  对象的所有键名都是字符串，在定义的时候键名会被自动转换成字符串，数值也会被转换成字符串</p>
 <pre><code>var obj = {
   a:1,
@@ -480,7 +488,80 @@ with (obj) {
   p1 = 4;
   p2 = 5;
 }</code></pre><p>  这个属性尽量不要使用，当操作obj中不存在的属性时，传建一个全局变量，不建议使用</p>
+<h4 id="7，类型的转换"><a href="#7，类型的转换" class="headerlink" title="7，类型的转换"></a>7，类型的转换</h4><h5 id="7-1转成Sstring"><a href="#7-1转成Sstring" class="headerlink" title="7.1转成Sstring"></a>7.1转成Sstring</h5><h6 id="1-window-string"><a href="#1-window-string" class="headerlink" title="1) window.string()"></a>1) <code>window.string()</code></h6><pre><code>window.String(1)                 //&quot;1&quot;
+window.String(ture)              //&quot;true&quot;
+window.String(undefined)         //undefined
+window.String(({a:1}))           //&quot;[object Object]&quot;
+window.String(null)              //&quot;null&quot;</code></pre><h5 id="2-xxx-toString"><a href="#2-xxx-toString" class="headerlink" title="2) xxx.toString()"></a>2) <code>xxx.toString()</code></h5><p>  这个属性很常用但是功能的局限性也很大。</p>
+<pre><code>var a = 1;
+a.toString();                 //&quot;1&quot;
 
+a = true;
+a.toString();                 //&quot;ture&quot;
+
+a = false;
+a.toString();                 //&quot;false&quot;
+
+a = null;
+a.toString();                 //Uncaught TypeError: Cannot read property &apos;toString&apos; of null
+
+a = undefined;
+a.toString();                 //Uncaught TypeError: Cannot read property &apos;toString&apos; of undefined
+
+a = {aa:1};
+a.toString()                  //&quot;[object Object]&quot;</code></pre><h5 id="3-quot-quot"><a href="#3-quot-quot" class="headerlink" title="3) +&quot;&quot;"></a>3) <code>+&quot;&quot;</code></h5><p>  比较常用并且效果很好，加号的性质是，如果两个不同数据类型的数据相加，会优先转换成字符串</p>
+<pre><code>1 + &quot;1&quot;                //&quot;11&quot;
+
+1+&quot;1&quot;+true             //&quot;11true&quot;
+
+1+true+1               //&quot;21&quot;</code></pre><p>  将想要转换成字符串的数据加一个””(是空字符串，不是空格字符串)</p>
+<pre><code>1 + &quot;&quot;                //&quot;1&quot;
+true + &quot;&quot;             //&quot;true&quot;
+false + &quot;&quot;            //&quot;false&quot;
+null + &quot;&quot;             //&quot;null&quot;
+undefined+ &quot;&quot;         //&quot;undefined&quot;</code></pre><h4 id="7-2-转成Boolean"><a href="#7-2-转成Boolean" class="headerlink" title="7.2 转成Boolean"></a>7.2 转成Boolean</h4><h5 id="1-Boolean"><a href="#1-Boolean" class="headerlink" title="1) Boolean()"></a>1) <code>Boolean()</code></h5><pre><code>Boolean(1);             //ture
+Boolean(0);             //false 
+Boolean(null);          //false</code></pre><h5 id="2-1"><a href="#2-1" class="headerlink" title="2) !!"></a>2) <code>!!</code></h5><pre><code>!!1                     //true
+!!0                     //false</code></pre><h5 id="3-5个会转换成false的特殊值-falsy值"><a href="#3-5个会转换成false的特殊值-falsy值" class="headerlink" title="3) 5个会转换成false的特殊值(falsy值)"></a>3) 5个会转换成<code>false</code>的特殊值(falsy值)</h5><ul>
+<li>0</li>
+<li>NaN</li>
+<li>null</li>
+<li>undefined</li>
+<li>“”</li>
+</ul>
+<h4 id="7-3-转成Number"><a href="#7-3-转成Number" class="headerlink" title="7.3 转成Number"></a>7.3 转成Number</h4><h5 id="1-Number"><a href="#1-Number" class="headerlink" title="1) Number()"></a>1) Number()</h5><pre><code>Number(&quot;&quot;);             //0
+Number(&quot; &quot;);            //0
+Number(&quot;1&quot;)             //1
+Number(&quot;1.23&quot;)          //1.23
+Number(&quot;123a&quot;)          //NaN
+Number(true);           //1
+Number(false);          //0
+Number(null);           //0
+Number(undefined);      //0</code></pre><h5 id="2-parseInt"><a href="#2-parseInt" class="headerlink" title="2) parseInt"></a>2) <code>parseInt</code></h5><p>  在处理小数字符串，空字符串，空格字符串，带字母的字符串以及<code>Null</code> <code>undefined</code> <code>Boolean</code>时与Number不同。</p>
+<ul>
+<li><p>默认转换成10进制</p>
+<pre><code>parseInt(&quot;&quot;);           //NaN
+parseInt(&quot; &quot;);          //NaN
+parseInt(&quot;123aaa&quot;);     //123
+parseInt(&quot;aaa123&quot;);     //NaN
+parseInt(&quot;1.23&quot;);       //1
+parseInt(&quot;0x10&quot;);       //16
+parseInt(&quot;011&quot;);        //11
+
+parseInt(true)          //NaN
+parseInt(false)         //NaN
+
+parseInt(null)          //NaN
+parseInt(undefined)     //NaN</code></pre></li>
+<li><p>加上进制参数,</p>
+<pre><code>parseInt(222,2);      //NaN
+parseInt(111,2);      //7
+parseInt(1f,30);      //45</code></pre><h5 id="3-parseFloat"><a href="#3-parseFloat" class="headerlink" title="3) parseFloat"></a>3) <code>parseFloat</code></h5><p>除了在处理小数字符串时不会将点后面的内容忽略，其余和<code>parseInt</code>基本相同。</p>
+</li>
+</ul>
+<h5 id="4-0"><a href="#4-0" class="headerlink" title="4) -0"></a>4) -0</h5><pre><code>基本等同于Number,下面是两者之间的差异
+
+    undefined - 0           //NaN</code></pre><h5 id="5"><a href="#5" class="headerlink" title="5) +"></a>5) <code>+</code></h5><pre><code>和-0效果相同</code></pre>
         </div>
       </div>
     </div>
