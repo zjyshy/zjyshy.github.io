@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-08-13</span>
-            <span class="time">11:06:02</span>
+            <span class="time">13:07:59</span>
           </span>
           
         </div>
@@ -238,14 +238,14 @@ Number.MIN_VALUE      // 5e-324</code></pre></li>
 <pre><code>111e10              //1110000000000</code></pre></li>
 </ul>
 <ul>
-<li>有两种情况会让js自动转为科学计数法</li>
+<li><p>有两种情况会让js自动转为科学计数法</p>
+<ul>
+<li><p>小数点前多与21位</p>
+<pre><code>1231131231231231231234   //1.2311312312312311e+21</code></pre></li>
 </ul>
-<pre><code>* 小数点前多与21位
-
-      1231131231231231231234   //1.2311312312312311e+21
-
-
-* 小数点后的0多与5个
+</li>
+</ul>
+<pre><code>* 小数点后的0多与5个
 
 
       0.0000001               //1e-7</code></pre><hr>
