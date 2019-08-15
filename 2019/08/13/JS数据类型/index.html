@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <!-- Html Head Tag-->
+  <head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content>
+  <meta name="author" content="John Doe">
+  <!-- Open Graph Data -->
+  <meta property="og:title" content="JS数据类型">
+  <meta property="og:description" content>
+  <meta property="og:site_name" content="施振兴的个人博客">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="http://yoursite.com">
+  
+    <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+
+  <!-- Site Title -->
+  <title>施振兴的个人博客</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  
+  <link rel="stylesheet" href="/css/style.light.css">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+  <body>
+    <!-- Page Header -->
+
+
+<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="page-title with-background-image">
+          <p class="title">JS数据类型</p>
+          <p class="subtitle"></p>
+        </div>
+        <div class="site-menu with-background-image">
+          <ul>
+            
+              <li>
+                <a href="/">
+                  
+                  Home
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  
+                  Archives
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="https://github.com/zjyshy">
+                  
+                  Github
+                  
+                </a>
+              </li>
+            
+              <li>
+                <a href="mailto:<zjyshyy@gmail.com>">
+                  
+                  Email
+                  
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article>
+  <div class="container typo">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-info text-muted">
+          
+            <!-- Author -->
+            <span class="author info">By John Doe</span>
+          
+          <!-- Date -->
+          <span class="date-time info">On
+            <span class="date">2019-08-13</span>
+            <span class="time">11:01:54</span>
+          </span>
+          
+        </div>
+        <!-- Tags -->
+        
+        <!-- Post Main Content -->
+        <div class="post-content">
+          <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><strong><a href="#1，简介">1，简介</a></strong></p>
+<p><strong><a href="#2，typeof">2，typeof</a></strong></p>
+<p><strong><a href="#3，null和undefined">3，null和undefined</a></strong></p>
+<p><strong><a href="#4，Number">4，Number</a></strong></p>
+<p><strong><a href="#5，字符串">5，字符串</a></strong></p>
+<p><strong><a href="#6，对象">6，对象</a></strong></p>
+<hr>
+<p>###1，简介</p>
+<p>js的数据类型可以分为两个大类</p>
+<ul>
+<li><p>简单类型（基本类型)</p>
+<ul>
+<li>Number :整数或者小数</li>
+<li>String ： 文本</li>
+<li>Boolean ：true和false两个特殊值</li>
+<li>undefined ：未定义的值</li>
+<li>null ：空值 </li>
+<li>symbol ：</li>
+</ul>
+</li>
+<li><p>复杂类型（合成类型）</p>
+<ul>
+<li>Object：各种值得集合<ul>
+<li>狭义的对象</li>
+<li>数组</li>
+<li>函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2，typeof"><a href="#2，typeof" class="headerlink" title="2，typeof"></a>2，typeof</h3><p>typeof的作用是返回一个值的数据类型</p>
+<p>除此之外还有一个运算符和一个方法可以确定一个值的数据类型。</p>
+<ul>
+<li><p>typeof对于各种数据类型的返回值</p>
+<pre><code>typeof 1          //number
+typeof &quot;aa&quot;       //string
+typeof true       //boolean
+typeof undefined  //undefined
+function a(){}
+typeof a          //function
+typeof null       //object
+typeof {}         //object
+typeof []         //object</code></pre></li>
+</ul>
+<hr>
+<h3 id="3，null和undefined"><a href="#3，null和undefined" class="headerlink" title="3，null和undefined"></a>3，null和undefined</h3><h4 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h4><p>  在大多数的编程语言中并没有使用两个值来表示空这一概念。在设计之初，Eich其实只涉及了<code>null</code>，但他后来觉得不妥，就又加了一个<code>undefined</code>。</p>
+<p>  将一个变量赋值为<code>undefined</code>或是<code>null</code>的语法效果基本没有任何区别。</p>
+<pre><code>null == undefined     //true
+null === undefinded   //false</code></pre><h4 id="3-2-区别"><a href="#3-2-区别" class="headerlink" title="3.2 区别"></a>3.2 区别</h4><ul>
+<li><p><code>null</code>表示一个空的对象，当把它转换为数值的时候可以自动转变成0,<br><code>undefined</code>则不行。</p>
+<p>Number(null);      // 0<br>Number(undefined)  //NaN</p>
+</li>
+<li><p>使用的场景不同</p>
+<ul>
+<li><code>undefined</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>    1,声明变量但是没有赋值
+
+      var test;                   //undefined
+
+  2,调用函数时，应该提供的参数没有被提供
+
+      function test1(a){
+        return a;
+      }
+
+      test1();                    //undefined
+
+  3,对象没有赋值的属性
+
+      window.aaaaa;               //undefined
+
+  4,没有设置返回值的函数，默认返回值就是undefined
+
+
+      function test4(){
+
+      }
+
+      test4();                    //undefined
+
+
+
+
+
+* `null`
+
+  `null`表示空值，即该处的值现在为空。调用函数时，某个参数未设置任何值，这时就可以传入`null`，表示该参数为空。比如，某个函数接受引擎抛出的错误作为参数，如果运行过程中未出错，那么这个参数就会传入`null`，表示未发生错误。</code></pre><hr>
+<h3 id="4，Number"><a href="#4，Number" class="headerlink" title="4，Number"></a>4，Number</h3><hr>
+<h4 id="4-1-整数和浮点数"><a href="#4-1-整数和浮点数" class="headerlink" title="4.1 整数和浮点数"></a>4.1 整数和浮点数</h4><p>  与c语言不同，js所有的数字都是用<strong>64位浮点数</strong>来表示的。但是有些运算只有整数才能完成，此时js会将64位浮点数，转换成<strong>32位整数</strong>。</p>
+<ul>
+<li>由于计算机对于浮点数的存储机制，决定了浮点数结算结果有时不会是特别精确的值。</li>
+</ul>
+<pre><code>0.1 + 0.2 === 0.3         //false
+
+
+0.7 / 0.1                 //0.999999999999999
+
+
+(0.6-0.3) === (0.7-0.4)   //false</code></pre><ul>
+<li><p>js可以精确表示-2^53^ 到 2^53^ ,当大于这个数的时候就无法保持精度，这个数是16位，即js可以保证<strong>15</strong>位数的计算精度。</p>
+<pre><code>Math.pow(2,53)     //9007199254740992</code></pre></li>
+</ul>
+<pre><code>Math.pow(2,53)+1   //9007199254740992</code></pre><ul>
+<li><p>js可以表示2^1024^ 到 2^-1023^</p>
+<ul>
+<li><p>大与1024次方发生”正向溢出”</p>
+<pre><code>Math.pow(2,1025)        //Infinity</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code>* 小于-1075(指数部分-1023和小数部分的52位)次方发生&quot;负向溢出&quot;
+
+      Math.pow(2,-1075)      //0
+
+
+* Number对象的`MAX_VALUE`和`MIN_VALUE`分别返回js所能表示的最大的数
+
+      Number.MAX_VALUE      // 1.7976931348623157e+308
+      Number.MIN_VALUE      // 5e-324</code></pre><hr>
+<h4 id="4-2数值的表示法"><a href="#4-2数值的表示法" class="headerlink" title="4.2数值的表示法"></a>4.2数值的表示法</h4><ul>
+<li><p>科学计数法，一个整数 + e +指数部分</p>
+<pre><code>111e10              //1110000000000</code></pre></li>
+</ul>
+<ul>
+<li>有两种情况会让js自动转为科学计数法</li>
+</ul>
+<pre><code>* 小数点前多与21位
+
+      1231131231231231231234   //1.2311312312312311e+21
+
+
+* 小数点后的0多与5个
+
+
+      0.0000001               //1e-7</code></pre><hr>
+<h4 id="4-3数值的进制"><a href="#4-3数值的进制" class="headerlink" title="4.3数值的进制"></a>4.3数值的进制</h4><p>  对于各种进制在js的写法</p>
+<ul>
+<li><p>2进制  加前缀<code>0b</code>或者<code>0B</code>的数值</p>
+</li>
+<li><p>8进制  加前缀<code>0O</code>或者<code>0o</code>的数值</p>
+</li>
+<li><p>16进制 加前缀<code>0x</code>或者<code>0X</code>的数值</p>
+</li>
+<li><p><em>PS*</em>:如果在一个数值前加<code>0</code>并且这个数的每一位都<strong>小于</strong>8，name也可以用来表示8进制，否则就是十进制。</p>
+</li>
+</ul>
+<p>  当相应进制中出现了不属于该进制的数值，那么便会报错</p>
+<h4 id="4-4-特殊值"><a href="#4-4-特殊值" class="headerlink" title="4.4 特殊值"></a>4.4 特殊值</h4><h5 id="1-0"><a href="#1-0" class="headerlink" title="1) 0"></a>1) <code>0</code></h5><pre><code>`+0`和`-0`，js里面的0有两个，它们完全等价，几乎所有场合他们都会被当做一个普通的`0`来使用，唯一的区别是在当**分母**的的时候。
+
+    0 === +0     //true
+    0 === -0     //true
+    +0 === -0    //true
+
+
+    1/0        //Infinity
+    1/+0       //Infinity
+    1/-0       //-Infinity</code></pre><p>#####2) <code>NaN</code></p>
+<h6 id="1-含义"><a href="#1-含义" class="headerlink" title="(1)含义"></a>(1)含义</h6><pre><code>它主要出现在将字符串解析成数字出错的场合
+
+  1-&apos;e&apos;              //NaN    
+
+
+它本身类型属于`Number`
+
+  typeof NaN         //Number
+
+
+一些计算出现问题也会返回NaN
+
+  Math.acos(2)       // NaN
+  Math.log(-1)       // NaN
+  Math.sqrt(-1)      // NaN
+  0/0                //NaN</code></pre><h6 id="（2）运算规则"><a href="#（2）运算规则" class="headerlink" title="（2）运算规则"></a>（2）运算规则</h6><p>  它不等于任何值，包括它本身</p>
+<pre><code>NaN === NaN       //false</code></pre><p>  与任何数运算得到NaN</p>
+<pre><code>1+NaN             //NaN</code></pre><h5 id="3-Infinity"><a href="#3-Infinity" class="headerlink" title="3) Infinity"></a>3) <code>Infinity</code></h5><p><code>Infinity</code>大于一切<strong>数值</strong>，<code>-infinity</code>小于一切<strong>数值</strong>,但是两者与<code>NaN</code>比较的结果都是false</p>
+<pre><code> Infinity &gt; NaN    //false
+-Infinity &gt; NaN    //false
+ Infinity &lt; NaN    //false
+-Infinity &lt; NaN    //false</code></pre><hr>
+<h3 id="5，字符串"><a href="#5，字符串" class="headerlink" title="5，字符串"></a>5，字符串</h3><p>用’’或””或``包起来的一个或者多个字符就是字符串。</p>
+<h4 id="5-1换行书写"><a href="#5-1换行书写" class="headerlink" title="5.1换行书写"></a>5.1换行书写</h4><h5 id="1）使用"><a href="#1）使用" class="headerlink" title="1）使用+"></a>1）使用<code>+</code></h5><pre><code>var str = &quot;a&quot;
+          +&quot;b&quot;;      
+
+a             //ab</code></pre><h5 id="2"><a href="#2" class="headerlink" title="2) `"></a>2) `</h5><pre><code>var str  = `aaa
+aaa
+aaa`;
+
+str                 //aaaaaaaaa</code></pre><h5 id="3"><a href="#3" class="headerlink" title="3) \"></a>3) <code>\</code></h5><p>   这种方式很容易出现问题，当反斜杠后面有任何内容，包括空格，都会导致报错。</p>
+<pre><code>var str = &quot;aaa\
+          aaa\
+          aaa&quot;;
+
+
+    str               //aaaaaaaaa</code></pre><h4 id="5-2转义字符"><a href="#5-2转义字符" class="headerlink" title="5.2转义字符\"></a>5.2转义字符<code>\</code></h4><h5 id="1）一些常用的转义字符"><a href="#1）一些常用的转义字符" class="headerlink" title="1）一些常用的转义字符"></a>1）一些常用的转义字符</h5><pre><code>\0 ：null（\u0000）
+\b ：后退键（\u0008）
+\f ：换页符（\u000C）
+\n ：换行符（\u000A）
+\r ：回车键（\u000D）
+\t ：制表符（\u0009）
+\v ：垂直制表符（\u000B）
+\&apos; ：单引号（\u0027）
+\&quot; ：双引号（\u0022）
+\\ ：反斜杠（\u005C）</code></pre><h5 id="2）三种特殊用法"><a href="#2）三种特殊用法" class="headerlink" title="2）三种特殊用法"></a>2）三种特殊用法</h5><ul>
+<li><p>\HHH</p>
+<p> 反斜杠后面紧跟三个八进制数（000到377），代表一个字符。HHH对应该字符的 Unicode 码点，比如\251表示版权符号。显然，这种方法只能输出256种字符。</p>
+</li>
+<li><p>\xHH</p>
+<p> \x后面紧跟两个十六进制数（00到FF），代表一个字符。HH对应该字符的 Unicode 码点，比如\xA9表示版权符号。这种方法也只能输出256种字符。</p>
+</li>
+<li><p>\uXXXX</p>
+<p> \u后面紧跟四个十六进制数（0000到FFFF），代表一个字符。XXXX对应该字符的 Unicode 码点，比如\u00A9表示版权符号。</p>
+</li>
+</ul>
+<h4 id="5-3-字符串与数组"><a href="#5-3-字符串与数组" class="headerlink" title="5.3 字符串与数组"></a>5.3 字符串与数组</h4><p>  可以通过数组来使用显示字符串，但是并不可以被修改。</p>
+<pre><code>var test = &quot;Hello&quot;;
+test[0]         //H
+
+test[8]         //undefined
+
+test[0] = &quot;h&quot;;
+test;           //Hello</code></pre><h4 id="5-4-length属性"><a href="#5-4-length属性" class="headerlink" title="5.4 length属性"></a>5.4 length属性</h4><p>  返回字符串长度，但是也没办法改变。</p>
+<p>  var test = “hello”;</p>
+<p>  test.length;           //5</p>
+<p>  test.length = 1;<br>  test.length;           //5</p>
+<h4 id="5-5-Base64转码"><a href="#5-5-Base64转码" class="headerlink" title="5.5 Base64转码"></a>5.5 Base64转码</h4><p>主要作用是，将任意值转成 0～9、A～Z、a-z、+和/这64个字符组成的可打印字符。</p>
+<h5 id="1）两个原生方法"><a href="#1）两个原生方法" class="headerlink" title="1）两个原生方法"></a>1）两个原生方法</h5><ul>
+<li><p>btoa()将任意值转变成Base64</p>
+</li>
+<li><p>atob()将Base64转换成原来的值</p>
+</li>
+</ul>
+<p>  #####2）转换字符</p>
+<p>  这个方法对于ASCII码的字符支持很差，需要加一个中间环节</p>
+<pre><code>  function b64Encode(str) {
+
+    return btoa(encodeURIComponent(str));
+
+  }
+
+function b64Decode(str) {
+
+    return decodeURIComponent(atob(str));
+
+  }
+
+b64Encode(&apos;你好&apos;)                        // &quot;JUU0JUJEJUEwJUU1JUE1JUJE&quot;
+b64Decode(&apos;JUU0JUJEJUEwJUU1JUE1JUJE&apos;)   // &quot;你好&quot;</code></pre><h3 id="6，对象"><a href="#6，对象" class="headerlink" title="6，对象"></a>6，对象</h3><p>  对象是一种十分特别的数据类型，是由各种原始类型组合而成的“键值对”集合。</p>
+<h4 id="6-1键名"><a href="#6-1键名" class="headerlink" title="6.1键名"></a>6.1键名</h4><p>  对象的所有键名都是字符串，在定义的时候键名会被自动转换成字符串，数值也会被转换成字符串</p>
+<pre><code>var obj = {
+  a:1,
+  b:2
+
+}
+
+等价于
+
+var obj = {
+
+  &apos;a&apos;:1,
+  &apos;b&apos;:2
+
+}</code></pre><h4 id="6-2-引用"><a href="#6-2-引用" class="headerlink" title="6.2 引用"></a>6.2 引用</h4><p>  这个和c语言的指针真的很像，都是存的是内存地址，如果不同的变量名指向同一个对象，那么它们都是这个对象的引用，也就是说指向同一个内存地址。修改其中一个变量，会影响到其他所有变量。这是对象与原始类型的最大的区别。</p>
+<pre><code>var obj = {hehe:1};
+var n = 1;
+
+function a(test){
+
+    test.hehe = 2;
+
+
+
+}
+
+a(obj);        //这里传入的是这个对象
+               //这样test和obj所引用的内存地址完全相同
+               //这样修改其中一个就会影响到其他的
+a(n);
+console.log(obj.hehe);
+console.log(n)</code></pre><h4 id="6-3-属性"><a href="#6-3-属性" class="headerlink" title="6.3 属性"></a>6.3 属性</h4><h5 id="1）-和"><a href="#1）-和" class="headerlink" title="1）.和[]"></a>1）<code>.</code>和<code>[]</code></h5><p>  个人认为<code>.</code>这种方法看似简单好用，但实际上功能不是很全面。因为如果想要通过字符串变量来使用属性，就只能使用<code>[]</code>,还有当键名是数字时也没办法使用<code>.</code>。</p>
+<pre><code>  var obj = {
+
+    name:&apos;zjy&apos;,
+    gender:&apos;female&apos;,
+    1:666
+  }
+
+
+var a = name;
+var b = 1;
+
+obj.a;                //undefined
+obj.name              //zjy
+obj.1                 //报错啦Uncaught SyntaxError: Unexpected number
+                      // 未捕获的语法错误：意料之外的数字
+obj.b                 //undefined
+
+obj[&apos;a&apos;]              //undefined
+obj[&apos;name&apos;]           //zjy
+obj[a]                //zjy
+obj[1]                //666
+obj[&apos;1&apos;]              //666
+obj[b]                //666</code></pre><h5 id="2-查看属性"><a href="#2-查看属性" class="headerlink" title="2)查看属性"></a>2)查看属性</h5><p>  <code>Object.keys()</code>方法</p>
+<pre><code>  var obj = {
+  key1: 1,
+  key2: 2
+};
+
+Object.keys(obj);       //[&apos;key1&apos;, &apos;key2&apos;]</code></pre><p>#####3) 删除属性<br>delete命令用于删除对象的属性，删除成功后返回true。不管删除的属性是否存在都会返回true</p>
+<pre><code>var obj = {
+
+  a:1,
+  b:2
+
+}
+
+Object.keys(obj)    //[&apos;a&apos;,&apos;b&apos;]
+
+delete obj.a        //true
+
+Object.keys(obj)    //[&apos;b&apos;]</code></pre><h5 id="4-in"><a href="#4-in" class="headerlink" title="4) in"></a>4) <code>in</code></h5><pre><code>不管是不是继承的属性都会返回ture
+
+    var obj = {
+
+        a:1,
+        b:2
+
+    }
+
+   &apos;a&apos; in obj;           // true
+   &apos;toString&apos; in obj     //true</code></pre><ul>
+<li><p>判断是否是自身的属性 <code>hasOwnProperty</code></p>
+<pre><code>var obj = {};
+if (&apos;toString&apos; in obj) {
+  console.log(obj.hasOwnProperty(&apos;toString&apos;)) // false
+}</code></pre></li>
+</ul>
+<h5 id="5-遍历属性：for…in"><a href="#5-遍历属性：for…in" class="headerlink" title="5) 遍历属性：for…in"></a>5) 遍历属性：for…in</h5><ul>
+<li>它遍历的是对象所有可遍历（enumerable）的属性，会跳过不可遍历的属性。</li>
+<li>它不仅遍历对象自身的属性，还遍历继承的属性。</li>
+<li>可以设置属性的可遍历性，有些继承属性并不会被遍历到就是这个原因。</li>
+</ul>
+<pre><code>var obj = {
+
+  a:1,
+  b:2
+
+}
+
+obj.toString();         //&quot;[object Object]&quot;
+
+for(var i in obj){
+
+  console.log(i);
+
+}                       // a b</code></pre><ul>
+<li>也可以使用<code>hasOwnProperty</code>判断是不是自身属性。</li>
+</ul>
+<h5 id="6）with"><a href="#6）with" class="headerlink" title="6）with"></a>6）<code>with</code></h5><p>  操作同一个对象的多个属性 </p>
+<pre><code>var obj = {
+  p1: 1,
+  p2: 2,
+};
+with (obj) {
+  p1 = 4;
+  p2 = 5;
+}</code></pre><p>  这个属性尽量不要使用，当操作obj中不存在的属性时，传建一个全局变量，不建议使用</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+    <!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <p class="copyright text-muted">
+          Github <a target="_blank" href="https://github.com/zjyshy">桓宇</a>
+          
+        </p><p class="copyright text-muted">
+        
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <!-- After Footer Scripts -->
+<script src="/js/highlight.pack.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
+    codeBlocks.forEach(function(block, index) {
+      hljs.highlightBlock(block);
+    });
+  });
+</script>
+
+  </body>
+</html>
+

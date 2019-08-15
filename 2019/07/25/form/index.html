@@ -100,7 +100,7 @@
           <!-- Date -->
           <span class="date-time info">On
             <span class="date">2019-07-25</span>
-            <span class="time">19:19:37</span>
+            <span class="time">11:01:54</span>
           </span>
           
         </div>
@@ -203,7 +203,7 @@
 <pre><code>&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</code></pre><ul>
 <li><p>img </p>
 <p>一个图片提交按钮</p>
-  <input type="image">
+  <input type="image" src="img/xxx">
 
 
 
@@ -249,40 +249,52 @@
 <h3 id="select-和-option下拉菜单"><a href="#select-和-option下拉菜单" class="headerlink" title="select 和 option下拉菜单"></a>select 和 option下拉菜单</h3><ul>
 <li>autocomplete</li>
 </ul>
-<pre><code>DOMString 提供用户代理自动完成功能的提示。 有关完整值的完整列表以及有关如何使用自动完成的详细信息，请参阅HTML自动完成属性。</code></pre><ul>
+<pre><code>DOMString 提供用户代理自动完成功能的提示。 有关完整值的完整列表以及有关如何使用自动完成的详细信息，请参阅HTML自动完成属性。
+*****</code></pre><ul>
 <li><p>autofocus</p>
 <p>这个属性能够让一个对象在页面加载的时候获得焦点. 在一个页面上下文中, 只有一个对象可以有这个属性，并且是布尔值(true 或者 false).</p>
+<hr>
 </li>
 <li><p>disabled</p>
 <p>这个布尔值的属性表明一个用户是否可以操控该表单对象. 如果这个属性没有被明确定义, 则从它的父元素继承, 例如 fieldset; 如果没有父元素设置 disabled 属性, 那么默认该表单对象 enabled.</p>
+<hr>
 </li>
 <li><p>form</p>
 <p>select所关联的form表单 (它的”表单拥有者”). 如果这个属性被明确定义, 那么它的值一定是在同一个document中表单ID. 这样能够让你把select标签放在任何的位置, 不仅限于作为form表单的后代元素.</p>
+<hr>
 </li>
 <li><p>multiple</p>
 <p>这个布尔值的属性标记select是否可以多选. 默认是单选.</p>
+<hr>
 </li>
 <li><p>name</p>
 <p>控件名称</p>
+<hr>
 </li>
 <li><p>required HTML5<br>规定select的值不能为空(布尔值).</p>
+<hr>
 </li>
 <li><p>size</p>
 <p>如果控件显示为滚动列表框，则此属性表示为控件中同时可见的行数。浏览器不需要将选择元素呈现为滚动列表框。默认值为0</p>
-</li>
+<hr>
+<p><code>option</code>的<code>selected</code>默认选中</p>
+<select multiple name="timezone_offset" id="timezone-offset" class="span5">
+      <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+      <option selected value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+      <option value="-10:00">(GMT -10:00) Hawaii</option>
+      <option selected value="-09:50">(GMT -9:30) Taiohae</option>
+      <option value="-09:00">(GMT -9:00) Alaska</option>
+      <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+
+
+</select></li>
 </ul>
-<pre><code>`option`的`selected`默认选中
-
-&lt;select multiple name=&quot;timezone_offset&quot; id=&quot;timezone-offset&quot; class=&quot;span5&quot;&gt;
-      &lt;option value=&quot;-12:00&quot;&gt;(GMT -12:00) Eniwetok, Kwajalein&lt;/option&gt;
-      &lt;option selected value=&quot;-11:00&quot;&gt;(GMT -11:00) Midway Island, Samoa&lt;/option&gt;
-      &lt;option value=&quot;-10:00&quot;&gt;(GMT -10:00) Hawaii&lt;/option&gt;
-      &lt;option selected value=&quot;-09:50&quot;&gt;(GMT -9:30) Taiohae&lt;/option&gt;
-      &lt;option value=&quot;-09:00&quot;&gt;(GMT -9:00) Alaska&lt;/option&gt;
-      &lt;option value=&quot;-08:00&quot;&gt;(GMT -8:00) Pacific Time (US &amp;amp; Canada)&lt;/option&gt;
+<pre><code>&lt;/select&gt;
 
 
-  &lt;/select&gt;</code></pre>
+#### button
+
+在form中添加了一个button的时候，它默认的type是submit</code></pre>
         </div>
       </div>
     </div>
