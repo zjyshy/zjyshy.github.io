@@ -5,22 +5,26 @@
   
 
   
-  <title>table | 施振兴的个人博客</title>
+  <title>原型与原型链 | 施振兴的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="table  表示表格数据 — 即通过二维数据表表示的信息。 可包含的内容 tbody thead tfoot caption colgroup tr">
+  <meta name="description" content="这节课我真的是看的快吐了，前几节还好，最后两三节我反反复复看了四五遍，查了好多资料，还专门看了教材里面对于原型一章额讲解，自我感觉懂了，特来写下这篇文章。 不得不说方方老师的课程讲的是真的好，通过内存从本质上讲解到底什么是原型，我决定送你一张点睛神图，这是助我最终理解全部内容的图，你可以考虑把它放在课程里。 一是为了记录下来以便日后查阅，而是为了嘚瑟嘚瑟。 首先来说说全局对象window，ECMA">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="table">
-<meta property="og:url" content="http://yoursite.com/2019/07/27/table/index.html">
+<meta property="og:title" content="原型与原型链">
+<meta property="og:url" content="http://yoursite.com/2019/08/16/原型与原型链/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
-<meta property="og:description" content="table  表示表格数据 — 即通过二维数据表表示的信息。 可包含的内容 tbody thead tfoot caption colgroup tr">
+<meta property="og:description" content="这节课我真的是看的快吐了，前几节还好，最后两三节我反反复复看了四五遍，查了好多资料，还专门看了教材里面对于原型一章额讲解，自我感觉懂了，特来写下这篇文章。 不得不说方方老师的课程讲的是真的好，通过内存从本质上讲解到底什么是原型，我决定送你一张点睛神图，这是助我最终理解全部内容的图，你可以考虑把它放在课程里。 一是为了记录下来以便日后查阅，而是为了嘚瑟嘚瑟。 首先来说说全局对象window，ECMA">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-31T03:07:04.906Z">
+<meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/JS%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1.png">
+<meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/__proto__VSprototype.png">
+<meta property="og:updated_time" content="2019-08-17T08:56:55.516Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="table">
-<meta name="twitter:description" content="table  表示表格数据 — 即通过二维数据表表示的信息。 可包含的内容 tbody thead tfoot caption colgroup tr">
+<meta name="twitter:title" content="原型与原型链">
+<meta name="twitter:description" content="这节课我真的是看的快吐了，前几节还好，最后两三节我反反复复看了四五遍，查了好多资料，还专门看了教材里面对于原型一章额讲解，自我感觉懂了，特来写下这篇文章。 不得不说方方老师的课程讲的是真的好，通过内存从本质上讲解到底什么是原型，我决定送你一张点睛神图，这是助我最终理解全部内容的图，你可以考虑把它放在课程里。 一是为了记录下来以便日后查阅，而是为了嘚瑟嘚瑟。 首先来说说全局对象window，ECMA">
+<meta name="twitter:image" content="http://yoursite.com/zjyshy.github.io/img/JS%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1.png">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
@@ -61,24 +65,26 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-table" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-原型与原型链" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      table
+      原型与原型链
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/07/27/table/" class="article-date">
-  <time datetime="2019-07-27T12:04:09.000Z" itemprop="datePublished">2019-07-27</time>
+    <a href="/2019/08/16/原型与原型链/" class="article-date">
+  <time datetime="2019-08-16T08:05:07.000Z" itemprop="datePublished">2019-08-16</time>
 </a>
     
     
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
   </div>
   
     <span id="busuanzi_container_page_pv">
@@ -90,15 +96,34 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>  表示表格数据 — 即通过二维数据表表示的信息。</p>
-<h3 id="可包含的内容"><a href="#可包含的内容" class="headerlink" title="可包含的内容"></a>可包含的内容</h3><ul>
-<li>tbody</li>
-<li>thead</li>
-<li>tfoot</li>
-<li>caption</li>
-<li>colgroup</li>
-<li>tr</li>
+        <p>这节课我真的是看的快吐了，前几节还好，最后两三节我反反复复看了四五遍，查了好多资料，还专门看了教材里面对于原型一章额讲解，自我感觉懂了，特来写下这篇文章。</p>
+<p>不得不说方方老师的课程讲的是真的好，通过内存从本质上讲解到底什么是原型，我决定送你一张点睛神图，这是助我最终理解全部内容的图，你可以考虑把它放在课程里。</p>
+<p>一是为了记录下来以便日后查阅，而是为了嘚瑟嘚瑟。</p>
+<p>首先来说说全局对象window，ECMAScript的全局对象Global在浏览器中的一种表现方式。他基本拥有所有的Global属性，但是不同浏览器中还可能有一些私有的属性</p>
+<p>在浏览器环境中总是存在，不论你是否写了代码，这些全局对象都是一直存在的</p>
+<p><img src="/zjyshy.github.io/img/JS%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1.png" alt="四层结构"></p>
+<p>window里面包含了一些全局函数</p>
+<ul>
+<li><p>Number</p>
+<p>var n = new Number(1) 创建一个 Number 对象<br>1 与 new Number(1) 的区别是什么？看内存图</p>
+</li>
+<li><p>String</p>
+<p>var s = new String(‘hello’) 创建一个 String 对象<br>‘hello’ 与 new String(‘hello’) 的区别是什么？看内存图</p>
+</li>
+<li><p>Boolean</p>
+<p>var b = new Boolean(true) 创建一个 Boolean 对象<br>true 与 new Boolean(true) 的区别是什么？看内存图<br>Object<br>var o1 = {}<br>var o2 = new Object()<br>o1 和 o2 没区别</p>
+</li>
 </ul>
+<p>当你对一个非对象的数据使用了例如toString方法时，将会创建一个临时对象。</p>
+<pre><code>var n = 1 ;
+n.toString();           //&apos;1&apos;</code></pre><p>  然而这种基本类型的数据本身并没有这个方法，js就会在背后进行了一些处理</p>
+<pre><code>var temp = new Number(1);
+temp.toString();</code></pre><p>  当用完了temp就会卸磨杀驴把它干掉。</p>
+<p>  当你利用构造函数传建一个新的实例的时候</p>
+<pre><code>var  对象 = new 函数();
+对象.__proto__ === 函数.prototype</code></pre><p>prototype vs __ proto __</p>
+<p>对象的__ proto__是对于某函数的prototype的引用。</p>
+<p><img src="/zjyshy.github.io/img/__proto__VSprototype.png" alt="继承"></p>
 
       
     </div>
@@ -113,20 +138,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/07/31/layout/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            layout
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/07/25/form/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">form</div>
+      <a href="/2019/08/15/面试题/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">面试题</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

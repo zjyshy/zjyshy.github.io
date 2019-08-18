@@ -1,423 +1,1412 @@
 <!DOCTYPE html>
 <html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content>
-  <meta name="author" content="John Doe">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="施振兴的个人博客">
-  <meta property="og:description" content>
-  <meta property="og:site_name" content="施振兴的个人博客">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>施振兴的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
   <meta property="og:type" content="website">
-  <meta property="og:image" content="http://yoursite.com">
+<meta property="og:title" content="施振兴的个人博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="施振兴的个人博客">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="施振兴的个人博客">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/images/default-avatar.webp">
   
-
-  <!-- Site Title -->
-  <title>施振兴的个人博客</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
   
-  <link rel="stylesheet" href="/css/style.light.css">
-
-  <!-- Google Analytics -->
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script>
 </head>
-
-  <body>
-    <!-- Page Header -->
-
-
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">施振兴的个人博客</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.com/zjyshy">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:<zjyshyy@gmail.com>">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
   </div>
 </header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main">
+  
+    <article id="post-原型与原型链" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/16/原型与原型链/">原型与原型链</a>
+    </h1>
+  
 
-<!-- Home Page Post List -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/16/原型与原型链/" class="article-date">
+  <time datetime="2019-08-16T08:05:07.000Z" itemprop="datePublished">2019-08-16</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <div class="post-item-wrapper">
-  <a href="/2019/08/15/面试题/" class="post-title">
-      面试题
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-08-15</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
+        <p>这节课我真的是看的快吐了，前几节还好，最后两三节我反反复复看了四五遍，查了好多资料，还专门看了教材里面对于原型一章额讲解，自我感觉懂了，特来写下这篇文章。</p>
+<p>不得不说方方老师的课程讲的是真的好，通过内存从本质上讲解到底什么是原型，我决定送你一张点睛神图，这是助我最终理解全部内容的图，你可以考虑把它放在课程里。</p>
+<p>一是为了记录下来以便日后查阅，而是为了嘚瑟嘚瑟。</p>
+<p>首先来说说全局对象window，ECMAScript的全局对象Global在浏览器中的一种表现方式。他基本拥有所有的Global属性，但是不同浏览器中还可能有一些私有的属性</p>
+<p>在浏览器环境中总是存在，不论你是否写了代码，这些全局对象都是一直存在的</p>
+<p><img src="/zjyshy.github.io/img/JS%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1.png" alt="四层结构"></p>
+<p>window里面包含了一些全局函数</p>
+<ul>
+<li><p>Number</p>
+<p>var n = new Number(1) 创建一个 Number 对象<br>1 与 new Number(1) 的区别是什么？看内存图</p>
+</li>
+<li><p>String</p>
+<p>var s = new String(‘hello’) 创建一个 String 对象<br>‘hello’ 与 new String(‘hello’) 的区别是什么？看内存图</p>
+</li>
+<li><p>Boolean</p>
+<p>var b = new Boolean(true) 创建一个 Boolean 对象<br>true 与 new Boolean(true) 的区别是什么？看内存图<br>Object<br>var o1 = {}<br>var o2 = new Object()<br>o1 和 o2 没区别</p>
+</li>
+</ul>
+<p>当你对一个非对象的数据使用了例如toString方法时，将会创建一个临时对象。</p>
+<pre><code>var n = 1 ;
+n.toString();           //&apos;1&apos;</code></pre><p>  然而这种基本类型的数据本身并没有这个方法，js就会在背后进行了一些处理</p>
+<pre><code>var temp = new Number(1);
+temp.toString();</code></pre><p>  当用完了temp就会卸磨杀驴把它干掉。</p>
+<p>  当你利用构造函数传建一个新的实例的时候</p>
+<pre><code>var  对象 = new 函数();
+对象.__proto__ === 函数.prototype</code></pre><p>prototype vs __ proto __</p>
+<p>对象的__ proto__是对于某函数的prototype的引用。</p>
+<p><img src="/zjyshy.github.io/img/__proto__VSprototype.png" alt="继承"></p>
+
+      
     </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-面试题" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
       
-        <div class="untagged">Untagged</div>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/15/面试题/">面试题</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/15/面试题/" class="article-date">
+  <time datetime="2019-08-15T10:26:32.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="1，对象"><a href="#1，对象" class="headerlink" title="1，对象"></a>1，对象</h3><hr>
+<h5 id="1-1"><a href="#1-1" class="headerlink" title="1.1"></a>1.1</h5><p>  Q:此时打印出的a.x和b.x的值分别是多少?</p>
+<pre><code>var a =  {n:1};
+var b = a;
+a.x = a = {n:2};
+
+console.log(a.x);
+console.log(b.x);</code></pre><p>  <span style="color :red" title="//undeffined  //{n:2}">鼠标悬停看答案</span></p>
+<p>  解释：这个体主要的考点在于第三行，对于js符号优先级和语句执行时步骤的顺序。</p>
+<ul>
+<li><p>第一行和第二行：假设初始a指向100，则b指向也是100。</p>
+</li>
+<li><p>第三行：</p>
+<ul>
+<li><p>a.x = a = {n:2}浏览器是自左向右看代码，第三句是先将两个指向100的a准备好, 此时两个a都指向100</p>
+</li>
+<li><p>a = {n:2}:因为<code>=</code>是自右向左。此时a指向了200，左边是早已准备好的指向100的指针。</p>
+</li>
+<li><p>a.x:为100号内存空间添加属性x</p>
+</li>
+<li><p>a.x = a:将a指向的新地址存入地址为100内存空间的x属性</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h5><p>  <strong>Q</strong>：打印出来的内容是什么</p>
+<pre><code>var a = false;
+
+var b = new Boolean(false);
+
+if(a)console.log(1);
+
+if(b)console.log(2)</code></pre><p>  解释：这个题目考察的是对于falsy值的记忆，因为a是基本类型<code>false</code>，b是一个对象，对象代表的布尔值是true。</p>
+<p><span style="color :red" title="//2">鼠标悬停看答案</span></p>
+<hr>
+<h3 id="2，垃圾回收"><a href="#2，垃圾回收" class="headerlink" title="2，垃圾回收"></a>2，垃圾回收</h3><p>  垃圾回收：如果一个对象没有被引用，那他就是垃圾，将被浏览器回收。IE6对于垃圾回收有BUG</p>
+<h5 id="1-1-1"><a href="#1-1-1" class="headerlink" title="1.1"></a>1.1</h5><p>  <strong>Q</strong>:现在的function()会不会被浏览器回收</p>
+<pre><code>var fn = function(){}
+
+documnet.body.onclick = fn;
+
+fn = null; </code></pre><p>  <span style="color :red" title="NO">鼠标悬停看答案</span></p>
+<p>  解释：因为function()这个对象在第二行被引用了。</p>
+<h5 id="2"><a href="#2" class="headerlink" title="2,"></a>2,</h5><p><strong>Q</strong>：n.xxx会不会报错，如果不报错最终值又是多少</p>
+<pre><code>var n = 1;
+n.xxx = 1;           
+n.xxx;                //undefined</code></pre><p> <span style="color :red" title="//不会报错  //undefined">鼠标悬停看答案</span></p>
+<p>  解释：<br>  由于n是一个基本类型，它本身并没有方法，也不能对他进行<code>.</code>操作。</p>
+<p>  当需要对n执行<code>.</code>操作时，会先创建一个temp来过渡,当结束后temp就会别销毁掉。</p>
+<pre><code>//暗中执行的操作
+var temp = new Nember(n);
+temp.xxx = 1;</code></pre><h2 id="Css"><a href="#Css" class="headerlink" title="Css"></a>Css</h2><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2>
       
     </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-function" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/15/function/">function</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/15/function/" class="article-date">
+  <time datetime="2019-08-15T05:10:27.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-JS数据类型" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/13/JS数据类型/">JS数据类型</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/13/JS数据类型/" class="article-date">
+  <time datetime="2019-08-13T02:27:31.000Z" itemprop="datePublished">2019-08-13</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><strong><a href="#1，简介">1，简介</a></strong></p>
+<p><strong><a href="#2，typeof">2，typeof</a></strong></p>
+<p><strong><a href="#3，null和undefined">3，null和undefined</a></strong></p>
+<p><strong><a href="#4，Number">4，Number</a></strong></p>
+<p><strong><a href="#5，字符串">5，字符串</a></strong></p>
+<p><strong><a href="#6，对象">6，对象</a></strong></p>
+<p><strong><a href="#7，类型的转换">7，类型的转换</a></strong></p>
+<hr>
+<h3 id="1，简介"><a href="#1，简介" class="headerlink" title="1，简介"></a>1，简介</h3><p>js的数据类型可以分为两个大类</p>
+<ul>
+<li><p>简单类型（基本类型)</p>
+<ul>
+<li>Number :整数或者小数</li>
+<li>String ： 文本</li>
+<li>Boolean ：true和false两个特殊值</li>
+<li>undefined ：未定义的值</li>
+<li>null ：空值 </li>
+<li>symbol ：</li>
+</ul>
+</li>
+<li><p>复杂类型（合成类型）</p>
+<ul>
+<li>Object：各种值得集合<ul>
+<li>狭义的对象</li>
+<li>数组</li>
+<li>函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2，typeof"><a href="#2，typeof" class="headerlink" title="2，typeof"></a>2，typeof</h3><p>typeof的作用是返回一个值的数据类型</p>
+<p>除此之外还有一个运算符和一个方法可以确定一个值的数据类型。</p>
+<ul>
+<li><p>typeof对于各种数据类型的返回值</p>
+<pre><code>typeof 1          //number
+typeof &quot;aa&quot;       //string
+typeof true       //boolean
+typeof undefined  //undefined
+function a(){}
+typeof a          //function
+typeof null       //object
+typeof {}         //object
+typeof []         //object</code></pre></li>
+</ul>
+<hr>
+<h3 id="3，null和undefined"><a href="#3，null和undefined" class="headerlink" title="3，null和undefined"></a>3，null和undefined</h3><h4 id="3-1-概述"><a href="#3-1-概述" class="headerlink" title="3.1 概述"></a>3.1 概述</h4><p>  在大多数的编程语言中并没有使用两个值来表示空这一概念。在设计之初，Eich其实只涉及了<code>null</code>，但他后来觉得不妥，就又加了一个<code>undefined</code>。</p>
+<p>  将一个变量赋值为<code>undefined</code>或是<code>null</code>的语法效果基本没有任何区别。</p>
+<pre><code>null == undefined     //true
+null === undefinded   //false</code></pre><h4 id="3-2-区别"><a href="#3-2-区别" class="headerlink" title="3.2 区别"></a>3.2 区别</h4><ul>
+<li><p><code>null</code>表示一个空的对象，当把它转换为数值的时候可以自动转变成0,<br><code>undefined</code>则不行。</p>
+<p>Number(null);      // 0<br>Number(undefined)  //NaN</p>
+</li>
+<li><p>使用的场景不同</p>
+<ul>
+<li><code>undefined</code></li>
+</ul>
+</li>
+</ul>
+<pre><code>    1,声明变量但是没有赋值
+
+      var test;                   //undefined
+
+  2,调用函数时，应该提供的参数没有被提供
+
+      function test1(a){
+        return a;
+      }
+
+      test1();                    //undefined
+
+  3,对象没有赋值的属性
+
+      window.aaaaa;               //undefined
+
+  4,没有设置返回值的函数，默认返回值就是undefined
+
+
+      function test4(){
+
+      }
+
+      test4();                    //undefined
+
+
+
+
+
+* `null`
+
+  `null`表示空值，即该处的值现在为空。调用函数时，某个参数未设置任何值，这时就可以传入`null`，表示该参数为空。比如，某个函数接受引擎抛出的错误作为参数，如果运行过程中未出错，那么这个参数就会传入`null`，表示未发生错误。</code></pre><hr>
+<h3 id="4，Number"><a href="#4，Number" class="headerlink" title="4，Number"></a>4，Number</h3><h4 id="4-1-整数和浮点数"><a href="#4-1-整数和浮点数" class="headerlink" title="4.1 整数和浮点数"></a>4.1 整数和浮点数</h4><p>  与c语言不同，js所有的数字都是用<strong>64位浮点数</strong>来表示的。但是有些运算只有整数才能完成，此时js会将64位浮点数，转换成<strong>32位整数</strong>。</p>
+<ul>
+<li>由于计算机对于浮点数的存储机制，决定了浮点数结算结果有时不会是特别精确的值。</li>
+</ul>
+<pre><code>0.1 + 0.2 === 0.3         //false
+
+
+0.7 / 0.1                 //0.999999999999999
+
+
+(0.6-0.3) === (0.7-0.4)   //false</code></pre><ul>
+<li><p>js可以精确表示-2^53^ 到 2^53^ ,当大于这个数的时候就无法保持精度，这个数是16位，即js可以保证<strong>15</strong>位数的计算精度。</p>
+<pre><code>Math.pow(2,53)     //9007199254740992
+Math.pow(2,53)+1   //9007199254740992</code></pre></li>
+</ul>
+<ul>
+<li><p>js可以表示2^1024^ 到 2^-1023^</p>
+<ul>
+<li>大与1024次方发生”正向溢出”</li>
+</ul>
+</li>
+</ul>
+<pre><code>Math.pow(2,1025)        //Infinity</code></pre><ul>
+<li><p>小于-1075(指数部分-1023和小数部分的52位)次方发生”负向溢出”</p>
+<pre><code>Math.pow(2,-1075)      //0</code></pre></li>
+</ul>
+<ul>
+<li><p>Number对象的<code>MAX_VALUE</code>和<code>MIN_VALUE</code>分别返回js所能表示的最大的数</p>
+<pre><code>Number.MAX_VALUE      // 1.7976931348623157e+308
+Number.MIN_VALUE      // 5e-324</code></pre></li>
+</ul>
+<hr>
+<h4 id="4-2数值的表示法"><a href="#4-2数值的表示法" class="headerlink" title="4.2数值的表示法"></a>4.2数值的表示法</h4><ul>
+<li><p>科学计数法，一个整数 + e +指数部分</p>
+<pre><code>111e10              //1110000000000</code></pre></li>
+</ul>
+<ul>
+<li><p>有两种情况会让js自动转为科学计数法</p>
+<ul>
+<li><p>小数点前多与21位</p>
+<pre><code>1231131231231231231234   //1.2311312312312311e+21</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code>* 小数点后的0多与5个
+
+
+      0.0000001               //1e-7</code></pre><hr>
+<h4 id="4-3数值的进制"><a href="#4-3数值的进制" class="headerlink" title="4.3数值的进制"></a>4.3数值的进制</h4><p>  对于各种进制在js的写法</p>
+<ul>
+<li><p>2进制  加前缀<code>0b</code>或者<code>0B</code>的数值</p>
+</li>
+<li><p>8进制  加前缀<code>0O</code>或者<code>0o</code>的数值</p>
+</li>
+<li><p>16进制 加前缀<code>0x</code>或者<code>0X</code>的数值</p>
+</li>
+<li><p><em>PS*</em>:如果在一个数值前加<code>0</code>并且这个数的每一位都<strong>小于</strong>8，name也可以用来表示8进制，否则就是十进制。</p>
+</li>
+</ul>
+<p>  当相应进制中出现了不属于该进制的数值，那么便会报错</p>
+<h4 id="4-4-特殊值"><a href="#4-4-特殊值" class="headerlink" title="4.4 特殊值"></a>4.4 特殊值</h4><h5 id="1-0"><a href="#1-0" class="headerlink" title="1) 0"></a>1) <code>0</code></h5><pre><code>`+0`和`-0`，js里面的0有两个，它们完全等价，几乎所有场合他们都会被当做一个普通的`0`来使用，唯一的区别是在当**分母**的的时候。
+
+    0 === +0     //true
+    0 === -0     //true
+    +0 === -0    //true
+
+
+    1/0        //Infinity
+    1/+0       //Infinity
+    1/-0       //-Infinity</code></pre><p>#####2) <code>NaN</code></p>
+<h6 id="1-含义"><a href="#1-含义" class="headerlink" title="(1)含义"></a>(1)含义</h6><pre><code>它主要出现在将字符串解析成数字出错的场合
+
+  1-&apos;e&apos;              //NaN    
+
+
+它本身类型属于`Number`
+
+  typeof NaN         //Number
+
+
+一些计算出现问题也会返回NaN
+
+  Math.acos(2)       // NaN
+  Math.log(-1)       // NaN
+  Math.sqrt(-1)      // NaN
+  0/0                //NaN</code></pre><h6 id="（2）运算规则"><a href="#（2）运算规则" class="headerlink" title="（2）运算规则"></a>（2）运算规则</h6><p>  它不等于任何值，包括它本身</p>
+<pre><code>NaN === NaN       //false</code></pre><p>  与任何数运算得到NaN</p>
+<pre><code>1+NaN             //NaN</code></pre><h6 id="3-isNaN"><a href="#3-isNaN" class="headerlink" title="(3)isNaN"></a>(3)<code>isNaN</code></h6><h5 id="3-Infinity"><a href="#3-Infinity" class="headerlink" title="3) Infinity"></a>3) <code>Infinity</code></h5><p><code>Infinity</code>大于一切<strong>数值</strong>，<code>-infinity</code>小于一切<strong>数值</strong>,但是两者与<code>NaN</code>比较的结果都是false</p>
+<pre><code> Infinity &gt; NaN    //false
+-Infinity &gt; NaN    //false
+ Infinity &lt; NaN    //false
+-Infinity &lt; NaN    //false</code></pre><hr>
+<h3 id="5，字符串"><a href="#5，字符串" class="headerlink" title="5，字符串"></a>5，字符串</h3><p>用’’或””或``包起来的一个或者多个字符就是字符串。</p>
+<h4 id="5-1换行书写"><a href="#5-1换行书写" class="headerlink" title="5.1换行书写"></a>5.1换行书写</h4><h5 id="1）使用"><a href="#1）使用" class="headerlink" title="1）使用+"></a>1）使用<code>+</code></h5><pre><code>var str = &quot;a&quot;
+          +&quot;b&quot;;      
+
+a             //ab</code></pre><h5 id="2"><a href="#2" class="headerlink" title="2) `"></a>2) `</h5><pre><code>var str  = `aaa
+aaa
+aaa`;
+
+str                 //aaaaaaaaa</code></pre><h5 id="3"><a href="#3" class="headerlink" title="3) \"></a>3) <code>\</code></h5><p>   这种方式很容易出现问题，当反斜杠后面有任何内容，包括空格，都会导致报错。</p>
+<pre><code>var str = &quot;aaa\
+          aaa\
+          aaa&quot;;
+
+
+    str               //aaaaaaaaa</code></pre><h4 id="5-2转义字符"><a href="#5-2转义字符" class="headerlink" title="5.2转义字符\"></a>5.2转义字符<code>\</code></h4><h5 id="1）一些常用的转义字符"><a href="#1）一些常用的转义字符" class="headerlink" title="1）一些常用的转义字符"></a>1）一些常用的转义字符</h5><pre><code>\0 ：null（\u0000）
+\b ：后退键（\u0008）
+\f ：换页符（\u000C）
+\n ：换行符（\u000A）
+\r ：回车键（\u000D）
+\t ：制表符（\u0009）
+\v ：垂直制表符（\u000B）
+\&apos; ：单引号（\u0027）
+\&quot; ：双引号（\u0022）
+\\ ：反斜杠（\u005C）</code></pre><h5 id="2）三种特殊用法"><a href="#2）三种特殊用法" class="headerlink" title="2）三种特殊用法"></a>2）三种特殊用法</h5><ul>
+<li><p>\HHH</p>
+<p> 反斜杠后面紧跟三个八进制数（000到377），代表一个字符。HHH对应该字符的 Unicode 码点，比如\251表示版权符号。显然，这种方法只能输出256种字符。</p>
+</li>
+<li><p>\xHH</p>
+<p> \x后面紧跟两个十六进制数（00到FF），代表一个字符。HH对应该字符的 Unicode 码点，比如\xA9表示版权符号。这种方法也只能输出256种字符。</p>
+</li>
+<li><p>\uXXXX</p>
+<p> \u后面紧跟四个十六进制数（0000到FFFF），代表一个字符。XXXX对应该字符的 Unicode 码点，比如\u00A9表示版权符号。</p>
+</li>
+</ul>
+<h4 id="5-3-字符串与数组"><a href="#5-3-字符串与数组" class="headerlink" title="5.3 字符串与数组"></a>5.3 字符串与数组</h4><p>  可以通过数组来使用显示字符串，但是并不可以被修改。</p>
+<pre><code>var test = &quot;Hello&quot;;
+test[0]         //H
+
+test[8]         //undefined
+
+test[0] = &quot;h&quot;;
+test;           //Hello</code></pre><h4 id="5-4-length属性"><a href="#5-4-length属性" class="headerlink" title="5.4 length属性"></a>5.4 length属性</h4><p>  返回字符串长度，但是也没办法改变。</p>
+<p>  var test = “hello”;</p>
+<p>  test.length;           //5</p>
+<p>  test.length = 1;<br>  test.length;           //5</p>
+<h4 id="5-5-Base64转码"><a href="#5-5-Base64转码" class="headerlink" title="5.5 Base64转码"></a>5.5 Base64转码</h4><p>主要作用是，将任意值转成 0～9、A～Z、a-z、+和/这64个字符组成的可打印字符。</p>
+<h5 id="1）两个原生方法"><a href="#1）两个原生方法" class="headerlink" title="1）两个原生方法"></a>1）两个原生方法</h5><ul>
+<li><p>btoa()将任意值转变成Base64</p>
+</li>
+<li><p>atob()将Base64转换成原来的值</p>
+</li>
+</ul>
+<p>  #####2）转换字符</p>
+<p>  这个方法对于ASCII码的字符支持很差，需要加一个中间环节</p>
+<pre><code>  function b64Encode(str) {
+
+    return btoa(encodeURIComponent(str));
+
+  }
+
+function b64Decode(str) {
+
+    return decodeURIComponent(atob(str));
+
+  }
+
+b64Encode(&apos;你好&apos;)                        // &quot;JUU0JUJEJUEwJUU1JUE1JUJE&quot;
+b64Decode(&apos;JUU0JUJEJUEwJUU1JUE1JUJE&apos;)   // &quot;你好&quot;</code></pre><hr>
+<h3 id="6，对象"><a href="#6，对象" class="headerlink" title="6，对象"></a>6，对象</h3><p>  对象是一种十分特别的数据类型，是由各种原始类型组合而成的“键值对”集合。</p>
+<h4 id="6-1键名"><a href="#6-1键名" class="headerlink" title="6.1键名"></a>6.1键名</h4><p>  对象的所有键名都是字符串，在定义的时候键名会被自动转换成字符串，数值也会被转换成字符串</p>
+<pre><code>var obj = {
+  a:1,
+  b:2
+
+}
+
+等价于
+
+var obj = {
+
+  &apos;a&apos;:1,
+  &apos;b&apos;:2
+
+}</code></pre><h4 id="6-2-引用"><a href="#6-2-引用" class="headerlink" title="6.2 引用"></a>6.2 引用</h4><p>  这个和c语言的指针真的很像，都是存的是内存地址，如果不同的变量名指向同一个对象，那么它们都是这个对象的引用，也就是说指向同一个内存地址。修改其中一个变量，会影响到其他所有变量。这是对象与原始类型的最大的区别。</p>
+<pre><code>var obj = {hehe:1};
+var n = 1;
+
+function a(test){
+
+    test.hehe = 2;
+
+
+
+}
+
+a(obj);        //这里传入的是这个对象
+               //这样test和obj所引用的内存地址完全相同
+               //这样修改其中一个就会影响到其他的
+a(n);
+console.log(obj.hehe);
+console.log(n)</code></pre><h4 id="6-3-属性"><a href="#6-3-属性" class="headerlink" title="6.3 属性"></a>6.3 属性</h4><h5 id="1）-和"><a href="#1）-和" class="headerlink" title="1）.和[]"></a>1）<code>.</code>和<code>[]</code></h5><p>  个人认为<code>.</code>这种方法看似简单好用，但实际上功能不是很全面。因为如果想要通过字符串变量来使用属性，就只能使用<code>[]</code>,还有当键名是数字时也没办法使用<code>.</code>。</p>
+<pre><code>  var obj = {
+
+    name:&apos;zjy&apos;,
+    gender:&apos;female&apos;,
+    1:666
+  }
+
+
+var a = name;
+var b = 1;
+
+obj.a;                //undefined
+obj.name              //zjy
+obj.1                 //报错啦Uncaught SyntaxError: Unexpected number
+                      // 未捕获的语法错误：意料之外的数字
+obj.b                 //undefined
+
+obj[&apos;a&apos;]              //undefined
+obj[&apos;name&apos;]           //zjy
+obj[a]                //zjy
+obj[1]                //666
+obj[&apos;1&apos;]              //666
+obj[b]                //666</code></pre><h5 id="2-查看属性"><a href="#2-查看属性" class="headerlink" title="2)查看属性"></a>2)查看属性</h5><p>  <code>Object.keys()</code>方法</p>
+<pre><code>  var obj = {
+  key1: 1,
+  key2: 2
+};
+
+Object.keys(obj);       //[&apos;key1&apos;, &apos;key2&apos;]</code></pre><p>#####3) 删除属性<br>delete命令用于删除对象的属性，删除成功后返回true。不管删除的属性是否存在都会返回true</p>
+<pre><code>var obj = {
+
+  a:1,
+  b:2
+
+}
+
+Object.keys(obj)    //[&apos;a&apos;,&apos;b&apos;]
+
+delete obj.a        //true
+
+Object.keys(obj)    //[&apos;b&apos;]</code></pre><h5 id="4-in"><a href="#4-in" class="headerlink" title="4) in"></a>4) <code>in</code></h5><pre><code>不管是不是继承的属性都会返回ture
+
+    var obj = {
+
+        a:1,
+        b:2
+
+    }
+
+   &apos;a&apos; in obj;           // true
+   &apos;toString&apos; in obj     //true</code></pre><ul>
+<li><p>判断是否是自身的属性 <code>hasOwnProperty</code></p>
+<pre><code>var obj = {};
+if (&apos;toString&apos; in obj) {
+  console.log(obj.hasOwnProperty(&apos;toString&apos;)) // false
+}</code></pre></li>
+</ul>
+<h5 id="5-遍历属性：for…in"><a href="#5-遍历属性：for…in" class="headerlink" title="5) 遍历属性：for…in"></a>5) 遍历属性：for…in</h5><ul>
+<li>它遍历的是对象所有可遍历（enumerable）的属性，会跳过不可遍历的属性。</li>
+<li>它不仅遍历对象自身的属性，还遍历继承的属性。</li>
+<li>可以设置属性的可遍历性，有些继承属性并不会被遍历到就是这个原因。</li>
+</ul>
+<pre><code>var obj = {
+
+  a:1,
+  b:2
+
+}
+
+obj.toString();         //&quot;[object Object]&quot;
+
+for(var i in obj){
+
+  console.log(i);
+
+}                       // a b</code></pre><ul>
+<li>也可以使用<code>hasOwnProperty</code>判断是不是自身属性。</li>
+</ul>
+<h5 id="6）with"><a href="#6）with" class="headerlink" title="6）with"></a>6）<code>with</code></h5><p>  操作同一个对象的多个属性 </p>
+<pre><code>var obj = {
+  p1: 1,
+  p2: 2,
+};
+with (obj) {
+  p1 = 4;
+  p2 = 5;
+}</code></pre><p>  这个属性尽量不要使用，当操作obj中不存在的属性时，传建一个全局变量，不建议使用</p>
+<h4 id="7，类型的转换"><a href="#7，类型的转换" class="headerlink" title="7，类型的转换"></a>7，类型的转换</h4><h5 id="7-1转成Sstring"><a href="#7-1转成Sstring" class="headerlink" title="7.1转成Sstring"></a>7.1转成Sstring</h5><h6 id="1-window-string"><a href="#1-window-string" class="headerlink" title="1) window.string()"></a>1) <code>window.string()</code></h6><pre><code>window.String(1)                 //&quot;1&quot;
+window.String(ture)              //&quot;true&quot;
+window.String(undefined)         //undefined
+window.String(({a:1}))           //&quot;[object Object]&quot;
+window.String(null)              //&quot;null&quot;</code></pre><h5 id="2-xxx-toString"><a href="#2-xxx-toString" class="headerlink" title="2) xxx.toString()"></a>2) <code>xxx.toString()</code></h5><p>  这个属性很常用但是功能的局限性也很大。</p>
+<pre><code>var a = 1;
+a.toString();                 //&quot;1&quot;
+
+a = true;
+a.toString();                 //&quot;ture&quot;
+
+a = false;
+a.toString();                 //&quot;false&quot;
+
+a = null;
+a.toString();                 //Uncaught TypeError: Cannot read property &apos;toString&apos; of null
+
+a = undefined;
+a.toString();                 //Uncaught TypeError: Cannot read property &apos;toString&apos; of undefined
+
+a = {aa:1};
+a.toString()                  //&quot;[object Object]&quot;</code></pre><h5 id="3-quot-quot"><a href="#3-quot-quot" class="headerlink" title="3) +&quot;&quot;"></a>3) <code>+&quot;&quot;</code></h5><p>  比较常用并且效果很好，加号的性质是，如果两个不同数据类型的数据相加，会优先转换成字符串</p>
+<pre><code>1 + &quot;1&quot;                //&quot;11&quot;
+
+1+&quot;1&quot;+true             //&quot;11true&quot;
+
+1+true+1               //&quot;21&quot;</code></pre><p>  将想要转换成字符串的数据加一个””(是空字符串，不是空格字符串)</p>
+<pre><code>1 + &quot;&quot;                //&quot;1&quot;
+true + &quot;&quot;             //&quot;true&quot;
+false + &quot;&quot;            //&quot;false&quot;
+null + &quot;&quot;             //&quot;null&quot;
+undefined+ &quot;&quot;         //&quot;undefined&quot;</code></pre><h4 id="7-2-转成Boolean"><a href="#7-2-转成Boolean" class="headerlink" title="7.2 转成Boolean"></a>7.2 转成Boolean</h4><h5 id="1-Boolean"><a href="#1-Boolean" class="headerlink" title="1) Boolean()"></a>1) <code>Boolean()</code></h5><pre><code>Boolean(1);             //ture
+Boolean(0);             //false 
+Boolean(null);          //false</code></pre><h5 id="2-1"><a href="#2-1" class="headerlink" title="2) !!"></a>2) <code>!!</code></h5><pre><code>!!1                     //true
+!!0                     //false</code></pre><h5 id="3-5个会转换成false的特殊值-falsy值"><a href="#3-5个会转换成false的特殊值-falsy值" class="headerlink" title="3) 5个会转换成false的特殊值(falsy值)"></a>3) 5个会转换成<code>false</code>的特殊值(falsy值)</h5><ul>
+<li>0</li>
+<li>NaN</li>
+<li>null</li>
+<li>undefined</li>
+<li>“”</li>
+</ul>
+<h4 id="7-3-转成Number"><a href="#7-3-转成Number" class="headerlink" title="7.3 转成Number"></a>7.3 转成Number</h4><h5 id="1-Number"><a href="#1-Number" class="headerlink" title="1) Number()"></a>1) Number()</h5><pre><code>Number(&quot;&quot;);             //0
+Number(&quot; &quot;);            //0
+Number(&quot;1&quot;)             //1
+Number(&quot;1.23&quot;)          //1.23
+Number(&quot;123a&quot;)          //NaN
+Number(true);           //1
+Number(false);          //0
+Number(null);           //0
+Number(undefined);      //0</code></pre><h5 id="2-parseInt"><a href="#2-parseInt" class="headerlink" title="2) parseInt"></a>2) <code>parseInt</code></h5><p>  在处理小数字符串，空字符串，空格字符串，带字母的字符串以及<code>Null</code> <code>undefined</code> <code>Boolean</code>时与Number不同。</p>
+<ul>
+<li><p>默认转换成10进制</p>
+<pre><code>parseInt(&quot;&quot;);           //NaN
+parseInt(&quot; &quot;);          //NaN
+parseInt(&quot;123aaa&quot;);     //123
+parseInt(&quot;aaa123&quot;);     //NaN
+parseInt(&quot;1.23&quot;);       //1
+parseInt(&quot;0x10&quot;);       //16
+parseInt(&quot;011&quot;);        //11
+
+parseInt(true)          //NaN
+parseInt(false)         //NaN
+
+parseInt(null)          //NaN
+parseInt(undefined)     //NaN</code></pre></li>
+<li><p>加上进制参数,</p>
+<pre><code>parseInt(222,2);      //NaN
+parseInt(111,2);      //7
+parseInt(1f,30);      //45</code></pre><h5 id="3-parseFloat"><a href="#3-parseFloat" class="headerlink" title="3) parseFloat"></a>3) <code>parseFloat</code></h5><p>除了在处理小数字符串时不会将点后面的内容忽略，其余和<code>parseInt</code>基本相同。</p>
+</li>
+</ul>
+<h5 id="4-0"><a href="#4-0" class="headerlink" title="4) -0"></a>4) -0</h5><pre><code>基本等同于Number,下面是两者之间的差异
+
+    undefined - 0           //NaN</code></pre><h5 id="5"><a href="#5" class="headerlink" title="5) +"></a>5) <code>+</code></h5><pre><code>和-0效果相同</code></pre><h3 id="8，深拷贝vs浅拷贝"><a href="#8，深拷贝vs浅拷贝" class="headerlink" title="8，深拷贝vs浅拷贝"></a>8，深拷贝vs浅拷贝</h3><p>基本类型的简单赋值就是深拷贝,但是一般不会考虑基本类型。只会考虑对象的深拷贝。</p>
+<pre><code>var a = 1;
+var b = a;
+b = 3;
+console.log(a);       //1
+console.log(b);       //3</code></pre><p>对象默认的赋值方式就是浅拷贝</p>
+<pre><code>var a = {test :1};
+var b = a ;
+b.test = 2;
+console.log(a.test);  //2
+console.log(b.test);  //2</code></pre>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-layout" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/31/layout/">layout</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/31/layout/" class="article-date">
+  <time datetime="2019-07-31T06:25:25.000Z" itemprop="datePublished">2019-07-31</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p>  <a href="#盒模型">1，盒模型</a></p>
+<p>  <a href="#display属性">2，display属性</a></p>
+<p>  <a href="#floa属性">3，float属性</a></p>
+<p>  <a href="#position属性">4，position属性</a></p>
+<p>  <a href="#常见布局">5，常见布局</a></p>
+<hr>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>  <img src="/zjyshy.github.io/img/boxmodel.png" alt="盒模型"></p>
+<h4 id="1-1-box-sizing"><a href="#1-1-box-sizing" class="headerlink" title="1.1 box-sizing"></a>1.1 box-sizing</h4><p>  这个属性至关重要，它可以改变盒模型计算大小的方式，他有两个主要属性<code>content-box</code> <code>border-box</code></p>
+<ul>
+<li><p><code>centent-box</code></p>
+<p> 是默认值，当我们设置<code>width</code>时，会把<code>border</code>和<code>padding</code>的值排除在外。</p>
+<p> <code>width</code> = <code>content</code></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><code>border-box</code></p>
+<p>  将<code>border</code>和<code>padding</code>的值算入宽度。</p>
+<p>  if <code>padding</code> + <code>border</code> &lt; <code>width</code>{
+<br><br></p>
+<p>   &nbsp;&nbsp; &nbsp;&nbsp; <code>width</code> = <code>content</code> + <code>padding</code><em>2 + <code>border</code></em>2;<br>   <br><br><br>  }else{<br><br><br><br>   &nbsp;&nbsp; &nbsp;&nbsp;<code>content</code> = 0;</p>
+<p>   &nbsp;&nbsp; &nbsp;&nbsp; <code>width</code> = <code>padding</code><em>2 + <code>border</code></em>2;<br><br><br><br>  }</p>
+<p>  <strong>对于<code>height</code>也有相同的结果</strong><br>  <br><br></p>
+<p>当为<code>content-box</code>和<code>border-box</code>设置了相同的宽高时<br><a href="http://js.jirengu.com/wapos/2/edit?html,css,output" target="_blank" rel="noopener">例子</a></p>
+</li>
+</ul>
+<h3 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h3><p>  任何布局方式都是建立在这个无比重要的属性上的。<br>  这个属性的值超级多，但是主要需要掌握的是<code>inline</code> <code>block</code> <code>inlin-block</code> <code>none</code></p>
+<h4 id="常见取值"><a href="#常见取值" class="headerlink" title="常见取值"></a>常见取值</h4><h5 id="1-inline"><a href="#1-inline" class="headerlink" title="1.inline"></a>1.inline</h5><ul>
+<li><strong>特点</strong>：高度和宽度由它的内容决定，没办法对一个inline元素设置<code>width</code>h和<code>height</code>。<code>margin-left</code> <code>margin-right</code>有效，但是<code>margin-top</code> <code>margin-bottom</code>将会无效。</li>
+</ul>
+<h5 id="2-block"><a href="#2-block" class="headerlink" title="2. block"></a>2. block</h5><ul>
+<li><p><strong>特点</strong>：宽度由父元素决定，高度默认由内容决定，但是可以自行设置<code>width</code>和<code>height</code></p>
+<h5 id="3-inline-block"><a href="#3-inline-block" class="headerlink" title="3. inline-block"></a>3. inline-block</h5></li>
+<li><p><strong>特点</strong>：宽度由内容决定，但是除此之外都和block相同。</p>
+<h5 id="4-none"><a href="#4-none" class="headerlink" title="4 none"></a>4 none</h5><p>设置了none属性的元素会</p>
+</li>
+</ul>
+<h3 id="float属性"><a href="#float属性" class="headerlink" title="float属性"></a>float属性</h3><p> 这个词中文有漂浮、浮动之意。可以让元素在文档流里面飘起来,也就是从正常的文档流中移除~他会将除了<code>flex</code>和<code>inlin-flex</code>之外的<code>display</code>值全部改成<code>block</code>,但是在为设置它的宽度之前，宽度会受内容影响，状态更像<code>inline-blkock</code>。</p>
+<h4 id="3-1-常见取值"><a href="#3-1-常见取值" class="headerlink" title="3.1 常见取值"></a>3.1 常见取值</h4><h5 id="left-amp-right"><a href="#left-amp-right" class="headerlink" title="left &amp; right"></a>left &amp; right</h5><p>  让元素向所在块的相应方向浮动。直到碰到所<code>block</code>处容器的边框,或者另一个<code>float</code>元素。</p>
+<h4 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h4><p>  它是为了<code>float</code>而生。可用于浮动和非浮动元素。属性指定一个元素是否必须移动(清除浮动后)到在它之前的浮动元素下面。</p>
+<h3 id="position属性"><a href="#position属性" class="headerlink" title="position属性"></a>position属性</h3><h4 id="常见取值-1"><a href="#常见取值-1" class="headerlink" title="常见取值"></a>常见取值</h4><h5 id="static"><a href="#static" class="headerlink" title="static"></a>static</h5><p>  默认值。该关键字指定元素使用正常的布局行为，即元素在文档常规流中当前的布局位置。此时 top, right, bottom, left 和 z-index 属性无效。  </p>
+<h5 id="relative-相对定位"><a href="#relative-相对定位" class="headerlink" title="relative 相对定位"></a>relative 相对定位</h5><p>  元素默认情况会被留在当前位置，并未脱离文档流。当设置了top等属性的时候，会在当前位置的基础上进行偏移。但是他会在原地留下空白。</p>
+<h5 id="position-绝对定位"><a href="#position-绝对定位" class="headerlink" title="position 绝对定位"></a>position 绝对定位</h5><p>  脱离文档流，会根据最近的非static祖元素进行定位。</p>
+<h3 id="常见布局"><a href="#常见布局" class="headerlink" title="常见布局"></a>常见布局</h3><h4 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h4><p>  这里就写我比较常用的方式吧。<a href="http://js.jirengu.com/helag/4/edit?html,css,output" target="_blank" rel="noopener">展示</a></p>
+<h4 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h4><p>  <a href="http://js.jirengu.com/pesam/5/edit?html,css,output" target="_blank" rel="noopener">展示</a></p>
+<h4 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h4><p>  <a href="http://js.jirengu.com/fidop/2/edit?html,css,output" target="_blank" rel="noopener">展示</a></p>
+<h4 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h4><p>  作为css居中的一大难点，我会多罗列几种方法。flex布局会另写一篇博客这里先不谈。</p>
+<ul>
+<li>三种方法：<br><a href="http://js.jirengu.com/jitoj/3/edit?html,css,output" target="_blank" rel="noopener">展示</a></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-table" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/27/table/">table</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/27/table/" class="article-date">
+  <time datetime="2019-07-27T12:04:09.000Z" itemprop="datePublished">2019-07-27</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>  表示表格数据 — 即通过二维数据表表示的信息。</p>
+<h3 id="可包含的内容"><a href="#可包含的内容" class="headerlink" title="可包含的内容"></a>可包含的内容</h3><ul>
+<li>tbody</li>
+<li>thead</li>
+<li>tfoot</li>
+<li>caption</li>
+<li>colgroup</li>
+<li>tr</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-form" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/25/form/">form</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/25/form/" class="article-date">
+  <time datetime="2019-07-25T09:13:38.000Z" itemprop="datePublished">2019-07-25</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <hr>
+<h3 id="form"><a href="#form" class="headerlink" title="form"></a>form</h3><h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p>action </p>
+<p> 规定了向谁提交</p>
+</li>
+<li><p>method</p>
+<ul>
+<li>默认是GET但是一般都会改成POST</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h5 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h5><ul>
+<li><p><strong>form是POST请求，a是GET请求</strong></p>
+</li>
+<li><p><strong>form的提交按钮是必不可少的</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>  这个标签就属于是form的内部标签，只有两者合作才会发挥作用</p>
+<h5 id="label"><a href="#label" class="headerlink" title="label"></a>label</h5><p>  点击label中的内容就可以自动聚焦到相应的input</p>
+<p>  label有两种使用方式：</p>
+<blockquote>
+<p>1，for 和 id对应</p>
+<blockquote>
+<pre><code>&lt;label for = &quot;test&quot;&gt;hi&lt;/label&gt;&lt;input type=&quot;text&quot; name=&quot;hi&quot;id=&quot;test&quot;&gt;</code></pre><p><label for="test">hi</label><input type="text" id="test"></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2，将input嵌入label内</p>
+<blockquote>
+<pre><code>&lt;label&gt;hei&lt;input type=&quot;text&quot;name=&quot;hi&quot;&gt;&lt;/label&gt;</code></pre></blockquote>
+</blockquote>
+<h5 id="type"><a href="#type" class="headerlink" title="type"></a>type</h5><ul>
+<li><p>submit 提交按钮</p>
+<p>这个可以说form不可或缺的一项，没有它form里面的内容就没办法提交。</p>
+</li>
+</ul>
+<pre><code>    &lt;input type=submit value=点我啊&gt;
+
+&lt;input type=submit value=点我啊&gt;</code></pre><ul>
+<li><p>radio 单选按钮</p>
+<p>这个属性值要结合name属性使用，当radio的name值相同时，就只能选中一个，checked属性用来决定默认选中项。必须使用 value 属性定义此控件被提交时的值。</p>
+<p>性别 男<input type="radio" value="male" name="gender" checked><br>   女<input type="radio" value="female" name="gender"></p>
+</li>
+</ul>
+<pre><code>性别 男&lt;input type=radio value=&quot;male&quot; name=&quot;gender&quot; checked&gt;
+女&lt;input type=radio value=&quot;female&quot; name=&quot;gender&quot;&gt;</code></pre><ul>
+<li><p>checkbox 复选框</p>
+<p>这个属性复选框。必须使用 value 属性定义此控件被提交时的值。使用 checked 属性指示控件是否被选择。也可以使用 indeterminate 指示复选框在一种不确定状态（大多数平台上，显示为一条穿过复选框的水平线）。</p>
+</li>
+</ul>
+<pre><code>苹果&lt;input type=checkbox value=&quot;apple&quot;  name=&quot;fruit&quot;&gt;
+橘子&lt;input type=checkbox value=&quot;orange&quot; name=&quot;fruit&quot;&gt;
+香蕉&lt;input type=checkbox value=&quot;banana&quot; name=&quot;fruit&quot;&gt;
+
+
+
+    苹果&lt;input type=checkbox value=&quot;apple&quot;  name=&quot;fruit&quot;&gt;
+    橘子&lt;input type=checkbox value=&quot;orange&quot; name=&quot;fruit&quot;&gt;
+    香蕉&lt;input type=checkbox value=&quot;banana&quot; name=&quot;fruit&quot;&gt;</code></pre><ul>
+<li><p>color 颜色控件</p>
+<p>用来创建一个允许用户使用颜色选择器，或输入兼容CSS语法的颜色代码的区域。（不支持Alpha通道），value可以用来指定默认颜色。</p>
+</li>
+</ul>
+<pre><code>&lt;input type=&quot;color&quot; value=&quot;#ff0000&quot; /&gt;</code></pre><ul>
+<li><p>atetime-local 时间控件</p>
+<p>用于输入日期时间控件，不包含时区</p>
+<ul>
+<li>value可以设置默认时间</li>
+</ul>
+</li>
+</ul>
+  <input id="party" type="datetime-local" name="partydate" value="2017-06-01T08:30">
+
+
+<pre><code>&lt;input id=&quot;party&quot; type=&quot;datetime-local&quot; name=&quot;partydate&quot; value=&quot;2017-06-01T08:30&quot;&gt;</code></pre><ul>
+<li><p>email</p>
+<p>会自动检测是否是合法的email地址</p>
+<input type="email" name="email">
+
+
+</li>
+</ul>
+<pre><code>&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</code></pre><ul>
+<li><p>img </p>
+<p>一个图片提交按钮</p>
+  <input type="image" src="img/xxx">
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>text</p>
+<blockquote>
+<p>特有属性</p>
+<blockquote>
+<ul>
+<li>maxlength    文本框能接受的最大字符数。</li>
+<li>minlength    文本框能输入的最小字符数，并且仍然被认为是有效的。</li>
+<li>pattern     验证文本框内容的正则表达式。</li>
+<li>placeholder    文本框为空时显示的一个示例值。</li>
+<li>readonly    一个布尔属性，指示文本框中的内容是否应该为只读。</li>
+<li>size    一个数字，指示文本框有多少个字符宽度。</li>
+<li>spellcheck    控制是否可以检查文本框的拼写,或者默认的拼写检查配置是否应该使用。 </li>
+</ul>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<input type="text" size="10" placeholder="hehe" name="username" maxlength="2">
+
+<pre><code>&lt;input type = text size = 7  placeholder = hehe name = username maxlength = 2&gt;</code></pre><ul>
+<li>range</li>
+</ul>
+<blockquote>
+<p>特有属性</p>
+<blockquote>
+<ul>
+<li>max允许的最大值</li>
+<li>min最小允许值 </li>
+<li>step步进间隔，用于用户界面和验证目的</li>
+</ul>
+</blockquote>
+</blockquote>
+  <input type="range" max="15" min="0" step="3">
+
+<pre><code>&lt;input type=&quot;range&quot; max = 15 min = 0 step = 3  name = value&gt;</code></pre><p>这些感觉平时比较常见，其他的等到用的时候再补充吧。</p>
+<hr>
+<h3 id="select-和-option下拉菜单"><a href="#select-和-option下拉菜单" class="headerlink" title="select 和 option下拉菜单"></a>select 和 option下拉菜单</h3><ul>
+<li>autocomplete</li>
+</ul>
+<pre><code>DOMString 提供用户代理自动完成功能的提示。 有关完整值的完整列表以及有关如何使用自动完成的详细信息，请参阅HTML自动完成属性。
+*****</code></pre><ul>
+<li><p>autofocus</p>
+<p>这个属性能够让一个对象在页面加载的时候获得焦点. 在一个页面上下文中, 只有一个对象可以有这个属性，并且是布尔值(true 或者 false).</p>
+<hr>
+</li>
+<li><p>disabled</p>
+<p>这个布尔值的属性表明一个用户是否可以操控该表单对象. 如果这个属性没有被明确定义, 则从它的父元素继承, 例如 fieldset; 如果没有父元素设置 disabled 属性, 那么默认该表单对象 enabled.</p>
+<hr>
+</li>
+<li><p>form</p>
+<p>select所关联的form表单 (它的”表单拥有者”). 如果这个属性被明确定义, 那么它的值一定是在同一个document中表单ID. 这样能够让你把select标签放在任何的位置, 不仅限于作为form表单的后代元素.</p>
+<hr>
+</li>
+<li><p>multiple</p>
+<p>这个布尔值的属性标记select是否可以多选. 默认是单选.</p>
+<hr>
+</li>
+<li><p>name</p>
+<p>控件名称</p>
+<hr>
+</li>
+<li><p>required HTML5<br>规定select的值不能为空(布尔值).</p>
+<hr>
+</li>
+<li><p>size</p>
+<p>如果控件显示为滚动列表框，则此属性表示为控件中同时可见的行数。浏览器不需要将选择元素呈现为滚动列表框。默认值为0</p>
+<hr>
+<p><code>option</code>的<code>selected</code>默认选中</p>
+<select multiple name="timezone_offset" id="timezone-offset" class="span5">
+      <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+      <option selected value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+      <option value="-10:00">(GMT -10:00) Hawaii</option>
+      <option selected value="-09:50">(GMT -9:30) Taiohae</option>
+      <option value="-09:00">(GMT -9:00) Alaska</option>
+      <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+
+
+</select></li>
+</ul>
+<pre><code>&lt;/select&gt;
+
+
+#### button
+
+在form中添加了一个button的时候，它默认的type是submit</code></pre>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-iframe和a" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/iframe和a/">iframe和a</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/24/iframe和a/" class="article-date">
+  <time datetime="2019-07-24T06:11:07.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><h4 id="1，前言"><a href="#1，前言" class="headerlink" title="1，前言"></a><a href="#1，前言">1，前言</a></h4><h4 id="2，iframe"><a href="#2，iframe" class="headerlink" title="2，iframe"></a><a href="#2，iframe">2，iframe</a></h4><h4 id="3，a"><a href="#3，a" class="headerlink" title="3，a"></a><a href="#3，a">3，a</a></h4><h4 id="4，扩展"><a href="#4，扩展" class="headerlink" title="4，扩展"></a><a href="#4，扩展">4，扩展</a></h4><h3 id="1，前言-1"><a href="#1，前言-1" class="headerlink" title="1，前言"></a>1，前言</h3><p>现在iframe已经很少用了，这是一个可替换元素。这个元素的属性很多，但是并不常用，以后用到时候在具体去了解，下面是比较常用的属性。</p>
+<h3 id="2，iframe-1"><a href="#2，iframe-1" class="headerlink" title="2，iframe"></a>2，iframe</h3><ul>
+<li><p>frameborder</p>
+<p>默认有外边框</p>
+<pre><code>&lt;iframe src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/border.png" alt="border"></p>
+<p>  去掉外边框</p>
+</li>
+</ul>
+<pre><code>   &lt;iframe frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+
+![noborder](/zjyshy.github.io/img/noborder.png)</code></pre><ul>
+<li><p>name</p>
+<p>属性需要搭配a标签使用,这样a标签href的地址，就会从name为xxx的iframe中打开</p>
+<pre><code>&lt;iframe name = xxx frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+&lt;a target=&quot;xxx&quot; href=&quot;http://www.baidu.com&quot;&gt;xxx &lt;/a&gt;</code></pre></li>
+</ul>
+<ul>
+<li><p>src </p>
+<p>  支持相对路径</p>
+<pre><code>&lt;iframe src = &quot;./index2.html&quot; &gt;&lt;iframe&gt;
+
+![相对路径](/zjyshy.github.io/img/index2.png)</code></pre><p>  //表示使用当前页面所使用的协议</p>
+<pre><code>&lt;iframe src = &quot;//qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/usefile.png" alt="file"></p>
+<p>  <img src="/zjyshy.github.io/img/useHTTP.png" alt="HTTP"></p>
+<h3 id="3，a-1"><a href="#3，a-1" class="headerlink" title="3，a"></a>3，a</h3></li>
+</ul>
+<h5 id="四种target值"><a href="#四种target值" class="headerlink" title="四种target值"></a>四种target值</h5><p>  想要更好的理解这四个值，还需要结合iframe。</p>
+<p>  .</p>
+<p>├── index.html</p>
+<p>├── index2.html</p>
+<p>└── index3.html</p>
+<p>  index3.html的内容</p>
+<pre><code>&lt;a target=&quot;_blank&quot; href=&quot;http://www.baidu.com&quot;&gt;_blank &lt;/a&gt;
+&lt;a target=&quot;_top&quot; href=&quot;http://www.baidu.com&quot;&gt;_top&lt;/a&gt;
+&lt;a target=&quot;_self&quot; href=&quot;http://www.baidu.com&quot;&gt;_self &lt;/a&gt;
+&lt;a target=&quot;_parent&quot; href=&quot;http://www.baidu.com&quot;&gt;_parent &lt;/a&gt;</code></pre><p>index2.html的内容</p>
+<pre><code>&lt;iframe src=&quot;./index3.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>index.html的内容</p>
+<pre><code>&lt;iframe  src=&quot;./index2.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>_blank 会打开一个新的窗口</p>
+<p>_top 会在index.html这个祖宗页面打开</p>
+<p>_self 会在ifrem中打开的index3.html中打开</p>
+<p>_parent会在ifrem中打开的index2.html中打开</p>
+<h5 id="download属性"><a href="#download属性" class="headerlink" title="download属性"></a>download属性</h5><ul>
+<li>content-type:application/octet-stream是通过设置http内容让页面变成下载</li>
+</ul>
+<ul>
+<li><p>a标签也可以通过设置download来实现下载页面的功能</p>
+<p><a class="downloadme" href="#" download>下载这个页面</a></p>
+<pre><code>&lt;a class = &quot;downloadResume&quot; href=&quot;#&quot; download&gt;下载这个页面&lt;/a&gt;</code></pre></li>
+</ul>
+<h5 id="href"><a href="#href" class="headerlink" title="href"></a>href</h5><ul>
+<li><p>如果想要访问一个网址一定要写成<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+</li>
+</ul>
+<ul>
+<li><p>//<a href="http://www.baidu.com表示使用当前页面使用的协议，" target="_blank" rel="noopener">www.baidu.com表示使用当前页面使用的协议，</a></p>
+</li>
+<li><p>?name=qqqq 可以添加查询参数</p>
+</li>
+<li><p>./xxx.html   相对路径</p>
+</li>
+<li><p>javascript伪协议 </p>
+<p>当需要实现点击页面后不要跳转的需求时，可以使用javascript伪协议。加<code>#</code>虽然页面也不会发起请求，但是页面会滚动到顶部。当href的值是空白的时候会刷新页面。</p>
+<p>这时候就可以使用</p>
+<p><a href="javascript:;" target="_blank" rel="noopener">啥也不干</a></p>
+<pre><code>&lt;a href=&quot;javascript:;&quot;&gt;啥也不干&lt;/a&gt;</code></pre></li>
+</ul>
+<h3 id="4，扩展-1"><a href="#4，扩展-1" class="headerlink" title="4，扩展"></a>4，扩展</h3><h5 id="src和href"><a href="#src和href" class="headerlink" title="src和href"></a>src和href</h5><ul>
+<li><p>在HTML中有的标签使用src有的则是href甚至还有url这里着重说一下href和src的区别。</p>
+</li>
+<li><p>src表示引入 （img、script、iframe），是页面必不可少的内容，在请求src资源时会将其指向的资源下载并应用到文档内。</p>
+<ul>
+<li>href表示引用（link、a），建立和当前元素（锚点）或当前文档（链接）之间的链接</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-可替换元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/可替换元素/">可替换元素</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/24/可替换元素/" class="article-date">
+  <time datetime="2019-07-24T06:10:32.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-空元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/空元素/">空元素</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/24/空元素/" class="article-date">
+  <time datetime="2019-07-24T06:10:13.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
+
+
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        一路烟霞
+      
+    </h3>
+    <p class="avatar-slogan">
+      特别耐撕的小前端，资深的打酱油攻城狮。
+    </p>
   </div>
 </div>
 
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/08/15/function/" class="post-title">
-      function
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-08-15</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        <div class="untagged">Untagged</div>
-      
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编辑器/">编辑器</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li></ul>
     </div>
   </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/08/13/JS数据类型/" class="post-title">
-      JS数据类型
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-08-13</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/JavaScript/">JavaScript</a>
 
 
-      
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/HTML/" style="font-size: 15px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/编辑器/" style="font-size: 10px;">编辑器</a> <a href="/tags/网络/" style="font-size: 10px;">网络</a>
     </div>
   </div>
-</div>
 
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/31/layout/" class="post-title">
-      layout
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-31</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        <div class="untagged">Untagged</div>
-      
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
     </div>
   </div>
-</div>
 
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/27/table/" class="post-title">
-      table
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-27</div>
-      <div class="categories">
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
         
-          Uncategorized
+          <li>
+            <a href="/2019/08/16/原型与原型链/">原型与原型链</a>
+          </li>
         
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        <div class="untagged">Untagged</div>
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/25/form/" class="post-title">
-      form
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-25</div>
-      <div class="categories">
+          <li>
+            <a href="/2019/08/15/面试题/">面试题</a>
+          </li>
         
-          Uncategorized
+          <li>
+            <a href="/2019/08/15/function/">function</a>
+          </li>
         
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
+          <li>
+            <a href="/2019/08/13/JS数据类型/">JS数据类型</a>
+          </li>
         
-
-<a class="tag" href="/tags/HTML/">HTML</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/24/iframe和a/" class="post-title">
-      iframe和a
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-24</div>
-      <div class="categories">
+          <li>
+            <a href="/2019/07/31/layout/">layout</a>
+          </li>
         
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        
-
-<a class="tag" href="/tags/HTML/">HTML</a>
-
-
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/24/可替换元素/" class="post-title">
-      可替换元素
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-24</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        <div class="untagged">Untagged</div>
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/24/空元素/" class="post-title">
-      空元素
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-24</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        <div class="untagged">Untagged</div>
-      
-    </div>
-  </div>
-</div>
-
-      
-        <div class="post-item-wrapper">
-  <a href="/2019/07/22/TCP-IP/" class="post-title">
-      TCP-IP
-  </a>
-  <div class="post-excerpt">
-    <!-- Post Date and Categories -->
-    <div class="date-and-category">
-      <div class="date">2019-07-22</div>
-      <div class="categories">
-        
-          Uncategorized
-        
-      </div>
-    </div>
-    <!-- Post Excerpt -->
-    <div class="excerpt typo">No Post Excerpt</div>
-    <!-- Post Tags -->
-    <div class="tags">
-      
-        <div class="untagged">Untagged</div>
-      
-    </div>
-  </div>
-</div>
-
-      
-    </div>
-  </div>
-</div>
-
-<!-- Pagination -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-10 col-md-10 col-md-offset-1">
-      <ul class="pagination">
-          
-          
-            <li class="next">
-              <a href="/page/2/">
-                <span>NEXT</span>
-                <span class="symbol-right">&gt;</span>
-              </a>
-            </li>
-          
       </ul>
     </div>
   </div>
-</div>
 
-
-
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Github <a target="_blank" href="https://github.com/zjyshy">桓宇</a>
-          
-        </p><p class="copyright text-muted">
-        
-        </p>
-      </div>
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target="_blank">一路眼瞎</a>
+      
     </div>
   </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
 </footer>
-
-
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
 </script>
 
-  </body>
-</html>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
