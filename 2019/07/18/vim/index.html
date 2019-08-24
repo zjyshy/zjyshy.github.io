@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="目录1，">
+  <meta name="description" content="目录1,前言 2,四种常见模式 3,移动光标 4,进入和退出 5,删除 6,定位文件 7,搜索类命令 8,配对括号 9,替换文本 10,执行外部命令 11,文件 12,复制粘贴 1,前言先暂时用vscod的vim插件过渡下，vim纯英文的文档看着太让人头大了 2,四种常见模式模式：这是vim最独特的地方，也是我最喜欢的地方。NORMAL模式：按下ESC既可进入，属于一个中转模式，可以通过它使用一些">
 <meta name="keywords" content="工具">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/vim/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
-<meta property="og:description" content="目录1，">
+<meta property="og:description" content="目录1,前言 2,四种常见模式 3,移动光标 4,进入和退出 5,删除 6,定位文件 7,搜索类命令 8,配对括号 9,替换文本 10,执行外部命令 11,文件 12,复制粘贴 1,前言先暂时用vscod的vim插件过渡下，vim纯英文的文档看着太让人头大了 2,四种常见模式模式：这是vim最独特的地方，也是我最喜欢的地方。NORMAL模式：按下ESC既可进入，属于一个中转模式，可以通过它使用一些">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-18T07:11:46.166Z">
+<meta property="og:updated_time" content="2019-08-24T14:39:58.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim">
-<meta name="twitter:description" content="目录1，">
+<meta name="twitter:description" content="目录1,前言 2,四种常见模式 3,移动光标 4,进入和退出 5,删除 6,定位文件 7,搜索类命令 8,配对括号 9,替换文本 10,执行外部命令 11,文件 12,复制粘贴 1,前言先暂时用vscod的vim插件过渡下，vim纯英文的文档看着太让人头大了 2,四种常见模式模式：这是vim最独特的地方，也是我最喜欢的地方。NORMAL模式：按下ESC既可进入，属于一个中转模式，可以通过它使用一些">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
@@ -93,7 +93,69 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h4 id="1，"><a href="#1，" class="headerlink" title="1，"></a>1，</h4>
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href="#1,前言">1,前言</a></p>
+<p><a href="#2,四种常见模式">2,四种常见模式</a></p>
+<p><a href="#3,移动光标">3,移动光标</a></p>
+<p><a href="4,进入和退出">4,进入和退出</a></p>
+<p><a href="#5,删除">5,删除</a></p>
+<p><a href="#6,定位文件">6,定位文件</a></p>
+<p><a href="#7,搜索类命令">7,搜索类命令</a></p>
+<p><a href="#8,配对括号">8,配对括号</a></p>
+<p><a href="#9,替换文本">9,替换文本</a></p>
+<p><a href="#10,执行外部命令">10,执行外部命令</a></p>
+<p><a href="#11,文件">11,文件</a></p>
+<p><a href="#12,粘贴复制">12,复制粘贴</a></p>
+<h4 id="1-前言"><a href="#1-前言" class="headerlink" title="1,前言"></a>1,前言</h4><p>先暂时用vscod的vim插件过渡下，vim纯英文的文档看着太让人头大了</p>
+<h4 id="2-四种常见模式"><a href="#2-四种常见模式" class="headerlink" title="2,四种常见模式"></a>2,四种常见模式</h4><p>模式：这是vim最独特的地方，也是我最喜欢的地方。<br>NORMAL模式：按下ESC既可进入，属于一个中转模式，可以通过它使用一些功能，或者切换到其他的模式。<br>INSERT模式：可以在这个模式下更改文本。a（在光标后方切模式容）或者i（在光标前方切换模式）s（删除当前光标所在的文本）A(跳转到当前行的末尾再切换模式)<br>VISUAL模式: 可以通过光标选中文本 <code>v</code><br>COMMAND-LINE模式：输入模式之外输入<code>:</code>可以执行命令，如果是外部命令需要在前面加上<code>!</code>。</p>
+<h4 id="3-移动光标"><a href="#3-移动光标" class="headerlink" title="3,移动光标"></a>3,移动光标</h4><pre><code>            k
+h                       j
+            j</code></pre><p>均可使用数字键控制一次要跳的单词个数。</p>
+<p><code>w</code>:将跳转到下一个单词的头一个字母</p>
+<p><code>e</code>:将跳转到当前单词的最后一个字母</p>
+<p><code>0</code>:移动到行首</p>
+<p><code>$</code>:移动到行末</p>
+<h4 id="4-进入和退出"><a href="#4-进入和退出" class="headerlink" title="4,进入和退出"></a>4,进入和退出</h4><p>退出vim分为强制退出，和保存退出。在Normal模式下输入<code>:</code><br>wq：保存所有改动并退出<br>q!：放弃所有改动</p>
+<h4 id="5-删除"><a href="#5-删除" class="headerlink" title="5,删除"></a>5,删除</h4><p><code>X</code>:删除单个字符,可以通过输入数字控制删除的字节数2x删除两个字符<br><code>r</code>:这个类似x，但是删除单个字符后直接切换in模式<br><code>R</code>:这个可以连续替换多个字符，如果按下删除键，会恢复到修改前的文本<br><code>d</code>:删除类命令，dd删除一行d2d删除两行,dw删除一个单词，d2w删除两个单词，以此类推<br><code>c</code>:叫更改类命令，其实本质就是d完了切换in模式，使用方法与d大致相同</p>
+<h4 id="6-定位文件"><a href="#6-定位文件" class="headerlink" title="6,定位文件"></a>6,定位文件</h4><p>主要就是一个<code>g</code><br><code>ctrl</code> + <code>g</code>:显示光标所在位置以及文件状态信息。<br><code>g</code>+<code>g</code>:跳转到文本顶部<br><code>G</code>:跳转到文本底部<br>Num+<code>g</code>:跳转到相应行</p>
+<h4 id="7-搜索类命令"><a href="#7-搜索类命令" class="headerlink" title="7,搜索类命令"></a>7,搜索类命令</h4><p><code>/</code>:正向搜索</p>
+<pre><code>exp
+/hello</code></pre><p><code>?</code>:反向搜索</p>
+<p><code>n</code>:跳转到下一个符合的内容</p>
+<p><code>N</code>:跳转到上一个符合的内容</p>
+<p><code>ctrl</code> + <code>o</code>:返回上一步的位置</p>
+<p><code>ctrl</code> + <code>i</code>:相对于o跳转到下一步的位置</p>
+<ul>
+<li><p>输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：</p>
+<pre><code>&apos;ic&apos; &apos;ignorecase&apos;       查找时忽略字母大小写
+&apos;is&apos; &apos;incsearch&apos;        查找短语时显示部分匹配
+&apos;hls&apos; &apos;hlsearch&apos;        高亮显示所有的匹配短语</code></pre><p> 选项名可以用完整版本，也可以用缩略版本。</p>
+</li>
+<li><p>在选项前加上 no 可以关闭选项：  :set noic ‘ic’</p>
+</li>
+</ul>
+<h4 id="8-配对括号"><a href="#8-配对括号" class="headerlink" title="8,配对括号"></a>8,配对括号</h4><p>编程时大中小括号真的再常见不过了，有的时候可能会搞不清哪两个括号是一对。</p>
+<p><code>%</code>:在不清楚的括号上使用就可以跳转到相对的括号那里去</p>
+<h4 id="9-替换文本"><a href="#9-替换文本" class="headerlink" title="9,替换文本"></a>9,替换文本</h4><p><code>s</code></p>
+<p>s/<code>old</code>/<code>new</code>  将当前行第一个匹配的<code>old</code>文本替换成<code>new</code>文本</p>
+<p>s/<code>old</code>/<code>new</code>/g   将当前行的每一个<code>old</code>文本替换成<code>new</code>文本</p>
+<p>n,$s/<code>old</code>/<code>new</code>   将n行中的第一个匹配到的<code>old</code>文本替换成<code>new</code>文本</p>
+<p>n,$s/<code>old</code>/<code>new</code>/g  将n行中的所用old替换成new</p>
+<p>%s/<code>old</code>/<code>new</code>     将正个文档的每一行第一个匹配的<code>old</code>文本替换成<code>new</code>文本</p>
+<p>%s/<code>old</code>/<code>new</code>/g    将整个文档所有匹配的<code>old</code>文本替换成<code>new</code>文本      </p>
+<p>%s/<code>old</code>/<code>new</code>/gc   会逐一询问是否要替换</p>
+<h4 id="10-执行外部令"><a href="#10-执行外部令" class="headerlink" title="10,执行外部令"></a>10,执行外部令</h4><p><code>!</code></p>
+<pre><code>使用:!ls    //就会打印list</code></pre><h4 id="11-文件"><a href="#11-文件" class="headerlink" title="11,文件"></a>11,文件</h4><p>将之前外部命令返回的内容保存下来</p>
+<pre><code>:!ls 
+:w &lt;file&gt;</code></pre><p>将部分文本内容单独保存</p>
+<pre><code>v切换到INSERT模式选取相应内容
+按下:会出现&apos;&lt;,&apos;&gt;
+输入w 目标文件</code></pre><p>将其他文件的内容加入当前文档</p>
+<pre><code>:r 目标文件</code></pre><h4 id="12-复制粘贴"><a href="#12-复制粘贴" class="headerlink" title="12,复制粘贴"></a>12,复制粘贴</h4><p><code>p</code>在光标所在位置输入剪切板的内容</p>
+<ul>
+<li>被删除的内容会被存到剪切板</li>
+<li>被v模式选中后按下y会将相应内容存到剪切板</li>
+</ul>
+
       
     </div>
     
