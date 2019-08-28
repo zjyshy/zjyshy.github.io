@@ -5,20 +5,24 @@
   
 
   
-  <title>可替换元素 | 施振兴的个人博客</title>
+  <title>原型链 | 施振兴的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="keywords" content="HTML">
+  <meta name="description" content="前言 关于原型我酝酿了好几天，看了网道的教材，看了你不知道的js不过还没有看完相关的内容。于是决定先写一篇关于饥人谷原型链课程的总结。不能耽误了任务的进度。     这篇文章写给明白什么是this new的读者，如果不懂就别看下去了。日后会有相关的全面的博客，现在还在酝酿。  我的理解。 当你new 通过构造函数创建了一个对象实例后，正常情况下每个实例的属性都是独立的，大家虽然都是兄弟姐妹，但是">
 <meta property="og:type" content="article">
-<meta property="og:title" content="可替换元素">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/可替换元素/index.html">
+<meta property="og:title" content="原型链">
+<meta property="og:url" content="http://yoursite.com/2019/08/28/原型链/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
+<meta property="og:description" content="前言 关于原型我酝酿了好几天，看了网道的教材，看了你不知道的js不过还没有看完相关的内容。于是决定先写一篇关于饥人谷原型链课程的总结。不能耽误了任务的进度。     这篇文章写给明白什么是this new的读者，如果不懂就别看下去了。日后会有相关的全面的博客，现在还在酝酿。  我的理解。 当你new 通过构造函数创建了一个对象实例后，正常情况下每个实例的属性都是独立的，大家虽然都是兄弟姐妹，但是">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-18T07:11:57.310Z">
+<meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/__proto__VSprototype.png">
+<meta property="og:updated_time" content="2019-08-28T08:20:27.994Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="可替换元素">
+<meta name="twitter:title" content="原型链">
+<meta name="twitter:description" content="前言 关于原型我酝酿了好几天，看了网道的教材，看了你不知道的js不过还没有看完相关的内容。于是决定先写一篇关于饥人谷原型链课程的总结。不能耽误了任务的进度。     这篇文章写给明白什么是this new的读者，如果不懂就别看下去了。日后会有相关的全面的博客，现在还在酝酿。  我的理解。 当你new 通过构造函数创建了一个对象实例后，正常情况下每个实例的属性都是独立的，大家虽然都是兄弟姐妹，但是">
+<meta name="twitter:image" content="http://yoursite.com/zjyshy.github.io/img/__proto__VSprototype.png">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
@@ -59,26 +63,24 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-可替换元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-原型链" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      可替换元素
+      原型链
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/07/24/可替换元素/" class="article-date">
-  <time datetime="2019-07-24T06:10:32.000Z" itemprop="datePublished">2019-07-24</time>
+    <a href="/2019/08/28/原型链/" class="article-date">
+  <time datetime="2019-08-28T07:45:17.000Z" itemprop="datePublished">2019-08-28</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
   </div>
   
     <span id="busuanzi_container_page_pv">
@@ -90,7 +92,52 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        
+        <ul>
+<li><p>前言</p>
+<p>关于原型我酝酿了好几天，看了网道的教材，看了你不知道的js不过还没有看完相关的内容。于是决定先写一篇关于饥人谷原型链课程的总结。不能耽误了任务的进度。</p>
+</li>
+</ul>
+<p>  这篇文章写给明白什么是this new的读者，如果不懂就别看下去了。日后会有相关的全面的博客，现在还在酝酿。</p>
+<ul>
+<li><p>我的理解。</p>
+<p>当你new 通过构造函数创建了一个对象实例后，正常情况下每个实例的属性都是独立的，大家虽然都是兄弟姐妹，但是每个人高矮胖瘦不同，而且性格迥异。</p>
+<p>但是，在创造啊构造函数的时候，可以给它这么一个属性prototype。一旦new在创造实例的时候看到了他，就会为创造出来的对象添加一个与其相对应的属性<strong>proto</strong>。</p>
+</li>
+<li><p>这有啥用呢？</p>
+<p>很多时候，虽然一队兄弟有很多不同，但是他们毕竟同父同母，基因还是会非常相似。而这个prototype就是存储这些对象之间的共用属性。</p>
+</li>
+</ul>
+<ul>
+<li><p>js引擎是如何处理它的呐？</p>
+<pre><code>function cat(name){
+
+  this.name = name;</code></pre></li>
+</ul>
+<pre><code>}
+
+cat.prototype.color = &quot;yellow&quot;
+
+
+
+var cat1 = new cat(&quot;pappe&quot;);
+var cat2 = new cat(&quot;ruby&quot;);
+
+cat1.color;         //yellow
+cat1.name;          //pappe
+
+cat2.color;          //yellow
+cat2.name;           //ruby</code></pre><p>  当添加了prototype属性，new在通过构造函数创建实例的时候就会将这里面的内容通过某种方式使得实例可以访问它。当你想要使用实例的某个属性或者方法，引擎会先在普通的属性中寻找，找不到就会跑到prototype中去找，如果找到了就会使用，找不到就显示undefined。</p>
+<ul>
+<li>如何存储这个prototype</li>
+</ul>
+<p>  在创建好的对象中，有这么一个特别的属性<strong>proto</strong>它里面放的就是构造函数的prototype属性（函数.prototype在内存中是一个对象）的地址，引擎就是通过这个<strong>proto</strong>来找到相对应的prototype</p>
+<ul>
+<li><p>var 对象 = new 函数();</p>
+<p>对象.<strong>proto</strong> === 函数.prototype;</p>
+<p>下图就是创建了一个构造函数foo。通过foo创建了两个实例b，c这两个实例的<strong>proto</strong>都指向foo.prototype，而构造函数本身也是由一个js内置的构造函数Function创建的，所以foo.<strong>proto</strong>指向了Function.prototype这个对象，Function是由Object这个构造函数创建出来的，所以Function.prototype的<strong>proto</strong>就指向了Object.prototype，Object就是这棵树的定点，它的上面就是虚无。Object.prototype的<strong>proto</strong>最终指向了Null<br><img src="/zjyshy.github.io/img/__proto__VSprototype.png" alt="继承"></p>
+</li>
+</ul>
+
       
     </div>
     
@@ -104,20 +151,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/07/24/iframe和a/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            iframe和a
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/07/24/空元素/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">空元素</div>
+      <a href="/2019/08/15/面试题/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">面试题</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

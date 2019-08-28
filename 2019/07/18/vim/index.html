@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="施振兴的个人博客">
 <meta property="og:description" content="目录1,前言 2,四种常见模式 3,移动光标 4,进入和退出 5,删除 6,定位文件 7,搜索类命令 8,配对括号 9,替换文本 10,执行外部命令 11,文件 12,复制粘贴 1,前言先暂时用vscod的vim插件过渡下，vim纯英文的文档看着太让人头大了 2,四种常见模式模式：这是vim最独特的地方，也是我最喜欢的地方。NORMAL模式：按下ESC既可进入，属于一个中转模式，可以通过它使用一些">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-24T14:39:58.552Z">
+<meta property="og:updated_time" content="2019-08-25T02:32:34.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim">
 <meta name="twitter:description" content="目录1,前言 2,四种常见模式 3,移动光标 4,进入和退出 5,删除 6,定位文件 7,搜索类命令 8,配对括号 9,替换文本 10,执行外部命令 11,文件 12,复制粘贴 1,前言先暂时用vscod的vim插件过渡下，vim纯英文的文档看着太让人头大了 2,四种常见模式模式：这是vim最独特的地方，也是我最喜欢的地方。NORMAL模式：按下ESC既可进入，属于一个中转模式，可以通过它使用一些">
@@ -124,7 +124,9 @@ h                       j
 <p><code>N</code>:跳转到上一个符合的内容</p>
 <p><code>ctrl</code> + <code>o</code>:返回上一步的位置</p>
 <p><code>ctrl</code> + <code>i</code>:相对于o跳转到下一步的位置</p>
-<ul>
+<p>可以使用<code>\</code>后面加上相应参数，仅本次搜索有效</p>
+<pre><code>/xxx\c              查找时忽略大小写
+/xxx\s              忽略部分匹配</code></pre><ul>
 <li><p>输入 :set xxx 可以设置 xxx 选项。一些有用的选项如下：</p>
 <pre><code>&apos;ic&apos; &apos;ignorecase&apos;       查找时忽略字母大小写
 &apos;is&apos; &apos;incsearch&apos;        查找短语时显示部分匹配
@@ -265,6 +267,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/08/28/原型链/">原型链</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/15/面试题/">面试题</a>
           </li>
         
@@ -278,10 +284,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/07/31/layout/">layout</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/27/table/">table</a>
           </li>
         
       </ul>
