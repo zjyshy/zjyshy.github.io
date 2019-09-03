@@ -5,20 +5,22 @@
   
 
   
-  <title>VScode使用 | 施振兴的个人博客</title>
+  <title>实现jQuery部分功能 | 施振兴的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="keywords" content="工具">
+  <meta name="description" content="二话不说先上代码代码位置 这个和方方老师课上的实现有所不同  这个功能在原有基础上做了升级：   1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。   2，changeClass均可实现同时更改多个元素   3，还可以同时增加或删除多个class   4，text可以同时获取/修改多个元素文本内容   5，可以实现链式操作   6，实现原理和课上讲的不同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VScode使用">
-<meta property="og:url" content="http://yoursite.com/2019/07/12/VScode使用/index.html">
+<meta property="og:title" content="实现jQuery部分功能">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/实现jQuery部分功能/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
+<meta property="og:description" content="二话不说先上代码代码位置 这个和方方老师课上的实现有所不同  这个功能在原有基础上做了升级：   1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。   2，changeClass均可实现同时更改多个元素   3，还可以同时增加或删除多个class   4，text可以同时获取/修改多个元素文本内容   5，可以实现链式操作   6，实现原理和课上讲的不同">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-18T07:11:44.686Z">
+<meta property="og:updated_time" content="2019-09-03T04:11:25.165Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VScode使用">
+<meta name="twitter:title" content="实现jQuery部分功能">
+<meta name="twitter:description" content="二话不说先上代码代码位置 这个和方方老师课上的实现有所不同  这个功能在原有基础上做了升级：   1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。   2，changeClass均可实现同时更改多个元素   3，还可以同时增加或删除多个class   4，text可以同时获取/修改多个元素文本内容   5，可以实现链式操作   6，实现原理和课上讲的不同">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
@@ -59,26 +61,24 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-VScode使用" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-实现jQuery部分功能" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      VScode使用
+      实现jQuery部分功能
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/07/12/VScode使用/" class="article-date">
-  <time datetime="2019-07-12T08:30:49.000Z" itemprop="datePublished">2019-07-12</time>
+    <a href="/2019/09/03/实现jQuery部分功能/" class="article-date">
+  <time datetime="2019-09-03T03:28:30.000Z" itemprop="datePublished">2019-09-03</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-
   </div>
   
     <span id="busuanzi_container_page_pv">
@@ -90,7 +90,69 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        
+        <p>二话不说先上代码<a href="http://js.jirengu.com/kotod/5/edit?html,js,output" target="_blank" rel="noopener">代码位置</a></p>
+<p>这个和方方老师课上的实现有所不同</p>
+<ul>
+<li><p>这个功能在原有基础上做了升级：</p>
+<p>  1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。</p>
+<p>  2，changeClass均可实现同时更改多个元素</p>
+<p>  3，还可以同时增加或删除多个class</p>
+<p>  4，text可以同时获取/修改多个元素文本内容</p>
+<p>  5，可以实现链式操作</p>
+<p>  6，实现原理和课上讲的不同，使用了bind将this硬绑定到三个模块中。</p>
+<p>  7,sibling方法可以通过传入一个非falsy值来将目标函数加入返回值。</p>
+<ul>
+<li><p>现有问题：我并没有想实现sibling同时获取多个目标的兄弟，我暂时没想什么时候会有这样的需求。</p>
+</li>
+<li><p>遇到的坑</p>
+<ul>
+<li><p>主要问题在于可以自动区分传入的是什么，三种情况：</p>
+<p>1，HTMLCollection对象（伪数组）</p>
+<p>2,一个元素</p>
+<p>3，字符串</p>
+</li>
+<li><p>字符串其实比较容易分辨，当是字符串的时候就对它使用DOM提供的querySelectorAll方法,获取到NodeList。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>       //如果是字符串就调用querySelectorAll方法，如果不是就就直接直接赋给target原值。
+        target = typeof target === &apos;string&apos; ? document.querySelectorAll(target) : target;
+
+
+  * 到上面一步其实都没有什么问题，主要是后面要区分到底的道德是一个元素，还是一个伪数组，
+
+  * 伪数组可能是NodeList也有可能是HTMLCollection但是在这里没什么影响。
+
+  * 将this转换成数组，这个长度是1就是一个元素，大于一就是一个伪数组
+
+  * 如果是一个元素，直接加`[]`就可以将它转换成数组
+
+  * 如果是一个伪数组，就调用slice方法将其转换成数组
+
+         //可以判断转换过的this到底是元素还是个伪数组
+         const thisContent = Array.prototype.slice.apply(this).length === 0 ? [this] : Array.prototype.slice.apply(this);
+
+
+* 现在不管之前this到底是哪个，都被变成了数组，调用forEach方法，对其进行处理，就可以得到最后的结果。</code></pre><ul>
+<li><p>如何实现对一个元素的class的修改，这个其实不算难，但是还是写一下吧。</p>
+<ul>
+<li>注意顺序<ul>
+<li>要先搜索是否存在要修改的目标</li>
+<li>如果存在就将要更改的内容先添加</li>
+<li>然后不管存不存在都可以删除目标，因为不存在就不会发生改变</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  if (tergetCon.indexOf(content[0]) !== -1) {
+
+  tar.classList.add(content[1]);
+}
+ tar.classList.remove(content[0]);</code></pre>
       
     </div>
     
@@ -104,20 +166,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/07/13/hexo-常用命令/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            hexo 常用命令
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/07/12/MarkDown/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">MarkDown</div>
+      <a href="/2019/08/29/Array对象/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Array对象</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

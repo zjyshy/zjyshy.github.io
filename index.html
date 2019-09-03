@@ -59,6 +59,383 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-实现jQuery部分功能" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/实现jQuery部分功能/">实现jQuery部分功能</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/03/实现jQuery部分功能/" class="article-date">
+  <time datetime="2019-09-03T03:28:30.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p>二话不说先上代码<a href="http://js.jirengu.com/kotod/5/edit?html,js,output" target="_blank" rel="noopener">代码位置</a></p>
+<p>这个和方方老师课上的实现有所不同</p>
+<ul>
+<li><p>这个功能在原有基础上做了升级：</p>
+<p>  1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。</p>
+<p>  2，changeClass均可实现同时更改多个元素</p>
+<p>  3，还可以同时增加或删除多个class</p>
+<p>  4，text可以同时获取/修改多个元素文本内容</p>
+<p>  5，可以实现链式操作</p>
+<p>  6，实现原理和课上讲的不同，使用了bind将this硬绑定到三个模块中。</p>
+<p>  7,sibling方法可以通过传入一个非falsy值来将目标函数加入返回值。</p>
+<ul>
+<li><p>现有问题：我并没有想实现sibling同时获取多个目标的兄弟，我暂时没想什么时候会有这样的需求。</p>
+</li>
+<li><p>遇到的坑</p>
+<ul>
+<li><p>主要问题在于可以自动区分传入的是什么，三种情况：</p>
+<p>1，HTMLCollection对象（伪数组）</p>
+<p>2,一个元素</p>
+<p>3，字符串</p>
+</li>
+<li><p>字符串其实比较容易分辨，当是字符串的时候就对它使用DOM提供的querySelectorAll方法,获取到NodeList。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>       //如果是字符串就调用querySelectorAll方法，如果不是就就直接直接赋给target原值。
+        target = typeof target === &apos;string&apos; ? document.querySelectorAll(target) : target;
+
+
+  * 到上面一步其实都没有什么问题，主要是后面要区分到底的道德是一个元素，还是一个伪数组，
+
+  * 伪数组可能是NodeList也有可能是HTMLCollection但是在这里没什么影响。
+
+  * 将this转换成数组，这个长度是1就是一个元素，大于一就是一个伪数组
+
+  * 如果是一个元素，直接加`[]`就可以将它转换成数组
+
+  * 如果是一个伪数组，就调用slice方法将其转换成数组
+
+         //可以判断转换过的this到底是元素还是个伪数组
+         const thisContent = Array.prototype.slice.apply(this).length === 0 ? [this] : Array.prototype.slice.apply(this);
+
+
+* 现在不管之前this到底是哪个，都被变成了数组，调用forEach方法，对其进行处理，就可以得到最后的结果。</code></pre><ul>
+<li><p>如何实现对一个元素的class的修改，这个其实不算难，但是还是写一下吧。</p>
+<ul>
+<li>注意顺序<ul>
+<li>要先搜索是否存在要修改的目标</li>
+<li>如果存在就将要更改的内容先添加</li>
+<li>然后不管存不存在都可以删除目标，因为不存在就不会发生改变</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  if (tergetCon.indexOf(content[0]) !== -1) {
+
+  tar.classList.add(content[1]);
+}
+ tar.classList.remove(content[0]);</code></pre>
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-Array对象" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/29/Array对象/">Array对象</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/08/29/Array对象/" class="article-date">
+  <time datetime="2019-08-29T11:09:19.000Z" itemprop="datePublished">2019-08-29</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><a href></a><br><a href></a><br><a href></a><br><a href></a><br><a href></a></p>
+<h3 id="1，创建新数组"><a href="#1，创建新数组" class="headerlink" title="1，创建新数组"></a>1，创建新数组</h3><p>创建一个新数组方法很多，可以使用它的构造函数Array</p>
+<pre><code>var arr = new Array(2);     //创建一个有两个成员的空数组，每一个成员都是empty但是显示的值是undefined
+var arr = Array(2);         //效果同上</code></pre><p>阮一峰老师并不建议使用这种方式，</p>
+<ul>
+<li><p>书写麻烦* 行为不一致</p>
+<pre><code>// 无参数时，返回一个空数组
+new Array() // []
+
+// 单个正整数参数，表示返回的新数组的长度
+new Array(1) // [ empty ]
+new Array(2) // [ empty x 2 ]
+
+// 非正整数的数值作为参数，会报错
+new Array(3.2) // RangeError: Invalid array length
+new Array(-3) // RangeError: Invalid array length
+
+// 单个非数值（比如字符串、布尔值、对象等）作为参数，
+// 则该参数是返回的新数组的成员
+new Array(&apos;abc&apos;) // [&apos;abc&apos;]
+new Array([1]) // [Array[1]]
+
+// 多参数时，所有参数都是返回的新数组的成员
+new Array(1, 2) // [1, 2]
+new Array(&apos;a&apos;, &apos;b&apos;, &apos;c&apos;) // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]      </code></pre></li>
+</ul>
+<p>其实可以直接使用[]</p>
+<pre><code>var arr = [1,2,,];       //(3)[1,2,empty]</code></pre><p>关于empty</p>
+<p>它表示一个空的位，读取的时候会返回undefined，但是当你对它取键名的时候会失败</p>
+<pre><code>var a = Array(2);
+var a2 = [undefined,undefined];
+
+a[0]         //undefined
+a2[0]        //undefined
+
+a.length     //3
+a1.length    //3
+
+0 in  a;      //false
+0 in  a1      //true</code></pre><h3 id="2，静态方法"><a href="#2，静态方法" class="headerlink" title="2，静态方法"></a>2，静态方法</h3><p><code>isArray()</code>当时用typeof对数组类型进行处理时，会返回Object，isArray解决了没办法区分对象和数组的问题。</p>
+<pre><code>var arr = [1,2,3];
+typeof arr;             //&apos;Object&apos;
+Array.isArray(arr);     //true</code></pre><p>###3，不改变原数组的方法</p>
+<p>3.1 <code>valueOf()</code>返回数组本身</p>
+<p>3.2 <code>toString()</code>返回数组的字符串形式</p>
+<p>3.3 <code>join()</code>有点类似toString，不提供参数的情况下与toString相同,参数决定了将数组转化成字符串后，每一个元素之间的分隔符</p>
+<pre><code>var a = [1,2,3,4];
+a.toString() === a.join();                //&quot;true&quot;
+a.join(&apos;?&apos;);                              //&quot;1?2?3?4&quot;
+
+var b = [,,,];
+b.join();                                 //&quot;,,,&quot;</code></pre><ul>
+<li>可以通过<code>call</code>对于字符串或<strong>类似</strong>的对象进行处理</li>
+</ul>
+<pre><code>Array.prototype.join.call(&apos;hehe&apos;,&apos;,&apos;)           //h,e,h,e
+
+var obj = {0:&apos;g&apos;,1:&apos;o&apos;};
+Array.prototype.join.call(obj,&apos;,&apos;)              //g,o</code></pre><p>3.4 <code>concat()</code>合并多个数组，返回新数组。当连接两个数组的时候和<code>+</code>的行为方式完全相同,但是如果连接的内容不是数组，就无法使用<code>+</code></p>
+<pre><code>var a = [1,2,3];
+
+a.concat(&apos;sss&apos;);        //[1,2,3,&apos;sss&apos;];
+//将数组转换成了字符串形式
+a+&apos;sss&apos;;                //’1，2，3sss‘</code></pre><p>3.5 <code>slice</code>提取数组的一部分，返回新数组   <code>arr.slice(start,end)</code>slice可以理解成切片，这两个参数其实有点特别。</p>
+<ul>
+<li><p>从start元素和ende元素的前面，返回剩下的中间一部分。</p>
+<pre><code>var a = [1,2,3,4];
+a.slice(1,2);                 //[2]</code></pre></li>
+<li><p>如果只有一个参数，就会从start前面切一刀，返回剩下的</p>
+<pre><code>var a = [1,2,3];
+a.slice(1);             //[2,3]
+a.slice(5);             //[]</code></pre></li>
+<li><p>负数的时候,就是从后向前数，然后在相应元素的前面切一刀。</p>
+<pre><code>var a = [1,2,3,4,5,6,7];
+
+a.slice(-1);            //[7]
+a.slice(-3,-1);         //[5,6]    </code></pre></li>
+<li><p>还可以将类似字符穿的对象转换成数组</p>
+<pre><code>Array.prototype.slice.call({0:&apos;a&apos;,1:&apos;b&apos;,length:2});            //[&apos;a&apos;,&apos;b&apos;] 
+
+//比较常见的arguments以及querySelectorAll方法
+
+Array.prototype.slice.call(arguments)</code></pre></li>
+</ul>
+<p>3.6    <code>map</code>将数组的内容依次传入函数，返回值传入新数组。</p>
+<ul>
+<li><p>语法：<code>arr.map(function(elem,index,arr),this指向)</code></p>
+</li>
+<li><p>解释一下哈，map方法本身可以可以传入两个参数，一个函数，一个this的指向(还有一个隐含的就是当前这个数组)。而它里面的function也可以传入三个参数，分别是elem数组的值、数组的index、当前数组。这三个是可选的。</p>
+</li>
+</ul>
+<pre><code>var a = [&apos;ruby&apos;,&apos;peppa&apos;,&apos;coco&apos;];
+a.map(function (value,key,arr){
+
+    console.log(&apos;value = &apos; + value);
+    console.log(&apos;key = &apos; + key);
+    if(key === 2 ){
+        console.log(arr);
+    }
+    return key
+})
+
+//value = ruby
+//key = 0
+//value = peppa
+//key = 1
+//value = coco
+//key = 2
+//(3) [&quot;ruby&quot;, &quot;peppa&quot;, &quot;coco&quot;]
+//(3) [0, 1, 2]</code></pre><p>3.7    <code>forEach</code>  它和<code>map</code>十分相似，惟一的区别就是<code>forEach</code>不会返回一个新数组。</p>
+<p>3.8 <code>filter</code> 这个单词可以理解成过滤器，他就是将数组过滤，将过滤出来的元素放入一个新的数组</p>
+<ul>
+<li><p>语法：<code>arr.filter(function(elem,index,arr){},this指向)</code></p>
+</li>
+<li><p>它里面传入的内容和map完全一样，function的三个参数也是一模一样 </p>
+</li>
+<li><p>retrun返回true的元素会被复制进新的数组</p>
+<pre><code>var a = [1,2,3,4,5,6];
+var b = [1,2,6,5,3,6];
+a.filter(function(elem,index,arr){
+
+    return elem === this[index];
+
+},b)
+
+//[1,2,6]</code></pre></li>
+</ul>
+<p>3.9 <code>some()</code>&amp;<code>every()</code></p>
+<ul>
+<li><p>这两个类似<code>或</code>和<code>与</code>。</p>
+</li>
+<li><p><code>some</code>传入函数的返回值都有true那么<code>some</code>的返回值就是true</p>
+</li>
+<li><p><code>every</code>传入函数的返回值都是true，<code>every</code>也会返回true,返回值有false，<code>every</code>就会返回false。</p>
+</li>
+<li><p>arr.some(function(elem,index,arr){},this指向)</p>
+</li>
+<li><p>every的语法也一样，下面只举一个some的例子</p>
+<pre><code>var a = [1,2,3];
+var b = [4,5,6];
+a.some(function(elem,index,arr){
+    return this[index]&gt;elem;
+},b)
+//true</code></pre></li>
+</ul>
+<p>3.10 <code>reduce()</code>&amp;<code>reduceRight()</code></p>
+<ul>
+<li><p><code>reduce</code>在这里最贴切的翻译应该是<code>归纳为</code>，因为它的作用就是将整个数组的所有归纳到一起。</p>
+</li>
+<li><p><code>reduceRight()</code>就是从右往左归纳</p>
+</li>
+<li><p>语法：arr.reduce(function(a,b,c,d),start)</p>
+</li>
+<li><p>如何归纳就是由传入函数的返回值来决定了</p>
+</li>
+<li><p>这个函数的参数和之前就很不同了，</p>
+<ul>
+<li>a累计变量，初始为arr[0]</li>
+<li>b当前变量，初始为arr[1]</li>
+<li>当前位置，初始为0</li>
+<li>原数组</li>
+</ul>
+</li>
+<li><p>start初始值，将累计变量的初始值</p>
+<pre><code>var a = [1,2,3,{name:11},&apos;llala&apos;,22,true];
+
+a.reduce(function(a,b){
+
+    return a+b;
+
+});
+//&quot;6[object Object]llala22true&quot;</code></pre></li>
+</ul>
+<p>3.11 <code>indexOf()</code>&amp; <code>lastIndexOf()</code></p>
+<ul>
+<li><code>indexOf</code>返回给定元素在数组中第一次出现的位置，-1代表不存在</li>
+<li><code>lastIndexOf</code>返回元素在数组中最后一次出现的位置，不出现也返回-1</li>
+<li><code>NaN</code>比较特别不能被搜索到</li>
+<li>语法：arr.indexOf(target,start)</li>
+<li>target是目标元素，start是搜索的起始位置，默认0</li>
+</ul>
+<h3 id="4，改变原数组的方法"><a href="#4，改变原数组的方法" class="headerlink" title="4，改变原数组的方法"></a>4，改变原数组的方法</h3><p>4.1这两兄弟的行为模式，就像是栈先进后出</p>
+<p><code>push()</code>在数组的末端添加一个或多个元素，可以接受多个参数<br><code>pop()</code>删除数组的最后一个元素</p>
+<p>4.2这两兄弟的行为模式，就像是堆先进先出</p>
+<p><code>shift()</code>删除数组的开头元素<br><code>unshift()</code>在数组的开头添加一个元素，可以接受多个参数</p>
+<p>4.3 <code>reverse()</code>颠倒数组</p>
+<ul>
+<li>语法<code>arr.reverse()</code> </li>
+</ul>
+<p>4.4 <code>splice()</code>这个可以删除数组的一部分，并且可以再删除的部分添加新的元素      语法<code>arr.splice(start, count, addElement1, addElement2, ...);</code></p>
+<ul>
+<li><p>ps.乍一看长得好像slice哦，但是这俩的功能可以说是大相径庭。splice这个单词的意思粘接。可以这样理解，一张纸，从中间剪下了一块，然后用胶带直接粘住，或者是在拿一块纸，从你剪下来的部分补上。</p>
+</li>
+<li><p>Note它是直接对原数组做处理的，会把剪下来的一部分返还给你,它是从start元素前面下刀(只有这一点像slice哦)，剪下count个元素哦</p>
+<pre><code>var a = [1,2,3,4,5,6,7];
+a.splice(2,3);                    //[3,4,5]
+a;                                //[1,2,6,7]</code></pre></li>
+<li><p>也可以从后往前剪</p>
+<pre><code>var a = [1,2,3,4,5,6,7];
+a.splice(-2,1);                    //[6]
+a;                                //[1,2,3,4,5,7]</code></pre></li>
+<li><p>当第二个参数是0就可以单纯插入元素</p>
+<pre><code>var a = [1,2,3,4,5,6,7];
+a.splice(3,0,6,6,6);
+a;                                //[1, 2, 3, 6, 6, 6, 4, 5, 6, 7]</code></pre></li>
+</ul>
+<ul>
+<li><p>如果只提供第一个参数，就会从start删到最后</p>
+<pre><code>var a = [1,2,3,4,5,6,7];
+a.splice(4);                    //[5,6,7]
+a;                                //[1,2,3,4]</code></pre></li>
+</ul>
+<p>4.5 <code>sort()</code>对数组进行排序</p>
+<ul>
+<li><p>没有参数时，会按照字典顺序。这意味着他不按照大小排序，当数值排序时，会先转换成字符串在进行排序。</p>
+<pre><code>var a = [&apos;e&apos;,&apos;a&apos;,&apos;c&apos;];
+a.sort();                    //[&apos;a&apos;,&apos;c&apos;,&apos;e&apos;]
+
+var b = [12,333,1111,2222,4,55];
+b.sort()                    //[1111, 12, 2222, 333, 4, 55]</code></pre></li>
+<li><p>可以传入一个函数，让sort按照自定义的方式排序,常见的方式如下</p>
+<pre><code>    var a = [34,666,221,1234,33123];
+    var sorting = function(x,y){
+
+        return x-y;
+
+    }
+
+    a.sort(storing);            //[34,221,666,1234,33123]
+
+sort会将数组的值从0到最后两两依次传入这个函数，函数对于这两个值进行处理，对返回值的大小进行处理。</code></pre></li>
+<li><p>一般常用的情况如下</p>
+<pre><code>var obj ={ 
+    peppa:23,
+    ruby:13,
+    coco:21
+    };
+
+var a = [&apos;peppa&apos;,&apos;ruby&apos;,&apos;coco&apos;];
+
+a.sort(function (x,y){
+
+    return obj[x] - obj[y]
+
+});                            //[&apos;ruby&apos;,&apos;coco&apos;,&apos;peppa&apos;]</code></pre></li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-原型链" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -1220,85 +1597,11 @@ console.log(b.test);  //2</code></pre>
 </article>
 
   
-    <article id="post-可替换元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/可替换元素/">可替换元素</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/07/24/可替换元素/" class="article-date">
-  <time datetime="2019-07-24T06:10:32.000Z" itemprop="datePublished">2019-07-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
-    <article id="post-空元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/空元素/">空元素</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/07/24/空元素/" class="article-date">
-  <time datetime="2019-07-24T06:10:13.000Z" itemprop="datePublished">2019-07-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 
@@ -1347,7 +1650,7 @@ console.log(b.test);  //2</code></pre>
   <div class="widget-box">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
     </div>
   </div>
 
@@ -1359,6 +1662,14 @@ console.log(b.test);  //2</code></pre>
       <ul>
         
           <li>
+            <a href="/2019/09/03/实现jQuery部分功能/">实现jQuery部分功能</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/29/Array对象/">Array对象</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/28/原型链/">原型链</a>
           </li>
         
@@ -1368,14 +1679,6 @@ console.log(b.test);  //2</code></pre>
         
           <li>
             <a href="/2019/08/15/function/">function</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/13/JS数据类型/">JS数据类型</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/31/layout/">layout</a>
           </li>
         
       </ul>
