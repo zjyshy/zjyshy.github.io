@@ -100,7 +100,8 @@
 <li><p>可以用来实现一次性监听，当成功监听后，将监听事件清除</p>
 </li>
 </ul>
-<h2 id="3，多层嵌套同时监听执行顺序"><a href="#3，多层嵌套同时监听执行顺序" class="headerlink" title="3，多层嵌套同时监听执行顺序"></a>3，<code>多层嵌套同时监听执行顺序</code></h2><ul>
+<h2 id="3，多层嵌套同时监听执行顺序"><a href="#3，多层嵌套同时监听执行顺序" class="headerlink" title="3，多层嵌套同时监听执行顺序"></a>3，<code>多层嵌套同时监听执行顺序</code></h2><p>  <img src="/zjyshy.github.io/img/addEventListener.png" alt="同时监听"></p>
+<ul>
 <li><p>是由第三个参数决定的</p>
 </li>
 <li><p>与监听的顺序无关</p>
@@ -1313,52 +1314,6 @@ console.log(b.test);  //2</code></pre>
 </article>
 
   
-    <article id="post-table" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/27/table/">table</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/07/27/table/" class="article-date">
-  <time datetime="2019-07-27T12:04:09.000Z" itemprop="datePublished">2019-07-27</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="table"><a href="#table" class="headerlink" title="table"></a>table</h2><p>  表示表格数据 — 即通过二维数据表表示的信息。</p>
-<h3 id="可包含的内容"><a href="#可包含的内容" class="headerlink" title="可包含的内容"></a>可包含的内容</h3><ul>
-<li>tbody</li>
-<li>thead</li>
-<li>tfoot</li>
-<li>caption</li>
-<li>colgroup</li>
-<li>tr</li>
-</ul>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
     <article id="post-form" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -1574,6 +1529,122 @@ console.log(b.test);  //2</code></pre>
 </article>
 
   
+    <article id="post-iframe和a" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/iframe和a/">iframe和a</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/24/iframe和a/" class="article-date">
+  <time datetime="2019-07-24T06:11:07.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><h4 id="1，前言"><a href="#1，前言" class="headerlink" title="1，前言"></a><a href="#1，前言">1，前言</a></h4><h4 id="2，iframe"><a href="#2，iframe" class="headerlink" title="2，iframe"></a><a href="#2，iframe">2，iframe</a></h4><h4 id="3，a"><a href="#3，a" class="headerlink" title="3，a"></a><a href="#3，a">3，a</a></h4><h4 id="4，扩展"><a href="#4，扩展" class="headerlink" title="4，扩展"></a><a href="#4，扩展">4，扩展</a></h4><h3 id="1，前言-1"><a href="#1，前言-1" class="headerlink" title="1，前言"></a>1，前言</h3><p>现在iframe已经很少用了，这是一个可替换元素。这个元素的属性很多，但是并不常用，以后用到时候在具体去了解，下面是比较常用的属性。</p>
+<h3 id="2，iframe-1"><a href="#2，iframe-1" class="headerlink" title="2，iframe"></a>2，iframe</h3><ul>
+<li><p>frameborder</p>
+<p>默认有外边框</p>
+<pre><code>&lt;iframe src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/border.png" alt="border"></p>
+<p>  去掉外边框</p>
+</li>
+</ul>
+<pre><code>   &lt;iframe frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+
+![noborder](/zjyshy.github.io/img/noborder.png)</code></pre><ul>
+<li><p>name</p>
+<p>属性需要搭配a标签使用,这样a标签href的地址，就会从name为xxx的iframe中打开</p>
+<pre><code>&lt;iframe name = xxx frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+&lt;a target=&quot;xxx&quot; href=&quot;http://www.baidu.com&quot;&gt;xxx &lt;/a&gt;</code></pre></li>
+</ul>
+<ul>
+<li><p>src </p>
+<p>  支持相对路径</p>
+<pre><code>&lt;iframe src = &quot;./index2.html&quot; &gt;&lt;iframe&gt;
+
+![相对路径](/zjyshy.github.io/img/index2.png)</code></pre><p>  //表示使用当前页面所使用的协议</p>
+<pre><code>&lt;iframe src = &quot;//qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/usefile.png" alt="file"></p>
+<p>  <img src="/zjyshy.github.io/img/useHTTP.png" alt="HTTP"></p>
+<h3 id="3，a-1"><a href="#3，a-1" class="headerlink" title="3，a"></a>3，a</h3></li>
+</ul>
+<h5 id="四种target值"><a href="#四种target值" class="headerlink" title="四种target值"></a>四种target值</h5><p>  想要更好的理解这四个值，还需要结合iframe。</p>
+<p>  .</p>
+<p>├── index.html</p>
+<p>├── index2.html</p>
+<p>└── index3.html</p>
+<p>  index3.html的内容</p>
+<pre><code>&lt;a target=&quot;_blank&quot; href=&quot;http://www.baidu.com&quot;&gt;_blank &lt;/a&gt;
+&lt;a target=&quot;_top&quot; href=&quot;http://www.baidu.com&quot;&gt;_top&lt;/a&gt;
+&lt;a target=&quot;_self&quot; href=&quot;http://www.baidu.com&quot;&gt;_self &lt;/a&gt;
+&lt;a target=&quot;_parent&quot; href=&quot;http://www.baidu.com&quot;&gt;_parent &lt;/a&gt;</code></pre><p>index2.html的内容</p>
+<pre><code>&lt;iframe src=&quot;./index3.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>index.html的内容</p>
+<pre><code>&lt;iframe  src=&quot;./index2.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>_blank 会打开一个新的窗口</p>
+<p>_top 会在index.html这个祖宗页面打开</p>
+<p>_self 会在ifrem中打开的index3.html中打开</p>
+<p>_parent会在ifrem中打开的index2.html中打开</p>
+<h5 id="download属性"><a href="#download属性" class="headerlink" title="download属性"></a>download属性</h5><ul>
+<li>content-type:application/octet-stream是通过设置http内容让页面变成下载</li>
+</ul>
+<ul>
+<li><p>a标签也可以通过设置download来实现下载页面的功能</p>
+<p><a class="downloadme" href="#" download>下载这个页面</a></p>
+<pre><code>&lt;a class = &quot;downloadResume&quot; href=&quot;#&quot; download&gt;下载这个页面&lt;/a&gt;</code></pre></li>
+</ul>
+<h5 id="href"><a href="#href" class="headerlink" title="href"></a>href</h5><ul>
+<li><p>如果想要访问一个网址一定要写成<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+</li>
+</ul>
+<ul>
+<li><p>//<a href="http://www.baidu.com表示使用当前页面使用的协议，" target="_blank" rel="noopener">www.baidu.com表示使用当前页面使用的协议，</a></p>
+</li>
+<li><p>?name=qqqq 可以添加查询参数</p>
+</li>
+<li><p>./xxx.html   相对路径</p>
+</li>
+<li><p>javascript伪协议 </p>
+<p>当需要实现点击页面后不要跳转的需求时，可以使用javascript伪协议。加<code>#</code>虽然页面也不会发起请求，但是页面会滚动到顶部。当href的值是空白的时候会刷新页面。</p>
+<p>这时候就可以使用</p>
+<p><a href="javascript:;" target="_blank" rel="noopener">啥也不干</a></p>
+<pre><code>&lt;a href=&quot;javascript:;&quot;&gt;啥也不干&lt;/a&gt;</code></pre></li>
+</ul>
+<h3 id="4，扩展-1"><a href="#4，扩展-1" class="headerlink" title="4，扩展"></a>4，扩展</h3><h5 id="src和href"><a href="#src和href" class="headerlink" title="src和href"></a>src和href</h5><ul>
+<li><p>在HTML中有的标签使用src有的则是href甚至还有url这里着重说一下href和src的区别。</p>
+</li>
+<li><p>src表示引入 （img、script、iframe），是页面必不可少的内容，在请求src资源时会将其指向的资源下载并应用到文档内。</p>
+<ul>
+<li>href表示引用（link、a），建立和当前元素（锚点）或当前文档（链接）之间的链接</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
 
 
   <nav id="page-nav">
@@ -1618,7 +1689,7 @@ console.log(b.test);  //2</code></pre>
   <div class="widget-box">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 20px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/工具/" style="font-size: 16.67px;">工具</a> <a href="/tags/网络/" style="font-size: 13.33px;">网络</a> <a href="/tags/计算机基础/" style="font-size: 13.33px;">计算机基础</a>
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 20px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a>
     </div>
   </div>
 
