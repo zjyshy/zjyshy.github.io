@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="施振兴的个人博客">
 <meta property="og:description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-04T11:19:41.423Z">
+<meta property="og:updated_time" content="2019-09-04T12:37:34.357Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="addEventListener事件">
 <meta name="twitter:description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
@@ -111,7 +111,7 @@
 </li>
 <li><p>与监听的顺序无关</p>
 </li>
-<li><p>出现这的多层情况时，触发后会对函数进行两次执行</p>
+<li><p>出现这的多层情况时，触发后会对函数两个阶段的捕获阶段，捕获阶段</p>
 </li>
 <li><p>第一次1，2，3，可能不会做出反应，因为比较怂</p>
 <ul>
@@ -143,6 +143,10 @@
 </li>
 <li><p>如果这祖孙三人性格迥异，那么顺序就会发生变化。</p>
 </li>
+</ul>
+<h2 id="4，某一个元素同时设置第三个参数"><a href="#4，某一个元素同时设置第三个参数" class="headerlink" title="4，某一个元素同时设置第三个参数"></a>4，<code>某一个元素同时设置第三个参数</code></h2><pre><code>xxx.addEventListener(&apos;click&apos;,fn,true);
+xxx.addEventListener(&apos;click&apos;,fn,false);</code></pre><ul>
+<li>影响顺序的是事件监听的顺序，true和false并不会对执行产生影响</li>
 </ul>
 
       

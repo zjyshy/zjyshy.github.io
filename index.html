@@ -105,7 +105,7 @@
 </li>
 <li><p>与监听的顺序无关</p>
 </li>
-<li><p>出现这的多层情况时，触发后会对函数进行两次执行</p>
+<li><p>出现这的多层情况时，触发后会对函数两个阶段的捕获阶段，捕获阶段</p>
 </li>
 <li><p>第一次1，2，3，可能不会做出反应，因为比较怂</p>
 <ul>
@@ -137,6 +137,10 @@
 </li>
 <li><p>如果这祖孙三人性格迥异，那么顺序就会发生变化。</p>
 </li>
+</ul>
+<h2 id="4，某一个元素同时设置第三个参数"><a href="#4，某一个元素同时设置第三个参数" class="headerlink" title="4，某一个元素同时设置第三个参数"></a>4，<code>某一个元素同时设置第三个参数</code></h2><pre><code>xxx.addEventListener(&apos;click&apos;,fn,true);
+xxx.addEventListener(&apos;click&apos;,fn,false);</code></pre><ul>
+<li>影响顺序的是事件监听的顺序，true和false并不会对执行产生影响</li>
 </ul>
 
       
