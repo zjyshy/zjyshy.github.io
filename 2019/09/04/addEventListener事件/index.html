@@ -5,22 +5,22 @@
   
 
   
-  <title>实现jQuery部分功能 | 施振兴的个人博客</title>
+  <title>addEventListener事件 | 施振兴的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="二话不说先上代码代码位置 这个和方方老师课上的实现有所不同  这个功能在原有基础上做了升级：   1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。   2，changeClass均可实现同时更改多个元素   3，还可以同时增加或删除多个class   4，text可以同时获取/修改多个元素文本内容   5，可以实现链式操作   6，实现原理和课上讲的不同">
+  <meta name="description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实现jQuery部分功能">
-<meta property="og:url" content="http://yoursite.com/2019/09/03/实现jQuery部分功能/index.html">
+<meta property="og:title" content="addEventListener事件">
+<meta property="og:url" content="http://yoursite.com/2019/09/04/addEventListener事件/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
-<meta property="og:description" content="二话不说先上代码代码位置 这个和方方老师课上的实现有所不同  这个功能在原有基础上做了升级：   1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。   2，changeClass均可实现同时更改多个元素   3，还可以同时增加或删除多个class   4，text可以同时获取/修改多个元素文本内容   5，可以实现链式操作   6，实现原理和课上讲的不同">
+<meta property="og:description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-03T04:11:25.165Z">
+<meta property="og:updated_time" content="2019-09-04T11:19:41.423Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实现jQuery部分功能">
-<meta name="twitter:description" content="二话不说先上代码代码位置 这个和方方老师课上的实现有所不同  这个功能在原有基础上做了升级：   1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。   2，changeClass均可实现同时更改多个元素   3，还可以同时增加或删除多个class   4，text可以同时获取/修改多个元素文本内容   5，可以实现链式操作   6，实现原理和课上讲的不同">
+<meta name="twitter:title" content="addEventListener事件">
+<meta name="twitter:description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
@@ -61,21 +61,21 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-实现jQuery部分功能" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-addEventListener事件" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      实现jQuery部分功能
+      addEventListener事件
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/09/03/实现jQuery部分功能/" class="article-date">
-  <time datetime="2019-09-03T03:28:30.000Z" itemprop="datePublished">2019-09-03</time>
+    <a href="/2019/09/04/addEventListener事件/" class="article-date">
+  <time datetime="2019-09-04T11:19:41.000Z" itemprop="datePublished">2019-09-04</time>
 </a>
     
     
@@ -90,69 +90,61 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <p>二话不说先上代码<a href="http://js.jirengu.com/kotod/5/edit?html,js,output" target="_blank" rel="noopener">代码位置</a></p>
-<p>这个和方方老师课上的实现有所不同</p>
+        <h1 id="务必要先点击这里！！！！"><a href="#务必要先点击这里！！！！" class="headerlink" title="务必要先点击这里！！！！"></a><a href="http://js.jirengu.com/hiwun/2/edit?html,js,console,output" target="_blank" rel="noopener">务必要先点击这里！！！！</a></h1><h2 id="1，addEventListenervsonclick"><a href="#1，addEventListenervsonclick" class="headerlink" title="1，addEventListenervsonclick"></a>1，<code>addEventListener</code>vs<code>onclick</code></h2><ul>
+<li><p><code>onclick</code>在DOM1的标准中就已经出现了，<code>addEventListener</code>是DOM2才出现的。</p>
+</li>
+<li><p>由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容</p>
+</li>
+<li><p>虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存储多个事件</p>
+</li>
+<li><p>多个重复的事件之间不会产生覆盖，只会以队列的形式存入其中，（先进先出）</p>
+</li>
+</ul>
+<h2 id="2-removeEventListener"><a href="#2-removeEventListener" class="headerlink" title="2, removeEventListener"></a>2, <code>removeEventListener</code></h2><ul>
+<li><p>这是addEventListener的好基友，用来清除使用addEventListener监听的事件</p>
+</li>
+<li><p>可以用来实现一次性监听，当成功监听后，将监听事件清除</p>
+</li>
+</ul>
+<h2 id="3，多层嵌套同时监听执行顺序"><a href="#3，多层嵌套同时监听执行顺序" class="headerlink" title="3，多层嵌套同时监听执行顺序"></a>3，<code>多层嵌套同时监听执行顺序</code></h2><ul>
+<li><p>是由第三个参数决定的</p>
+</li>
+<li><p>与监听的顺序无关</p>
+</li>
+<li><p>出现这的多层情况时，触发后会对函数进行两次执行</p>
+</li>
+<li><p>第一次1，2，3，可能不会做出反应，因为比较怂</p>
 <ul>
-<li><p>这个功能在原有基础上做了升级：</p>
-<p>  1，addClass更名为changeClass，分别有三个模式，增（1）删（2）改（3）。</p>
-<p>  2，changeClass均可实现同时更改多个元素</p>
-<p>  3，还可以同时增加或删除多个class</p>
-<p>  4，text可以同时获取/修改多个元素文本内容</p>
-<p>  5，可以实现链式操作</p>
-<p>  6，实现原理和课上讲的不同，使用了bind将this硬绑定到三个模块中。</p>
-<p>  7,sibling方法可以通过传入一个非falsy值来将目标函数加入返回值。</p>
+<li>1，爷爷有人打你</li>
+<li>2，爸爸有人打你</li>
+<li>3，孙子有人打你</li>
+</ul>
+</li>
+<li><p>第二次4，5，6,如果第一次没有做出反应第二次就会做出反应</p>
 <ul>
-<li><p>现有问题：我并没有想实现sibling同时获取多个目标的兄弟，我暂时没想什么时候会有这样的需求。</p>
+<li>4，孙子有人打你</li>
+<li>5，爸爸有人打你</li>
+<li>6，爷爷有人打你</li>
+</ul>
 </li>
-<li><p>遇到的坑</p>
+<li><p>当第三个参数为falsy值得时候，就比较怂第一次不会做出反应，你再告诉他一次他就会有反应了</p>
+</li>
+<li><p>当为true时，就会变成true男人，第一次知道挨打了就会不能忍，之间就有反应了。</p>
+</li>
+</ul>
 <ul>
-<li><p>主要问题在于可以自动区分传入的是什么，三种情况：</p>
-<p>1，HTMLCollection对象（伪数组）</p>
-<p>2,一个元素</p>
-<p>3，字符串</p>
+<li><p>所以默认情况下参数3是<code>undefined</code>，大家都不是真男人，都会在第二字才有反应</p>
 </li>
-<li><p>字符串其实比较容易分辨，当是字符串的时候就对它使用DOM提供的querySelectorAll方法,获取到NodeList。</p>
+<li><p>但是第二次是从孙开始提醒的，所以顺序是孙–&gt;爹–&gt;爷</p>
 </li>
-</ul>
+<li><p>如果大家上来都是真男人，那就是从爷开始提醒一遍就有反应了</p>
 </li>
-</ul>
+<li><p>顺序是爷–&gt;爹–&gt;孙</p>
 </li>
-</ul>
-<pre><code>       //如果是字符串就调用querySelectorAll方法，如果不是就就直接直接赋给target原值。
-        target = typeof target === &apos;string&apos; ? document.querySelectorAll(target) : target;
-
-
-  * 到上面一步其实都没有什么问题，主要是后面要区分到底的道德是一个元素，还是一个伪数组，
-
-  * 伪数组可能是NodeList也有可能是HTMLCollection但是在这里没什么影响。
-
-  * 将this转换成数组，这个长度是1就是一个元素，大于一就是一个伪数组
-
-  * 如果是一个元素，直接加`[]`就可以将它转换成数组
-
-  * 如果是一个伪数组，就调用slice方法将其转换成数组
-
-         //可以判断转换过的this到底是元素还是个伪数组
-         const thisContent = Array.prototype.slice.apply(this).length === 0 ? [this] : Array.prototype.slice.apply(this);
-
-
-* 现在不管之前this到底是哪个，都被变成了数组，调用forEach方法，对其进行处理，就可以得到最后的结果。</code></pre><ul>
-<li><p>如何实现对一个元素的class的修改，这个其实不算难，但是还是写一下吧。</p>
-<ul>
-<li>注意顺序<ul>
-<li>要先搜索是否存在要修改的目标</li>
-<li>如果存在就将要更改的内容先添加</li>
-<li>然后不管存不存在都可以删除目标，因为不存在就不会发生改变</li>
-</ul>
+<li><p>如果这祖孙三人性格迥异，那么顺序就会发生变化。</p>
 </li>
 </ul>
-</li>
-</ul>
-<pre><code>  if (tergetCon.indexOf(content[0]) !== -1) {
 
-  tar.classList.add(content[1]);
-}
- tar.classList.remove(content[0]);</code></pre>
       
     </div>
     
@@ -166,20 +158,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/09/04/addEventListener事件/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            addEventListener事件
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/08/29/Array对象/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Array对象</div>
+      <a href="/2019/09/03/实现jQuery部分功能/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">实现jQuery部分功能</div>
         <strong class="article-nav-caption"></strong>
       </a>
     

@@ -59,6 +59,95 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-addEventListener事件" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/04/addEventListener事件/">addEventListener事件</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/04/addEventListener事件/" class="article-date">
+  <time datetime="2019-09-04T11:19:41.000Z" itemprop="datePublished">2019-09-04</time>
+</a>
+    
+    
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="务必要先点击这里！！！！"><a href="#务必要先点击这里！！！！" class="headerlink" title="务必要先点击这里！！！！"></a><a href="http://js.jirengu.com/hiwun/2/edit?html,js,console,output" target="_blank" rel="noopener">务必要先点击这里！！！！</a></h1><h2 id="1，addEventListenervsonclick"><a href="#1，addEventListenervsonclick" class="headerlink" title="1，addEventListenervsonclick"></a>1，<code>addEventListener</code>vs<code>onclick</code></h2><ul>
+<li><p><code>onclick</code>在DOM1的标准中就已经出现了，<code>addEventListener</code>是DOM2才出现的。</p>
+</li>
+<li><p>由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容</p>
+</li>
+<li><p>虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存储多个事件</p>
+</li>
+<li><p>多个重复的事件之间不会产生覆盖，只会以队列的形式存入其中，（先进先出）</p>
+</li>
+</ul>
+<h2 id="2-removeEventListener"><a href="#2-removeEventListener" class="headerlink" title="2, removeEventListener"></a>2, <code>removeEventListener</code></h2><ul>
+<li><p>这是addEventListener的好基友，用来清除使用addEventListener监听的事件</p>
+</li>
+<li><p>可以用来实现一次性监听，当成功监听后，将监听事件清除</p>
+</li>
+</ul>
+<h2 id="3，多层嵌套同时监听执行顺序"><a href="#3，多层嵌套同时监听执行顺序" class="headerlink" title="3，多层嵌套同时监听执行顺序"></a>3，<code>多层嵌套同时监听执行顺序</code></h2><ul>
+<li><p>是由第三个参数决定的</p>
+</li>
+<li><p>与监听的顺序无关</p>
+</li>
+<li><p>出现这的多层情况时，触发后会对函数进行两次执行</p>
+</li>
+<li><p>第一次1，2，3，可能不会做出反应，因为比较怂</p>
+<ul>
+<li>1，爷爷有人打你</li>
+<li>2，爸爸有人打你</li>
+<li>3，孙子有人打你</li>
+</ul>
+</li>
+<li><p>第二次4，5，6,如果第一次没有做出反应第二次就会做出反应</p>
+<ul>
+<li>4，孙子有人打你</li>
+<li>5，爸爸有人打你</li>
+<li>6，爷爷有人打你</li>
+</ul>
+</li>
+<li><p>当第三个参数为falsy值得时候，就比较怂第一次不会做出反应，你再告诉他一次他就会有反应了</p>
+</li>
+<li><p>当为true时，就会变成true男人，第一次知道挨打了就会不能忍，之间就有反应了。</p>
+</li>
+</ul>
+<ul>
+<li><p>所以默认情况下参数3是<code>undefined</code>，大家都不是真男人，都会在第二字才有反应</p>
+</li>
+<li><p>但是第二次是从孙开始提醒的，所以顺序是孙–&gt;爹–&gt;爷</p>
+</li>
+<li><p>如果大家上来都是真男人，那就是从爷开始提醒一遍就有反应了</p>
+</li>
+<li><p>顺序是爷–&gt;爹–&gt;孙</p>
+</li>
+<li><p>如果这祖孙三人性格迥异，那么顺序就会发生变化。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-实现jQuery部分功能" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -1481,122 +1570,6 @@ console.log(b.test);  //2</code></pre>
 </article>
 
   
-    <article id="post-iframe和a" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/24/iframe和a/">iframe和a</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/07/24/iframe和a/" class="article-date">
-  <time datetime="2019-07-24T06:11:07.000Z" itemprop="datePublished">2019-07-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><h4 id="1，前言"><a href="#1，前言" class="headerlink" title="1，前言"></a><a href="#1，前言">1，前言</a></h4><h4 id="2，iframe"><a href="#2，iframe" class="headerlink" title="2，iframe"></a><a href="#2，iframe">2，iframe</a></h4><h4 id="3，a"><a href="#3，a" class="headerlink" title="3，a"></a><a href="#3，a">3，a</a></h4><h4 id="4，扩展"><a href="#4，扩展" class="headerlink" title="4，扩展"></a><a href="#4，扩展">4，扩展</a></h4><h3 id="1，前言-1"><a href="#1，前言-1" class="headerlink" title="1，前言"></a>1，前言</h3><p>现在iframe已经很少用了，这是一个可替换元素。这个元素的属性很多，但是并不常用，以后用到时候在具体去了解，下面是比较常用的属性。</p>
-<h3 id="2，iframe-1"><a href="#2，iframe-1" class="headerlink" title="2，iframe"></a>2，iframe</h3><ul>
-<li><p>frameborder</p>
-<p>默认有外边框</p>
-<pre><code>&lt;iframe src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/border.png" alt="border"></p>
-<p>  去掉外边框</p>
-</li>
-</ul>
-<pre><code>   &lt;iframe frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
-
-![noborder](/zjyshy.github.io/img/noborder.png)</code></pre><ul>
-<li><p>name</p>
-<p>属性需要搭配a标签使用,这样a标签href的地址，就会从name为xxx的iframe中打开</p>
-<pre><code>&lt;iframe name = xxx frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
-&lt;a target=&quot;xxx&quot; href=&quot;http://www.baidu.com&quot;&gt;xxx &lt;/a&gt;</code></pre></li>
-</ul>
-<ul>
-<li><p>src </p>
-<p>  支持相对路径</p>
-<pre><code>&lt;iframe src = &quot;./index2.html&quot; &gt;&lt;iframe&gt;
-
-![相对路径](/zjyshy.github.io/img/index2.png)</code></pre><p>  //表示使用当前页面所使用的协议</p>
-<pre><code>&lt;iframe src = &quot;//qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/usefile.png" alt="file"></p>
-<p>  <img src="/zjyshy.github.io/img/useHTTP.png" alt="HTTP"></p>
-<h3 id="3，a-1"><a href="#3，a-1" class="headerlink" title="3，a"></a>3，a</h3></li>
-</ul>
-<h5 id="四种target值"><a href="#四种target值" class="headerlink" title="四种target值"></a>四种target值</h5><p>  想要更好的理解这四个值，还需要结合iframe。</p>
-<p>  .</p>
-<p>├── index.html</p>
-<p>├── index2.html</p>
-<p>└── index3.html</p>
-<p>  index3.html的内容</p>
-<pre><code>&lt;a target=&quot;_blank&quot; href=&quot;http://www.baidu.com&quot;&gt;_blank &lt;/a&gt;
-&lt;a target=&quot;_top&quot; href=&quot;http://www.baidu.com&quot;&gt;_top&lt;/a&gt;
-&lt;a target=&quot;_self&quot; href=&quot;http://www.baidu.com&quot;&gt;_self &lt;/a&gt;
-&lt;a target=&quot;_parent&quot; href=&quot;http://www.baidu.com&quot;&gt;_parent &lt;/a&gt;</code></pre><p>index2.html的内容</p>
-<pre><code>&lt;iframe src=&quot;./index3.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>index.html的内容</p>
-<pre><code>&lt;iframe  src=&quot;./index2.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>_blank 会打开一个新的窗口</p>
-<p>_top 会在index.html这个祖宗页面打开</p>
-<p>_self 会在ifrem中打开的index3.html中打开</p>
-<p>_parent会在ifrem中打开的index2.html中打开</p>
-<h5 id="download属性"><a href="#download属性" class="headerlink" title="download属性"></a>download属性</h5><ul>
-<li>content-type:application/octet-stream是通过设置http内容让页面变成下载</li>
-</ul>
-<ul>
-<li><p>a标签也可以通过设置download来实现下载页面的功能</p>
-<p><a class="downloadme" href="#" download>下载这个页面</a></p>
-<pre><code>&lt;a class = &quot;downloadResume&quot; href=&quot;#&quot; download&gt;下载这个页面&lt;/a&gt;</code></pre></li>
-</ul>
-<h5 id="href"><a href="#href" class="headerlink" title="href"></a>href</h5><ul>
-<li><p>如果想要访问一个网址一定要写成<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></p>
-<p><a href="www.baidu.com">百度</a></p>
-<p><a href="www.baidu.com">百度</a></p>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
-<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
-</li>
-</ul>
-<ul>
-<li><p>//<a href="http://www.baidu.com表示使用当前页面使用的协议，" target="_blank" rel="noopener">www.baidu.com表示使用当前页面使用的协议，</a></p>
-</li>
-<li><p>?name=qqqq 可以添加查询参数</p>
-</li>
-<li><p>./xxx.html   相对路径</p>
-</li>
-<li><p>javascript伪协议 </p>
-<p>当需要实现点击页面后不要跳转的需求时，可以使用javascript伪协议。加<code>#</code>虽然页面也不会发起请求，但是页面会滚动到顶部。当href的值是空白的时候会刷新页面。</p>
-<p>这时候就可以使用</p>
-<p><a href="javascript:;" target="_blank" rel="noopener">啥也不干</a></p>
-<pre><code>&lt;a href=&quot;javascript:;&quot;&gt;啥也不干&lt;/a&gt;</code></pre></li>
-</ul>
-<h3 id="4，扩展-1"><a href="#4，扩展-1" class="headerlink" title="4，扩展"></a>4，扩展</h3><h5 id="src和href"><a href="#src和href" class="headerlink" title="src和href"></a>src和href</h5><ul>
-<li><p>在HTML中有的标签使用src有的则是href甚至还有url这里着重说一下href和src的区别。</p>
-</li>
-<li><p>src表示引入 （img、script、iframe），是页面必不可少的内容，在请求src资源时会将其指向的资源下载并应用到文档内。</p>
-<ul>
-<li>href表示引用（link、a），建立和当前元素（锚点）或当前文档（链接）之间的链接</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -1662,6 +1635,10 @@ console.log(b.test);  //2</code></pre>
       <ul>
         
           <li>
+            <a href="/2019/09/04/addEventListener事件/">addEventListener事件</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/03/实现jQuery部分功能/">实现jQuery部分功能</a>
           </li>
         
@@ -1675,10 +1652,6 @@ console.log(b.test);  //2</code></pre>
         
           <li>
             <a href="/2019/08/15/面试题/">面试题</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/15/function/">function</a>
           </li>
         
       </ul>
