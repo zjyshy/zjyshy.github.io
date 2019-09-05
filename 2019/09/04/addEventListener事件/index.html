@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
+  <meta name="description" content="务必要结合这里看！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  addEventListener可以监听多种事件，并且每种事件还可以重复监听  多个重复的事件之间不会产生覆盖，只会以队列的形式存">
 <meta property="og:type" content="article">
 <meta property="og:title" content="addEventListener事件">
 <meta property="og:url" content="http://yoursite.com/2019/09/04/addEventListener事件/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
-<meta property="og:description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
+<meta property="og:description" content="务必要结合这里看！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  addEventListener可以监听多种事件，并且每种事件还可以重复监听  多个重复的事件之间不会产生覆盖，只会以队列的形式存">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/addEventListener.png">
-<meta property="og:updated_time" content="2019-09-05T01:34:54.446Z">
+<meta property="og:updated_time" content="2019-09-05T01:56:32.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="addEventListener事件">
-<meta name="twitter:description" content="务必要先点击这里！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存">
+<meta name="twitter:description" content="务必要结合这里看！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  addEventListener可以监听多种事件，并且每种事件还可以重复监听  多个重复的事件之间不会产生覆盖，只会以队列的形式存">
 <meta name="twitter:image" content="http://yoursite.com/zjyshy.github.io/img/addEventListener.png">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
@@ -92,30 +92,32 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h1 id="务必要先点击这里！！！！"><a href="#务必要先点击这里！！！！" class="headerlink" title="务必要先点击这里！！！！"></a><a href="http://js.jirengu.com/hiwun/2/edit?html,js,console,output" target="_blank" rel="noopener">务必要先点击这里！！！！</a></h1><h2 id="1，addEventListenervsonclick"><a href="#1，addEventListenervsonclick" class="headerlink" title="1，addEventListenervsonclick"></a>1，<code>addEventListener</code>vs<code>onclick</code></h2><ul>
+        <h1 id="务必要结合这里看！！！！"><a href="#务必要结合这里看！！！！" class="headerlink" title="务必要结合这里看！！！！"></a><a href="http://js.jirengu.com/hiwun/2/edit?html,js,console,output" target="_blank" rel="noopener">务必要结合这里看！！！！</a></h1><h2 id="1，addEventListenervsonclick"><a href="#1，addEventListenervsonclick" class="headerlink" title="1，addEventListenervsonclick"></a>1，<code>addEventListener</code>vs<code>onclick</code></h2><ul>
 <li><p><code>onclick</code>在DOM1的标准中就已经出现了，<code>addEventListener</code>是DOM2才出现的。</p>
 </li>
-<li><p>由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容</p>
+<li><p>由于<code>onclick</code>是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容</p>
 </li>
-<li><p>虽然addEventListener也是一个方法，但是它的实现方式和onclick是不同的，一个元素只能有一个add，但是它可以存储多个事件</p>
+<li><p><code>addEventListener</code>可以监听多种事件，并且每种事件还可以重复监听</p>
 </li>
 <li><p>多个重复的事件之间不会产生覆盖，只会以队列的形式存入其中，（先进先出）</p>
 </li>
 </ul>
 <h2 id="2-removeEventListener"><a href="#2-removeEventListener" class="headerlink" title="2, removeEventListener"></a>2, <code>removeEventListener</code></h2><ul>
-<li><p>这是addEventListener的好基友，用来清除使用addEventListener监听的事件</p>
+<li><p>这是<code>addEventListener</code>的好基友，用来清除使用<code>addEventListener</code>监听的事件</p>
 </li>
 <li><p>可以用来实现一次性监听，当成功监听后，将监听事件清除</p>
 </li>
 </ul>
-<h2 id="3，多层嵌套同时监听执行顺序"><a href="#3，多层嵌套同时监听执行顺序" class="headerlink" title="3，多层嵌套同时监听执行顺序"></a>3，<code>多层嵌套同时监听执行顺序</code></h2><p>  <img src="/zjyshy.github.io/img/addEventListener.png" alt="同时监听"></p>
-<ul>
+<h2 id="3，多层嵌套同时监听执行顺序"><a href="#3，多层嵌套同时监听执行顺序" class="headerlink" title="3，多层嵌套同时监听执行顺序"></a>3，<code>多层嵌套同时监听执行顺序</code></h2><ul>
 <li><p>是由第三个参数决定的</p>
 </li>
 <li><p>与监听的顺序无关</p>
 </li>
-<li><p>出现这的多层情况时，触发后会对函数两个阶段的捕获阶段，冒泡阶段</p>
+<li><p>出现这的多层情况时，触发有两个阶段，傲跑阶段，捕获阶段</p>
 </li>
+</ul>
+<p><img src="/zjyshy.github.io/img/addEventListener.png" alt="同时监听"></p>
+<ul>
 <li><p>捕获阶段1，2，3，可能不会做出反应，因为比较怂</p>
 <ul>
 <li>1，爷爷有人打你</li>
@@ -149,7 +151,7 @@
 </ul>
 <h2 id="4，某一个元素同时设置第三个参数"><a href="#4，某一个元素同时设置第三个参数" class="headerlink" title="4，某一个元素同时设置第三个参数"></a>4，<code>某一个元素同时设置第三个参数</code></h2><pre><code>xxx.addEventListener(&apos;click&apos;,fn,true);
 xxx.addEventListener(&apos;click&apos;,fn,false);</code></pre><ul>
-<li>影响顺序的是事件监听的顺序，true和false并不会对执行产生影响</li>
+<li>影响顺序的是事件的监听顺序，true和false并不会对执行产生影响</li>
 </ul>
 
       
