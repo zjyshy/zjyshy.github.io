@@ -59,6 +59,122 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-iframe和a" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/iframe和a/">iframe和a</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/24/iframe和a/" class="article-date">
+  <time datetime="2019-07-24T06:11:07.000Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><h4 id="1，前言"><a href="#1，前言" class="headerlink" title="1，前言"></a><a href="#1，前言">1，前言</a></h4><h4 id="2，iframe"><a href="#2，iframe" class="headerlink" title="2，iframe"></a><a href="#2，iframe">2，iframe</a></h4><h4 id="3，a"><a href="#3，a" class="headerlink" title="3，a"></a><a href="#3，a">3，a</a></h4><h4 id="4，扩展"><a href="#4，扩展" class="headerlink" title="4，扩展"></a><a href="#4，扩展">4，扩展</a></h4><h3 id="1，前言-1"><a href="#1，前言-1" class="headerlink" title="1，前言"></a>1，前言</h3><p>现在iframe已经很少用了，这是一个可替换元素。这个元素的属性很多，但是并不常用，以后用到时候在具体去了解，下面是比较常用的属性。</p>
+<h3 id="2，iframe-1"><a href="#2，iframe-1" class="headerlink" title="2，iframe"></a>2，iframe</h3><ul>
+<li><p>frameborder</p>
+<p>默认有外边框</p>
+<pre><code>&lt;iframe src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/border.png" alt="border"></p>
+<p>  去掉外边框</p>
+</li>
+</ul>
+<pre><code>   &lt;iframe frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+
+![noborder](/zjyshy.github.io/img/noborder.png)</code></pre><ul>
+<li><p>name</p>
+<p>属性需要搭配a标签使用,这样a标签href的地址，就会从name为xxx的iframe中打开</p>
+<pre><code>&lt;iframe name = xxx frameborder = &quot;0&quot; src = &quot;http://qq.com&quot; &gt;&lt;iframe&gt;
+&lt;a target=&quot;xxx&quot; href=&quot;http://www.baidu.com&quot;&gt;xxx &lt;/a&gt;</code></pre></li>
+</ul>
+<ul>
+<li><p>src </p>
+<p>  支持相对路径</p>
+<pre><code>&lt;iframe src = &quot;./index2.html&quot; &gt;&lt;iframe&gt;
+
+![相对路径](/zjyshy.github.io/img/index2.png)</code></pre><p>  //表示使用当前页面所使用的协议</p>
+<pre><code>&lt;iframe src = &quot;//qq.com&quot; &gt;&lt;iframe&gt;</code></pre><p>  <img src="/zjyshy.github.io/img/usefile.png" alt="file"></p>
+<p>  <img src="/zjyshy.github.io/img/useHTTP.png" alt="HTTP"></p>
+<h3 id="3，a-1"><a href="#3，a-1" class="headerlink" title="3，a"></a>3，a</h3></li>
+</ul>
+<h5 id="四种target值"><a href="#四种target值" class="headerlink" title="四种target值"></a>四种target值</h5><p>  想要更好的理解这四个值，还需要结合iframe。</p>
+<p>  .</p>
+<p>├── index.html</p>
+<p>├── index2.html</p>
+<p>└── index3.html</p>
+<p>  index3.html的内容</p>
+<pre><code>&lt;a target=&quot;_blank&quot; href=&quot;http://www.baidu.com&quot;&gt;_blank &lt;/a&gt;
+&lt;a target=&quot;_top&quot; href=&quot;http://www.baidu.com&quot;&gt;_top&lt;/a&gt;
+&lt;a target=&quot;_self&quot; href=&quot;http://www.baidu.com&quot;&gt;_self &lt;/a&gt;
+&lt;a target=&quot;_parent&quot; href=&quot;http://www.baidu.com&quot;&gt;_parent &lt;/a&gt;</code></pre><p>index2.html的内容</p>
+<pre><code>&lt;iframe src=&quot;./index3.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>index.html的内容</p>
+<pre><code>&lt;iframe  src=&quot;./index2.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</code></pre><p>_blank 会打开一个新的窗口</p>
+<p>_top 会在index.html这个祖宗页面打开</p>
+<p>_self 会在ifrem中打开的index3.html中打开</p>
+<p>_parent会在ifrem中打开的index2.html中打开</p>
+<h5 id="download属性"><a href="#download属性" class="headerlink" title="download属性"></a>download属性</h5><ul>
+<li>content-type:application/octet-stream是通过设置http内容让页面变成下载</li>
+</ul>
+<ul>
+<li><p>a标签也可以通过设置download来实现下载页面的功能</p>
+<p><a class="downloadme" href="#" download>下载这个页面</a></p>
+<pre><code>&lt;a class = &quot;downloadResume&quot; href=&quot;#&quot; download&gt;下载这个页面&lt;/a&gt;</code></pre></li>
+</ul>
+<h5 id="href"><a href="#href" class="headerlink" title="href"></a>href</h5><ul>
+<li><p>如果想要访问一个网址一定要写成<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="www.baidu.com">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+<p><a href="http://www.baidu.com" target="_blank" rel="noopener">百度</a></p>
+</li>
+</ul>
+<ul>
+<li><p>//<a href="http://www.baidu.com表示使用当前页面使用的协议，" target="_blank" rel="noopener">www.baidu.com表示使用当前页面使用的协议，</a></p>
+</li>
+<li><p>?name=qqqq 可以添加查询参数</p>
+</li>
+<li><p>./xxx.html   相对路径</p>
+</li>
+<li><p>javascript伪协议 </p>
+<p>当需要实现点击页面后不要跳转的需求时，可以使用javascript伪协议。加<code>#</code>虽然页面也不会发起请求，但是页面会滚动到顶部。当href的值是空白的时候会刷新页面。</p>
+<p>这时候就可以使用</p>
+<p><a href="javascript:;" target="_blank" rel="noopener">啥也不干</a></p>
+<pre><code>&lt;a href=&quot;javascript:;&quot;&gt;啥也不干&lt;/a&gt;</code></pre></li>
+</ul>
+<h3 id="4，扩展-1"><a href="#4，扩展-1" class="headerlink" title="4，扩展"></a>4，扩展</h3><h5 id="src和href"><a href="#src和href" class="headerlink" title="src和href"></a>src和href</h5><ul>
+<li><p>在HTML中有的标签使用src有的则是href甚至还有url这里着重说一下href和src的区别。</p>
+</li>
+<li><p>src表示引入 （img、script、iframe），是页面必不可少的内容，在请求src资源时会将其指向的资源下载并应用到文档内。</p>
+<ul>
+<li>href表示引用（link、a），建立和当前元素（锚点）或当前文档（链接）之间的链接</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-可替换元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
@@ -1064,132 +1180,6 @@ cd ..</code></pre><p>如果知道绝对路径,就可以像下面一样去访问<
 </article>
 
   
-    <article id="post-MarkDown" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/MarkDown/">MarkDown</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/07/12/MarkDown/" class="article-date">
-  <time datetime="2019-07-12T01:28:46.000Z" itemprop="datePublished">2019-07-12</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>  1,<a href="#标题">标题</a></p>
-<p>  2,<a href="#段落">段落</a></p>
-<p>  3,<a href="#区块">区块</a></p>
-<p>  4,<a href="#代码块">代码块</a></p>
-<p>  5,<a href="#强调">强调</a></p>
-<p>  6,<a href="#列表">列表</a></p>
-<p>  7,<a href="#分割线">分割线</a></p>
-<p>  8,<a href="#链接">链接</a></p>
-<p>  9,<a href="#锚点">锚点</a>（其实应该放在链接那里，但我想单独拿出来）</p>
-<p>  10,<a href="#图片">图片</a></p>
-<p>  11,<a href="#空格">空格</a></p>
-<p>  12,<a href="#空行">空行</a></p>
-<p>  13，支持html标签</p>
-<h1 id="内容介绍"><a href="#内容介绍" class="headerlink" title="内容介绍"></a>内容介绍</h1><p>  主要用来保留我自己比较常用的md语法规则,内容会不断更新。如果有错误大家可以给我发邮件。</p>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>  就是一个# + 空格 + 文字（加空格肯定没事，不加空格容易出问题）</p>
-<p>  其实还有一种方法从来不用。</p>
-<pre><code># 一级
-## 二级
-### 三级
-    .
-    .
-    .
-最多六级（六个#）</code></pre><h1 id="一级"><a href="#一级" class="headerlink" title="一级"></a>一级</h1><h2 id="二级"><a href="#二级" class="headerlink" title="二级"></a>二级</h2><h3 id="三级"><a href="#三级" class="headerlink" title="三级"></a>三级</h3><br>
-
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>  关于换行按两下回车就好了</p>
-<h2 id="区块"><a href="#区块" class="headerlink" title="区块"></a>区块</h2><p>  这个功能在日常书写中暂时还没体会到作用<br>  有点像标题的那个#,但是我并不知道具体有几级</p>
-<p>  <strong><code>&gt;</code> + 文字</strong></p>
-<pre><code>&gt;hehe
-
-&gt;&gt;heheh
-
-&gt;&gt;&gt;hehehehe</code></pre><blockquote>
-<p>hehe</p>
-<blockquote>
-<p>heheh</p>
-<blockquote>
-<p>hehehehe</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<br>
-
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>  这个很常用的功能</p>
-<p>  <strong>按两下tab</strong></p>
-<pre><code>var test = 1;      </code></pre><br>
-
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>  <strong>使用<code>_</code>或者<code>*</code></strong></p>
-<pre><code>*倾斜* _倾斜_
-
-**强调** __强调__</code></pre><p>  <em>倾斜</em> <em>倾斜</em></p>
-<p>  <strong>强调</strong> <strong>强调</strong></p>
-<br>
-
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p><code>+</code>或者<code>-</code> + 空格 + 文字。</p>
-<pre><code>+我是第一行
-+我是第二行
-+我是第三行</code></pre><ul>
-<li>我是第一行 </li>
-<li>我是第二行</li>
-<li>我是第三行</li>
-</ul>
-<br>
-
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><p>在内容下面加上一行<code>*</code> <code>_</code> <code>-</code></p>
-<pre><code>---
-___
-***</code></pre><hr>
-<hr>
-<hr>
-<br>
-
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>title可有可无,就是你把鼠标放上去短暂延迟后出现的文字。<br><code>[名字](链接 &quot;title&quot;)</code></p>
-<pre><code>[baidu](http://www.baidu.com &quot;heihei&quot;)    </code></pre><p><a href="http://www.baidu.com" title="heihei" target="_blank" rel="noopener">baidu</a></p>
-  <br>
-
-<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>这个挺好用的，但是目前只会回到标题，貌似只能回到标题也就是带有<code>#</code> 的那些内容。和链接基本相同，多了个#</p>
-<pre><code>[回到目录](#目录)</code></pre><p><a href="#目录">回到目录</a></p>
-<br>
-
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><pre><code>![heihei](/zjyshy.github.io/img/guaiqiao.jpg)</code></pre><p><img src="/zjyshy.github.io/img/guaiqiao.jpg" alt="heihei"></p>
-<br>
-
-<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><p> <strong>添加&amp;#160;或者&amp;nbsp;</strong></p>
-<pre><code>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;he&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;he</code></pre><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;he&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;he </p>
-<br>
-
-<h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><p>有些编辑器可能不支持</p>
-<pre><code>&lt;br/&gt;
-空了两行哦</code></pre><br>
-空了两行哦
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -1255,6 +1245,10 @@ ___
       <ul>
         
           <li>
+            <a href="/2019/09/06/轮播的实现思路/">轮播的实现思路</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/04/addEventListener事件/">addEventListener事件</a>
           </li>
         
@@ -1268,10 +1262,6 @@ ___
         
           <li>
             <a href="/2019/08/28/原型链/">原型链</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/15/面试题/">面试题</a>
           </li>
         
       </ul>

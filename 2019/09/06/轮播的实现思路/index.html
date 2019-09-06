@@ -5,20 +5,24 @@
   
 
   
-  <title>空元素 | 施振兴的个人博客</title>
+  <title>轮播的实现思路 | 施振兴的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="keywords" content="HTML">
+  <meta name="description" content="轮播的样式真的非常多，慢慢来 1，苹果轮播 2，无缝轮播  行为模式：无缝轮播的特点就是反直觉，当首元素向前，尾元素向后切图时，感觉好像首尾相接  实现思路：通过复制头部放在队尾，复制尾部元素放在队头，这两个副本的作用就是，每当执行到特殊位置，并且需要跳转到特殊方向时，就会跳转到相应副本，实现视觉上的无缝轮播。     代码实现：  由于实现方法的特殊性，暂时没有想到不利用js控制样式的方法  在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="空元素">
-<meta property="og:url" content="http://yoursite.com/2019/07/24/空元素/index.html">
+<meta property="og:title" content="轮播的实现思路">
+<meta property="og:url" content="http://yoursite.com/2019/09/06/轮播的实现思路/index.html">
 <meta property="og:site_name" content="施振兴的个人博客">
+<meta property="og:description" content="轮播的样式真的非常多，慢慢来 1，苹果轮播 2，无缝轮播  行为模式：无缝轮播的特点就是反直觉，当首元素向前，尾元素向后切图时，感觉好像首尾相接  实现思路：通过复制头部放在队尾，复制尾部元素放在队头，这两个副本的作用就是，每当执行到特殊位置，并且需要跳转到特殊方向时，就会跳转到相应副本，实现视觉上的无缝轮播。     代码实现：  由于实现方法的特殊性，暂时没有想到不利用js控制样式的方法  在">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-18T07:11:56.023Z">
+<meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/carousel/ThePrincipleOfSeamlessCarousel.png">
+<meta property="og:updated_time" content="2019-09-06T00:59:07.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="空元素">
+<meta name="twitter:title" content="轮播的实现思路">
+<meta name="twitter:description" content="轮播的样式真的非常多，慢慢来 1，苹果轮播 2，无缝轮播  行为模式：无缝轮播的特点就是反直觉，当首元素向前，尾元素向后切图时，感觉好像首尾相接  实现思路：通过复制头部放在队尾，复制尾部元素放在队头，这两个副本的作用就是，每当执行到特殊位置，并且需要跳转到特殊方向时，就会跳转到相应副本，实现视觉上的无缝轮播。     代码实现：  由于实现方法的特殊性，暂时没有想到不利用js控制样式的方法  在">
+<meta name="twitter:image" content="http://yoursite.com/zjyshy.github.io/img/carousel/ThePrincipleOfSeamlessCarousel.png">
   
     <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
   
@@ -59,26 +63,24 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-空元素" class="article global-container article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-轮播的实现思路" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      空元素
+      轮播的实现思路
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/07/24/空元素/" class="article-date">
-  <time datetime="2019-07-24T06:10:13.000Z" itemprop="datePublished">2019-07-24</time>
+    <a href="/2019/09/06/轮播的实现思路/" class="article-date">
+  <time datetime="2019-09-06T00:59:07.000Z" itemprop="datePublished">2019-09-06</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
-
   </div>
   
     <span id="busuanzi_container_page_pv">
@@ -90,7 +92,117 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        
+        <p>轮播的样式真的非常多，慢慢来</p>
+<p>1，苹果轮播</p>
+<p>2，无缝轮播</p>
+<ul>
+<li><p>行为模式：无缝轮播的特点就是反直觉，当首元素向前，尾元素向后切图时，感觉好像<strong>首尾相接</strong></p>
+</li>
+<li><p>实现思路：通过复制头部放在队尾，复制尾部元素放在队头，这两个副本的作用就是，每当执行到特殊位置，并且需要跳转到特殊方向时，就会跳转到相应副本，实现视觉上的无缝轮播。</p>
+</li>
+</ul>
+<p><img src="/zjyshy.github.io/img/carousel/ThePrincipleOfSeamlessCarousel.png" alt="原理图"></p>
+<ul>
+<li><p>代码实现：</p>
+<ul>
+<li><p>由于实现方法的特殊性，暂时没有想到不利用js控制样式的方法</p>
+</li>
+<li><p>在队头和队尾点击特定按钮情况下面分别简称special1（队头）special2（队尾）其他情况下的切换简称normal</p>
+</li>
+<li><p>首先设置一个标志flag用来记录当前显示的位置，初始值为0</p>
+<ul>
+<li>点击LB（左侧按钮）flag– , RB（右侧按钮）flag++</li>
+<li>当flag === -1到达特殊点，如果按下LB会触发special1</li>
+<li>当flag === element.length，按下RB会触发special2</li>
+<li>special1：将位置调整到相应副本位置，flag = element.length</li>
+<li>special2：将位置调整到相应副本位置，flag = 0;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>坑</p>
+<ul>
+<li><p>获取当前left的值后，由于是负值，不能直接使用各种全局方法（函数）其转换成number，自己写了一个myNumber函数，可以将开头不是数字的字符串中的数字依次取出并返回一个Number类型的值。</p>
+<pre><code>function myNumber(target){
+
+  var a = &apos;&apos;;
+
+    for(let i = 0;i &lt; target.length;i++){
+
+      if(!isNaN(Number(target[i]))){
+
+      a = a+target[i];
+
+    }
+  }
+
+    return Number(a);
+}</code></pre></li>
+<li><p>由于无法使用css的动画来实现，只能使用js来创造动画。当setInterval执行到一定的次数后，需要自己将自己清除实现方法如下。</p>
+<pre><code>var n = 0;
+var heihei = setInterval(() =&gt; {
+  n++;
+  if(n === 40){
+
+    window.clearInterval(heihei);//这就是清除自己的关键
+
+   }
+ }, 12);</code></pre></li>
+<li><p>当在动画没有执行完之前点击多次按钮，会导致错位bug，可以通过自身清除自身，然后当定时器执行完毕后，再重新监听这个按钮。</p>
+<ul>
+<li><p>jq的监听和清除分别是<code>on</code>和<code>off</code></p>
+</li>
+<li><p>原生js里面是<code>addEventListener</code>和<code>removeEventListener</code></p>
+<p>  $LB.on(‘click’,()=&gt;{</p>
+<pre><code>$LB.off(&apos;click)</code></pre><p>  })</p>
+</li>
+</ul>
+</li>
+<li><p>优化代码时将用this替换了一些目标，还是没有完全的掌握this出现了不少bug。</p>
+<ul>
+<li><p>我将有关动画的代码，写成了一个函数。</p>
+<pre><code>function myAnimation(tar,myclick,that){
+    //tar决定了这是点击左边按钮还是右边按钮的动画
+   //myclick是click事件所触发的函数
+  //that里面保存了一个不变的this
+
+    var leftNow = myNumber( $SCWrapper.css(&apos;left&apos;));
+    const NUM = 40;   //设置移动次数
+    var eve = W/NUM;  //每次移动的距离
+    var n = 1;        //控制移动次数</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>          //true是左，false是右  
+          eve = tar?eve:-eve;
+          leftNow = tar?leftNow-10:leftNow+10;
+
+          var heihei = setInterval(() =&gt; {
+            $SCWrapper.css({left:eve*n-leftNow+&apos;px&apos;});
+            n++;
+
+            if(n === NUM){
+              window.clearInterval(heihei);
+            //看这里
+            $(that).on(&apos;click&apos;,myclick);//看这里
+            //看这里
+
+            }
+
+          }, 12);
+      }
+
+* 这段代码要在两个地方执行，左侧按钮的click和右侧按钮的click
+
+* 代码中的*看着里看这里看这里*部分的that就是用来替代原本的this
+
+* myAnimation执行的环境中this是window，而本来的函数中this就是监听的按钮对象本身
+
+* 如果不添加这个that一旦动画函数被执行，这里的this就会变成window，就会出现bug</code></pre>
       
     </div>
     
@@ -104,20 +216,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/07/24/可替换元素/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            可替换元素
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/07/22/TCP-IP/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">TCP-IP</div>
+      <a href="/2019/09/04/addEventListener事件/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">addEventListener事件</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
