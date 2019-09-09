@@ -18,7 +18,7 @@
 <meta property="og:description" content="轮播的样式真的非常多，慢慢来 1，苹果轮播 2，无缝轮播  行为模式：无缝轮播的特点就是反直觉，当首元素向前，尾元素向后切图时，感觉好像首尾相接  实现思路：通过复制头部放在队尾，复制尾部元素放在队头，这两个副本的作用就是，每当执行到特殊位置，并且需要跳转到特殊方向时，就会跳转到相应副本，实现视觉上的无缝轮播。     代码实现：  由于实现方法的特殊性，暂时没有想到不利用js控制样式的方法  在">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/carousel/ThePrincipleOfSeamlessCarousel.png">
-<meta property="og:updated_time" content="2019-09-06T00:59:07.287Z">
+<meta property="og:updated_time" content="2019-09-08T02:43:34.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="轮播的实现思路">
 <meta name="twitter:description" content="轮播的样式真的非常多，慢慢来 1，苹果轮播 2，无缝轮播  行为模式：无缝轮播的特点就是反直觉，当首元素向前，尾元素向后切图时，感觉好像首尾相接  实现思路：通过复制头部放在队尾，复制尾部元素放在队头，这两个副本的作用就是，每当执行到特殊位置，并且需要跳转到特殊方向时，就会跳转到相应副本，实现视觉上的无缝轮播。     代码实现：  由于实现方法的特殊性，暂时没有想到不利用js控制样式的方法  在">
@@ -156,7 +156,7 @@ var heihei = setInterval(() =&gt; {
 </li>
 <li><p>原生js里面是<code>addEventListener</code>和<code>removeEventListener</code></p>
 <p>  $LB.on(‘click’,()=&gt;{</p>
-<pre><code>$LB.off(&apos;click)</code></pre><p>  })</p>
+<pre><code>$LB.off(&apos;click&apos;)</code></pre><p>  })</p>
 </li>
 </ul>
 </li>
@@ -215,6 +215,15 @@ var heihei = setInterval(() =&gt; {
     
 <nav id="article-nav">
   <div class="article-nav-block">
+    
+      <a href="/2019/09/09/JSONP/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            JSONP
+          
+        </div>
+      </a>
     
   </div>
   <div class="article-nav-block">
@@ -303,6 +312,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/09/09/JSONP/">JSONP</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/06/轮播的实现思路/">轮播的实现思路</a>
           </li>
         
@@ -316,10 +329,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/08/29/Array对象/">Array对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/28/原型链/">原型链</a>
           </li>
         
       </ul>

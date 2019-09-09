@@ -18,7 +18,7 @@
 <meta property="og:description" content="务必要结合这里看！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  addEventListener可以监听多种事件，并且每种事件还可以重复监听  多个重复的事件之间不会产生覆盖，只会以队列的形式存">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/zjyshy.github.io/img/addEventListener.png">
-<meta property="og:updated_time" content="2019-09-05T01:57:19.243Z">
+<meta property="og:updated_time" content="2019-09-09T01:43:54.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="addEventListener事件">
 <meta name="twitter:description" content="务必要结合这里看！！！！1，addEventListenervsonclick onclick在DOM1的标准中就已经出现了，addEventListener是DOM2才出现的。  由于onclick是一个方法，一个元素的方法是唯一的，多次更改方法只会覆盖前面的内容  addEventListener可以监听多种事件，并且每种事件还可以重复监听  多个重复的事件之间不会产生覆盖，只会以队列的形式存">
@@ -113,7 +113,7 @@
 </li>
 <li><p>与监听的顺序无关</p>
 </li>
-<li><p>出现这的多层情况时，触发有两个阶段，傲跑阶段，捕获阶段</p>
+<li><p>出现这的多层情况时，触发有两个阶段，冒泡阶段，捕获阶段</p>
 </li>
 </ul>
 <p><img src="/zjyshy.github.io/img/addEventListener.png" alt="同时监听"></p>
@@ -134,11 +134,11 @@
 </li>
 <li><p>当第三个参数为falsy值得时候，就比较怂第一次不会做出反应，你再告诉他一次他就会有反应了</p>
 </li>
-<li><p>当为true时，就会变成true男人，第一次知道挨打了就会不能忍，之间就有反应了。</p>
+<li><p>当为true时，就会变成true男人，第一次知道挨打了就会不能忍，直接就有反应了。</p>
 </li>
 </ul>
 <ul>
-<li><p>所以默认情况下参数3是<code>undefined</code>，大家都不是真男人，都会在第二字才有反应</p>
+<li><p>所以默认情况下参数3是<code>undefined</code>，大家都不是真男人，都会在第二次才有反应</p>
 </li>
 <li><p>但是第二次是从孙开始提醒的，所以顺序是孙–&gt;爹–&gt;爷</p>
 </li>
@@ -153,6 +153,7 @@
 xxx.addEventListener(&apos;click&apos;,fn,false);</code></pre><ul>
 <li>影响顺序的是事件的监听顺序，true和false并不会对执行产生影响</li>
 </ul>
+<h2 id="5，阻止冒泡"><a href="#5，阻止冒泡" class="headerlink" title="5，阻止冒泡"></a>5，阻止冒泡</h2><p><code>stopPropagation()</code><br>* </p>
 
       
     </div>
@@ -263,6 +264,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/09/09/JSONP/">JSONP</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/06/轮播的实现思路/">轮播的实现思路</a>
           </li>
         
@@ -276,10 +281,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/08/29/Array对象/">Array对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/28/原型链/">原型链</a>
           </li>
         
       </ul>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>JSONP | 施振兴的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="目录数据库 表单发请求 imgae发请求 script发请求 JSONP jQuery实现JSONP)) 数据库 只要能长久存储数据的地方就是数据库。  就像我们存放杂物的房间，就是一个小仓库，存放数据的房间就是数据库   文件系统就是一种数据库  MySQL是使用最广泛的数据库  my并不是我的的意思，而是作者女儿名字的缩写    表单发请求 优点：  可以使用POST方法发送请求     缺点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSONP">
+<meta property="og:url" content="http://yoursite.com/2019/09/09/JSONP/index.html">
+<meta property="og:site_name" content="施振兴的个人博客">
+<meta property="og:description" content="目录数据库 表单发请求 imgae发请求 script发请求 JSONP jQuery实现JSONP)) 数据库 只要能长久存储数据的地方就是数据库。  就像我们存放杂物的房间，就是一个小仓库，存放数据的房间就是数据库   文件系统就是一种数据库  MySQL是使用最广泛的数据库  my并不是我的的意思，而是作者女儿名字的缩写    表单发请求 优点：  可以使用POST方法发送请求     缺点">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-09T15:45:08.317Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSONP">
+<meta name="twitter:description" content="目录数据库 表单发请求 imgae发请求 script发请求 JSONP jQuery实现JSONP)) 数据库 只要能长久存储数据的地方就是数据库。  就像我们存放杂物的房间，就是一个小仓库，存放数据的房间就是数据库   文件系统就是一种数据库  MySQL是使用最广泛的数据库  my并不是我的的意思，而是作者女儿名字的缩写    表单发请求 优点：  可以使用POST方法发送请求     缺点">
+  
+    <link rel="alternate" href="/atom.xml" title="施振兴的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <script>
+  let antiquityStorage = window.sessionStorage.getItem('antiquitySessionStorage');
+  if (antiquityStorage == '' || antiquityStorage == null) {
+    var antiquityLoader = '<div id="loaderbox"><div class="loader"><div class="load-roll"><div class="load-top"></div><div class="load-right"></div><div class="load-bottom"></div></div></div></div>';
+    document.write(antiquityLoader);
+    document.body.style.overflow = 'hidden'
+  }
+  </script>
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title>首页</a>
+      
+        <a class="nav-item" href="/archives" title>归档</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-JSONP" class="article global-container article-type-post" itemscope itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      JSONP
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/09/JSONP/" class="article-date">
+  <time datetime="2019-09-09T15:45:08.000Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+    
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p><a href="#数据库">数据库</a></p>
+<p><a href="#表单发请求">表单发请求</a></p>
+<p><a href="#image标签发请求">imgae发请求</a></p>
+<p><a href="#script标签发请求">script发请求</a></p>
+<p><a href="#JSONP">JSONP</a></p>
+<p><a href="jQuery实现JSONP">jQuery实现JSONP</a>))</p>
+<h2 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h2><ul>
+<li><p>只要能长久存储数据的地方就是数据库。</p>
+</li>
+<li><p>就像我们存放杂物的房间，就是一个小仓库，存放数据的房间就是数据库 </p>
+</li>
+<li><p>文件系统就是一种数据库</p>
+</li>
+<li><p>MySQL是使用最广泛的数据库</p>
+<ul>
+<li><code>my</code>并不是<code>我的</code>的意思，而是作者女儿名字的缩写</li>
+</ul>
+</li>
+</ul>
+<h2 id="表单发请求"><a href="#表单发请求" class="headerlink" title="表单发请求"></a>表单发请求</h2><ul>
+<li><p>优点：</p>
+<ul>
+<li>可以使用POST方法发送请求</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>缺点</p>
+<ul>
+<li>要么跳转页面</li>
+<li>要么就要使用iframe</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>实现方式</p>
+<ul>
+<li><p>创建表单</p>
+</li>
+<li><p>在action中写入请求路径</p>
+</li>
+</ul>
+<p>*</p>
+<pre><code>&lt;form action=&apos;/pay&apos; method = &apos;post&apos;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;money&quot;&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;支付&quot;&gt;
+&lt;/form&gt;</code></pre></li>
+</ul>
+<h2 id="image标签发送请求"><a href="#image标签发送请求" class="headerlink" title="image标签发送请求"></a>image标签发送请求</h2><ul>
+<li><p>优点：</p>
+<ul>
+<li>可以不用跳转页面</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>只能使用GET方法发送请求</li>
+<li>需要发送一张图片</li>
+</ul>
+</li>
+<li><p>实现方式</p>
+<ul>
+<li><p>动态创建一张个图片标签（不需要添加到页面中）</p>
+</li>
+<li><p>将这个标签的src设置为请求路径</p>
+</li>
+<li><p>监听图片是否加载</p>
+</li>
+<li><p>加载成功则说明请求得到了正确的响应</p>
+</li>
+<li><p>失败则说明没有的到正确的响应</p>
+<pre><code>//动态的创建img标签
+var img = document.createElement(&apos;img&apos;);//img标签即使不放在页面中也可以发送请求
+  img.src = &quot;/pay&quot;;//请求路径
+  img.onload = function(){//成功就执行这一段
+    --amount.innerText;
+    window.location.reload();
+  }
+  img.onerror = function(){//失败就执行这一段
+
+    alert(&apos;失败啦&apos;)
+  }</code></pre></li>
+</ul>
+</li>
+</ul>
+<h2 id="script标签发送请求"><a href="#script标签发送请求" class="headerlink" title="script标签发送请求"></a>script标签发送请求</h2><ul>
+<li><p>优点</p>
+<ul>
+<li>可以不用跳转页面</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>只能使用GET方法发送请求</li>
+<li>需要将script标签添加到body里面</li>
+<li>每次都要清除script标签</li>
+</ul>
+</li>
+<li><p>实现方式</p>
+<ul>
+<li>动态创建一个script标签（必须添加到body中）</li>
+<li>将这个标签的src设置为请求路径</li>
+</ul>
+</li>
+</ul>
+<pre><code>  var script = document.createElement(&apos;script&apos;);//动态的创建script标签
+script.src = &apos;/pay&apos;;//请求路径
+document.body.appendChild(script);//script不同于img标签，如果不放到body中就无法发送请求
+script.onload = function(e){
+
+  --amount.innerText;
+e.currentTarget.remove();//用来删除新增的script标签
+
+}</code></pre><h2 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h2><ul>
+<li><p>优点</p>
+<ul>
+<li>可以不用跳转页面</li>
+<li>实现跨站请求</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>与script标签发送请求缺点相同</li>
+</ul>
+</li>
+<li><p>实现方式</p>
+<ul>
+<li><p>动态创建一个script标签</p>
+</li>
+<li><p>请求方通过script的src为请求地址以及查询参数（?callback）</p>
+</li>
+<li><p>响应方通过callback构造响应内容</p>
+</li>
+<li><p>将请求方所需数据包含在响应内容中</p>
+<pre><code>var functionName = &apos;zjy&apos;+parseInt(Math.random()*100000);//传给响应方的callback就是它，为了保证不会污染全局变量，名词每次都是随机的
+
+var script = document.createElement(&apos;script&apos;);//动态创建script标签
+window[functionName] = function(content){//这里千万不要用 &apos;.&apos; 不要用 &apos;.&apos; 不要用 &apos; . &apos;   !!!!!!!!!!</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code>}
+script.src = &apos;http://127.0.0.1:8880/pay?callback=&apos;+functionName;
+//src包含响应方的地址,以及一个查询参数?callback它的值就是随机创建的函数名
+
+document.body.appendChild(script);//script不同于img标签，如果不放到body中就无法发送请求
+
+script.onload = function(e){
+
+  --amount.innerText;
+e.currentTarget.remove();//用来删除新增的script标签
+delete functionName;
+}</code></pre><ul>
+<li><p>服务器是如何处理这个callback的呐    </p>
+<pre><code>  response.write(` ${queryObject.callback}.call(undefined,{
+
+    //这里面的内容就是JSON打包传递的数据，包含这个JSON的称为paddingJSONP由此得名。
+
+    &quot;status&quot;:&quot;success&quot;,
+    &quot;message&quot;:heihei
+
+});</code></pre><p>  `)</p>
+<ul>
+<li>如果请求的数据很少可以传递一个字符串</li>
+</ul>
+</li>
+</ul>
+<h2 id="jQuery实现JSONP"><a href="#jQuery实现JSONP" class="headerlink" title="jQuery实现JSONP"></a>jQuery实现JSONP</h2><ul>
+<li><p>优点</p>
+<ul>
+<li>好写</li>
+</ul>
+</li>
+<li><p>缺点</p>
+<ul>
+<li>需要加载jQuery</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>jQuery格式化的JSONP方法</li>
+</ul>
+<pre><code>$.ajax({
+  url:&quot;http://127.0.0.1:8880/pay&quot;,
+  dataType:&apos;jsonp&apos;,//选择使用JSONP
+  success:function(response){//这里的response就是返回的JSON数据包或者一个字符串
+    console.log(response);
+  }
+
+})</code></pre>
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/09/06/轮播的实现思路/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">轮播的实现思路</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/default-avatar.webp" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        施振兴
+      
+    </h3>
+    <p class="avatar-slogan">
+      前端！前端！前端！变强!变强!变强!
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络/">网络</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机基础/">计算机基础</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/HTML/" style="font-size: 20px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 15px;">JavaScript</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/工具/" style="font-size: 20px;">工具</a> <a href="/tags/网络/" style="font-size: 15px;">网络</a> <a href="/tags/计算机基础/" style="font-size: 15px;">计算机基础</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/09/JSONP/">JSONP</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/06/轮播的实现思路/">轮播的实现思路</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/04/addEventListener事件/">addEventListener事件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/实现jQuery部分功能/">实现jQuery部分功能</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/29/Array对象/">Array对象</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://yiluyanxia.github.io/" title target="_blank">一路眼瞎</a>
+      
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 John Doe &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script>
+if (!window.jQuery) {
+var script = document.createElement('script');
+script.src = "/js/jquery-2.0.3.min.js";
+document.body.write(script);
+}
+</script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
